@@ -478,3 +478,5 @@ C:\Users\Ian\Documents\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Ho
 C:\Users\Ian\Documents\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
 C:\Users\Ian\Documents\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
 C:\Users\Ian\Documents\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Ian\Documents\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.DynamicProductEntryControl.resources
+C:\Users\Ian\Documents\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PropertiesWindow.resources

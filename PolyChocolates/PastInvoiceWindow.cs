@@ -19,6 +19,7 @@ namespace PolyChocolates
             InitializeComponent();
 
             this.Text = invoice;
+            label8.Text = Home.invoiceHeader;
 
             var query =
                 from invoiceRow in db.Invoices

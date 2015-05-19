@@ -193,12 +193,12 @@ namespace PolyChocolates
                 && (traceabilityComplete[i] || row.Recipe.TraceabilityRequired.Equals("N"))
                 && (efficiencyComplete[i] || row.Recipe.EfficiencyRequired.Equals("N")))
                 {
-                    row.Check.Image = Home.checkMark;
+                    row.Check.Image = Home.CheckMark;
                     row.Complete = true;
                 }
                 else
                 {
-                    row.Check.Image = Home.xMark;
+                    row.Check.Image = Home.XMark;
                     row.Complete = false;
                 }
                 i++;
@@ -475,16 +475,16 @@ namespace PolyChocolates
                 HACCP haacp = new HACCP(this);
                 haacp.ShowDialog();
                 if (this.haacp != null)
-                    picBox.Image = Home.document;
+                    picBox.Image = Home.Document;
                 else
-                    picBox.Image = Home.blankDocument;
+                    picBox.Image = Home.BlankDocument;
             }
             private void loadCOAIcon(object sender, EventArgs e)
             {
                 if (this.haacp != null && this.haacp.Length > 0)
-                    picBox.Image = Home.document;
+                    picBox.Image = Home.Document;
                 else
-                    picBox.Image = Home.blankDocument;
+                    picBox.Image = Home.BlankDocument;
             }
         }
 

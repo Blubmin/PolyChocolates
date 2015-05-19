@@ -18,6 +18,7 @@ namespace PolyChocolates
         public InvoicingControl(Home home)
         {
             InitializeComponent();
+            label12.Text = Home.invoiceHeader;
             totalOwed.TextChanged += new EventHandler(Library.formatMoney);
             this.home = home;
 

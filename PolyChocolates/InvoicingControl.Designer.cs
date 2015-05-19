@@ -444,7 +444,7 @@
         private System.Windows.Forms.TextBox totalOwed;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

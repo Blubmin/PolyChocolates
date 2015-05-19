@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +14,18 @@ namespace PolyChocolates
 {
     public partial class Home : Form
     {
+        // PASSWORD
+        public static String realPassword;
+        // Invoice Header
+        public static String invoiceHeader;
+
+        public static Home Instance;
+
         private static UserControl mainPanel;
         private static HomeControl homeControl;
 
         private static ProductEntryControl productEntryControl;
+        private static DynamicProductEntryControl _dynamicProductEntryControl;
 
         public static UserControl[] qcControls = new UserControl[4];
         public static TraceabilityControl[] traceabilityControls = new TraceabilityControl[4];
@@ -32,19 +42,23 @@ namespace PolyChocolates
         private static InventoryControl inventoryControl;
         private static PastInventoriesControl pastInventoriesControl;
         private static RecipeControl recipeControl;
-        private static InvoicingControl invoiceControl;
+        public static InvoicingControl invoiceControl;
         private static InvoiceSearch pastInvoices;
 
-        public static Image document = Image.FromFile("../../IconImages/document.png");
-        public static Image blankDocument = Image.FromFile("../../IconImages/blankDocument.png");
-        public static Image xMark = Image.FromFile("../../IconImages/x_mark.png");
-        public static Image checkMark = Image.FromFile("../../IconImages/check_mark.png");
+        public static readonly Image Document = Image.FromFile("../../IconImages/document.png");
+        public static readonly Image BlankDocument = Image.FromFile("../../IconImages/blankDocument.png");
+        public static readonly Image XMark = Image.FromFile("../../IconImages/x_mark.png");
+        public static readonly Image CheckMark = Image.FromFile("../../IconImages/check_mark.png");
 
         public static Point controlStartingPoint;
 
         public Home()
         {
             InitializeComponent();
+
+            Instance = this;
+
+            ReadPreferencesFromFile();
 
             controlStartingPoint = new Point(SidePanel.Right, TopPanel.Bottom);
             // Home Display
@@ -56,6 +70,10 @@ namespace PolyChocolates
             productEntryControl = new ProductEntryControl(this);
             productEntryControl.Location = controlStartingPoint;
             productEntryControl.Visible = false;
+
+            _dynamicProductEntryControl = new DynamicProductEntryControl();
+            _dynamicProductEntryControl.Location = controlStartingPoint;
+            _dynamicProductEntryControl.Visible = false;
 
             // Setup/Shutdown Controls
             // General Setup
@@ -138,6 +156,32 @@ namespace PolyChocolates
             this.Controls.Add(bbqShutdownControl);
         }
 
+        private void ReadPreferencesFromFile()
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader("../../DatabaseObjects/Preferences.txt"))
+                {
+                    String preferencesData = sr.ReadToEnd();
+                    int from = preferencesData.IndexOf(":") + 1;
+                    int to = preferencesData.LastIndexOf(":");
+                    int headerFrom = preferencesData.IndexOf("-") + 1;
+                    realPassword = preferencesData.Substring(from, to - from);
+                    invoiceHeader = preferencesData.Substring(headerFrom, preferencesData.Length - headerFrom);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public static void overwritePreferencesFile()
+        {
+            String text = "Password:" + realPassword + ":Header-" + invoiceHeader;
+            System.IO.File.WriteAllText("../../DatabaseObjects/Preferences.txt", text);
+        }
 
         private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -147,7 +191,8 @@ namespace PolyChocolates
                     changeViewToHome();
                     break;
                 case "Product Entry":
-                    changeViewToProductEntry();
+                    ChangeMainViewControl(_dynamicProductEntryControl);
+                    //changeViewToProductEntry();
                     break;
                 case "Search":
                     changeViewToSearch();
@@ -159,9 +204,27 @@ namespace PolyChocolates
                 case "Quality Forms":
                     new QualityWindow(this).ShowDialog();
                     break;
+                case "Preferences":
+                    PropertiesWindow propertiesWindow = new PropertiesWindow(this);
+                    propertiesWindow.StartPosition = FormStartPosition.CenterScreen;
+                    propertiesWindow.ShowDialog();
+                    break;
                 default:
                     break;
             }
+        }
+
+        /**
+         * Changes the main panel to the input control.
+         */
+        public static void ChangeMainViewControl(UserControl control)
+        {
+            if (!Instance.Controls.Contains(control))
+                Instance.Controls.Add(control);
+            if (mainPanel != null)
+                mainPanel.Visible = false;
+            mainPanel = control;
+            mainPanel.Visible = true;
         }
 
         /**
