@@ -59,7 +59,7 @@
             // 
             this.backButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.backButton.Location = new System.Drawing.Point(920, 579);
+            this.backButton.Location = new System.Drawing.Point(995, 579);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 23);
             this.backButton.TabIndex = 12;
@@ -72,9 +72,9 @@
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.inventoryTable);
-            this.panel1.Location = new System.Drawing.Point(82, 111);
+            this.panel1.Location = new System.Drawing.Point(29, 111);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(313, 462);
+            this.panel1.Size = new System.Drawing.Size(462, 462);
             this.panel1.TabIndex = 13;
             // 
             // inventoryTable
@@ -139,7 +139,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.traceabilityTable);
-            this.panel2.Location = new System.Drawing.Point(482, 111);
+            this.panel2.Location = new System.Drawing.Point(557, 111);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(594, 462);
             this.panel2.TabIndex = 14;
@@ -160,12 +160,11 @@
             this.traceabilityTable.Controls.Add(this.label6, 3, 0);
             this.traceabilityTable.Controls.Add(this.label9, 4, 0);
             this.traceabilityTable.Controls.Add(this.label10, 5, 0);
-            this.traceabilityTable.Location = new System.Drawing.Point(3, 5);
+            this.traceabilityTable.Location = new System.Drawing.Point(3, 6);
             this.traceabilityTable.Name = "traceabilityTable";
             this.traceabilityTable.RowCount = 1;
             this.traceabilityTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.traceabilityTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.traceabilityTable.Size = new System.Drawing.Size(567, 48);
+            this.traceabilityTable.Size = new System.Drawing.Size(567, 23);
             this.traceabilityTable.TabIndex = 9;
             // 
             // label11
@@ -229,9 +228,9 @@
             // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(401, 413);
+            this.removeButton.Location = new System.Drawing.Point(497, 413);
             this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.Size = new System.Drawing.Size(54, 23);
             this.removeButton.TabIndex = 15;
             this.removeButton.Text = "<<";
             this.removeButton.UseVisualStyleBackColor = true;
@@ -239,9 +238,9 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(401, 291);
+            this.addButton.Location = new System.Drawing.Point(497, 291);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.Size = new System.Drawing.Size(54, 23);
             this.addButton.TabIndex = 16;
             this.addButton.Text = ">>";
             this.addButton.UseVisualStyleBackColor = true;
@@ -251,7 +250,7 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(82, 29);
+            this.TitleLabel.Location = new System.Drawing.Point(29, 29);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(154, 31);
             this.TitleLabel.TabIndex = 17;
@@ -259,7 +258,7 @@
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(1001, 579);
+            this.submitButton.Location = new System.Drawing.Point(1076, 579);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 18;
@@ -271,7 +270,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label1.Location = new System.Drawing.Point(84, 82);
+            this.label1.Location = new System.Drawing.Point(31, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 24);
             this.label1.TabIndex = 19;
@@ -281,7 +280,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label2.Location = new System.Drawing.Point(483, 84);
+            this.label2.Location = new System.Drawing.Point(558, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 24);
             this.label2.TabIndex = 20;

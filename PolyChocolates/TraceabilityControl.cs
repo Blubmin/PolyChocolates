@@ -83,13 +83,7 @@ namespace PolyChocolates
 
             public InventoryRow(Inventory inv) : this(inv, inv.Name, inv.Supplier, inv.LotCode + "") { }
 
-            public InventoryRow(TraceabilityRow row)
-            {
-                inv = row.inv;
-                this.name = row.item;
-                this.lotCode = row.lotCode;
-                this.supplier = row.supplier;
-            }
+            public InventoryRow(TraceabilityRow row) : this(row.inv, row.item.Text, row.supplier.Text, row.lotCode.Text) { }
 
             private InventoryRow(Inventory inv, String name, String supplier, String lotCode)
             {
@@ -131,7 +125,6 @@ namespace PolyChocolates
                 this.supplier = row.supplier;
                 this.unit.AutoSize = true;
                 this.unit.Text = inv.Unit;
-                this.unit.Padding = new Padding(3);
                 this.unit.Dock = DockStyle.Fill;
                 this.amountUsed.Text = "0";
                 this.amountUsed.Dock = DockStyle.Fill;
@@ -164,8 +157,17 @@ namespace PolyChocolates
                     traceabilityTable.Controls.Add(newRow.unit);
                     traceabilityTable.Controls.Add(newRow.amountUsed);
                     toRemove.Add(row);
+
+                    TableLayoutRowStyleCollection styles = traceabilityTable.RowStyles;
+                    foreach (RowStyle style in styles)
+                    {
+                        style.SizeType = SizeType.Absolute;
+                        style.Height = 15;
+                    }
                 }
             }
+
+
             foreach (var row in toRemove)
             {
                 inventoryTable.Controls.Remove(row.toAdd);
@@ -181,17 +183,20 @@ namespace PolyChocolates
                 if (row.toRemove.Checked)
                 {
                     InventoryRow newRow = new InventoryRow(row);
-                    inventoryList.Add(newRow);
                     inventoryTable.Controls.Add(newRow.toAdd);
                     inventoryTable.Controls.Add(newRow.name);
                     inventoryTable.Controls.Add(newRow.supplier);
                     inventoryTable.Controls.Add(newRow.lotCode);
+                    inventoryList.Add(newRow);
                     toRemove.Add(row);
                 }
             }
             foreach (var row in toRemove)
             {
                 traceabilityTable.Controls.Remove(row.toRemove);
+                traceabilityTable.Controls.Remove(row.item);
+                traceabilityTable.Controls.Remove(row.supplier);
+                traceabilityTable.Controls.Remove(row.lotCode);
                 traceabilityTable.Controls.Remove(row.unit);
                 traceabilityTable.Controls.Remove(row.amountUsed);
                 traceabilityList.Remove(row);
