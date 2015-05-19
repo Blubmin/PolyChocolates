@@ -31,6 +31,7 @@ namespace PolyChocolates
             var query =
                 from cust in db.Customers
                 where cust.Enabled == "Y"
+                orderby cust.Name
                 select cust;
             foreach (var customer in query)
             {

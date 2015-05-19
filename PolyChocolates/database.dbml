@@ -115,8 +115,8 @@
       <Column Name="Enabled" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="QualityControl_QualityLabelQual" Member="QualityLabelQuals" ThisKey="QualityControlId" OtherKey="QualityControlId" Type="QualityLabelQual" />
       <Association Name="QualityControl_QualityLabelQuant" Member="QualityLabelQuants" ThisKey="QualityControlId" OtherKey="QualityControlId" Type="QualityLabelQuant" />
-      <Association Name="QualityControl_ProductEntry" Member="ProductEntries" ThisKey="QualityControlId" OtherKey="QualityControlId" Type="ProductEntry" />
       <Association Name="QualityControl_Recipe" Member="Recipes" ThisKey="QualityControlId" OtherKey="QualityControlId" Type="Recipe" />
+      <Association Name="QualityControl_ProductEntry" Member="ProductEntries" ThisKey="QualityControlId" OtherKey="QualityControlId" Type="ProductEntry" />
     </Type>
   </Table>
   <Table Name="dbo.QualityLabelQual" Member="QualityLabelQuals">
@@ -182,30 +182,6 @@
       <Association Name="Inventory_Traceability" Member="Traceabilities" ThisKey="InventoryId" OtherKey="InventoryId" Type="Traceability" />
     </Type>
   </Table>
-  <Table Name="dbo.ProductEntry" Member="ProductEntries">
-    <Type Name="ProductEntry">
-      <Column Name="ProductEntryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RecipeEntryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CodeDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="AmountPackaged" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AmountProduced" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProductionNotes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="StudentManager" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="PlantManager" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="QualityPerformer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="QualityControlId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="haacp" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="ProductEntry_Traceability" Member="Traceabilities" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="Traceability" />
-      <Association Name="ProductEntry_ChocolateControl" Member="ChocolateControls" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="ChocolateControl" />
-      <Association Name="ProductEntry_ChocolateQuality" Member="ChocolateQualities" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="ChocolateQuality" />
-      <Association Name="ProductEntry_Efficiency" Member="Efficiencies" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="Efficiency" />
-      <Association Name="ProductEntry_ProductQualityEntryQual" Member="ProductQualityEntryQuals" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="ProductQualityEntryQual" />
-      <Association Name="ProductEntry_ProductQualityEntryQuant" Member="ProductQualityEntryQuants" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="ProductQualityEntryQuant" />
-      <Association Name="QualityControl_ProductEntry" Member="QualityControl" ThisKey="QualityControlId" OtherKey="QualityControlId" Type="QualityControl" IsForeignKey="true" />
-      <Association Name="Recipe_ProductEntry" Member="Recipe" ThisKey="RecipeEntryId" OtherKey="RecipeId" Type="Recipe" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Recipe" Member="Recipes">
     <Type Name="Recipe">
       <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -258,6 +234,32 @@
       <Column Name="Type" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Enabled" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Customer_Invoice" Member="Invoices" ThisKey="CustomerId" OtherKey="CustomerId" Type="Invoice" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductEntry" Member="ProductEntries">
+    <Type Name="ProductEntry">
+      <Column Name="ProductEntryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecipeEntryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodeDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AmountPackaged" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AmountProduced" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Downtime" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProductionNotes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="StudentManager" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PlantManager" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QualityPerformer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QualityControlId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Complete" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="haacp" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ProductEntry_Traceability" Member="Traceabilities" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="Traceability" />
+      <Association Name="ProductEntry_ChocolateControl" Member="ChocolateControls" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="ChocolateControl" />
+      <Association Name="ProductEntry_ChocolateQuality" Member="ChocolateQualities" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="ChocolateQuality" />
+      <Association Name="ProductEntry_Efficiency" Member="Efficiencies" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="Efficiency" />
+      <Association Name="ProductEntry_ProductQualityEntryQual" Member="ProductQualityEntryQuals" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="ProductQualityEntryQual" />
+      <Association Name="ProductEntry_ProductQualityEntryQuant" Member="ProductQualityEntryQuants" ThisKey="ProductEntryId" OtherKey="ProductEntryId" Type="ProductQualityEntryQuant" />
+      <Association Name="QualityControl_ProductEntry" Member="QualityControl" ThisKey="QualityControlId" OtherKey="QualityControlId" Type="QualityControl" IsForeignKey="true" />
+      <Association Name="Recipe_ProductEntry" Member="Recipe" ThisKey="RecipeEntryId" OtherKey="RecipeId" Type="Recipe" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
