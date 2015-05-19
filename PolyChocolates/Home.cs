@@ -194,8 +194,8 @@ namespace PolyChocolates
                     changeViewToHome();
                     break;
                 case "Product Entry":
-                    ChangeMainViewControl(_dynamicProductEntryControl);
-                    //changeViewToProductEntry();
+                    //ChangeMainViewControl(_dynamicProductEntryControl);
+                    changeViewToProductEntry();
                     break;
                 case "Search":
                     changeViewToSearch();
@@ -485,11 +485,6 @@ namespace PolyChocolates
             efficiencyControls[view].Location = new Point(home.SidePanel.Right, home.TopPanel.Bottom);
             efficiencyControls[view].Visible = false;
             home.Controls.Add(efficiencyControls[view]);
-
-            if (traceabilityControls[view] != null)
-            {
-                traceabilityControls[view].reset();
-            }
 
         }
 
