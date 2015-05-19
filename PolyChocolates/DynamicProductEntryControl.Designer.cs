@@ -42,7 +42,7 @@
             this.HAACP = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AddButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.DeleteRowsButton = new System.Windows.Forms.Button();
             this.ProductionNotesLabel = new System.Windows.Forms.Label();
             this.productionNotesSummaryTextBox = new System.Windows.Forms.RichTextBox();
             this.date = new System.Windows.Forms.DateTimePicker();
@@ -100,7 +100,8 @@
             this.ProductionSummaryTable.Name = "ProductionSummaryTable";
             this.ProductionSummaryTable.RowCount = 1;
             this.ProductionSummaryTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ProductionSummaryTable.Size = new System.Drawing.Size(1056, 31);
+            this.ProductionSummaryTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ProductionSummaryTable.Size = new System.Drawing.Size(1056, 28);
             this.ProductionSummaryTable.TabIndex = 13;
             // 
             // AmountPackagedLabel
@@ -108,7 +109,7 @@
             this.AmountPackagedLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AmountPackagedLabel.AutoSize = true;
             this.AmountPackagedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AmountPackagedLabel.Location = new System.Drawing.Point(185, 5);
+            this.AmountPackagedLabel.Location = new System.Drawing.Point(185, 4);
             this.AmountPackagedLabel.Name = "AmountPackagedLabel";
             this.AmountPackagedLabel.Size = new System.Drawing.Size(93, 20);
             this.AmountPackagedLabel.TabIndex = 51;
@@ -119,7 +120,7 @@
             this.LotCodeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LotCodeLabel.AutoSize = true;
             this.LotCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LotCodeLabel.Location = new System.Drawing.Point(93, 5);
+            this.LotCodeLabel.Location = new System.Drawing.Point(93, 4);
             this.LotCodeLabel.Name = "LotCodeLabel";
             this.LotCodeLabel.Size = new System.Drawing.Size(86, 20);
             this.LotCodeLabel.TabIndex = 6;
@@ -130,7 +131,7 @@
             this.ProductLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ProductLabel.AutoSize = true;
             this.ProductLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductLabel.Location = new System.Drawing.Point(23, 5);
+            this.ProductLabel.Location = new System.Drawing.Point(23, 4);
             this.ProductLabel.Name = "ProductLabel";
             this.ProductLabel.Size = new System.Drawing.Size(64, 20);
             this.ProductLabel.TabIndex = 5;
@@ -141,7 +142,7 @@
             this.StatusLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StatusLabel.AutoSize = true;
             this.StatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusLabel.Location = new System.Drawing.Point(874, 5);
+            this.StatusLabel.Location = new System.Drawing.Point(874, 4);
             this.StatusLabel.Name = "StatusLabel";
             this.StatusLabel.Size = new System.Drawing.Size(56, 20);
             this.StatusLabel.TabIndex = 83;
@@ -152,7 +153,7 @@
             this.EfficiencyLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.EfficiencyLabel.AutoSize = true;
             this.EfficiencyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EfficiencyLabel.Location = new System.Drawing.Point(668, 5);
+            this.EfficiencyLabel.Location = new System.Drawing.Point(668, 4);
             this.EfficiencyLabel.Name = "EfficiencyLabel";
             this.EfficiencyLabel.Size = new System.Drawing.Size(77, 20);
             this.EfficiencyLabel.TabIndex = 82;
@@ -163,7 +164,7 @@
             this.TraceabilityLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TraceabilityLabel.AutoSize = true;
             this.TraceabilityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TraceabilityLabel.Location = new System.Drawing.Point(574, 5);
+            this.TraceabilityLabel.Location = new System.Drawing.Point(574, 4);
             this.TraceabilityLabel.Name = "TraceabilityLabel";
             this.TraceabilityLabel.Size = new System.Drawing.Size(88, 20);
             this.TraceabilityLabel.TabIndex = 81;
@@ -174,7 +175,7 @@
             this.DowntimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DowntimeLabel.AutoSize = true;
             this.DowntimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DowntimeLabel.Location = new System.Drawing.Point(380, 5);
+            this.DowntimeLabel.Location = new System.Drawing.Point(380, 4);
             this.DowntimeLabel.Name = "DowntimeLabel";
             this.DowntimeLabel.Size = new System.Drawing.Size(80, 20);
             this.DowntimeLabel.TabIndex = 84;
@@ -185,7 +186,7 @@
             this.AmountProducedLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AmountProducedLabel.AutoSize = true;
             this.AmountProducedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AmountProducedLabel.Location = new System.Drawing.Point(284, 5);
+            this.AmountProducedLabel.Location = new System.Drawing.Point(284, 4);
             this.AmountProducedLabel.Name = "AmountProducedLabel";
             this.AmountProducedLabel.Size = new System.Drawing.Size(90, 20);
             this.AmountProducedLabel.TabIndex = 52;
@@ -196,7 +197,7 @@
             this.QCLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.QCLabel.AutoSize = true;
             this.QCLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QCLabel.Location = new System.Drawing.Point(536, 5);
+            this.QCLabel.Location = new System.Drawing.Point(536, 4);
             this.QCLabel.Name = "QCLabel";
             this.QCLabel.Size = new System.Drawing.Size(32, 20);
             this.QCLabel.TabIndex = 80;
@@ -207,7 +208,7 @@
             this.HAACP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HAACP.AutoSize = true;
             this.HAACP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HAACP.Location = new System.Drawing.Point(466, 5);
+            this.HAACP.Location = new System.Drawing.Point(466, 4);
             this.HAACP.Name = "HAACP";
             this.HAACP.Size = new System.Drawing.Size(64, 20);
             this.HAACP.TabIndex = 79;
@@ -233,14 +234,15 @@
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // button2
+            // DeleteRowsButton
             // 
-            this.button2.Location = new System.Drawing.Point(122, 345);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Delete Selected Rows";
-            this.button2.UseVisualStyleBackColor = true;
+            this.DeleteRowsButton.Location = new System.Drawing.Point(122, 345);
+            this.DeleteRowsButton.Name = "DeleteRowsButton";
+            this.DeleteRowsButton.Size = new System.Drawing.Size(123, 23);
+            this.DeleteRowsButton.TabIndex = 16;
+            this.DeleteRowsButton.Text = "Delete Selected Rows";
+            this.DeleteRowsButton.UseVisualStyleBackColor = true;
+            this.DeleteRowsButton.Click += new System.EventHandler(this.DeleteRowsButton_Click);
             // 
             // ProductionNotesLabel
             // 
@@ -373,7 +375,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 5);
+            this.label4.Location = new System.Drawing.Point(10, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 85;
@@ -394,7 +396,7 @@
             this.Controls.Add(this.date);
             this.Controls.Add(this.ProductionNotesLabel);
             this.Controls.Add(this.productionNotesSummaryTextBox);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.DeleteRowsButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TitleLabel);
@@ -425,7 +427,7 @@
         private System.Windows.Forms.Label DowntimeLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button DeleteRowsButton;
         private System.Windows.Forms.Label ProductionNotesLabel;
         private System.Windows.Forms.RichTextBox productionNotesSummaryTextBox;
         private System.Windows.Forms.DateTimePicker date;

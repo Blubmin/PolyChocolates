@@ -14,14 +14,31 @@ namespace PolyChocolates
 {
     public partial class HACCP : Form
     {
-        PolyChocolates.ProductEntryControl.ProductRow row;
+        PolyChocolates.ProductEntryControl.ProductRow OldProductRow;
+        private PolyChocolates.DynamicProductEntryControl.ProductRow DynamicProductRow;
         RecipeDetails recipeDetails;
+
+        public HACCP(PolyChocolates.DynamicProductEntryControl.ProductRow productRow)
+        {
+            InitializeComponent();
+            DynamicProductRow = productRow;
+            setPhoto(DynamicProductRow.HaacpBytes);
+            if (haacpImage.Image != null)
+            {
+                panel.Width = Math.Min(haacpImage.Image.Width + 22, 1200);
+                this.Width = Math.Min(panel.Width + 20, 1200);
+            }
+
+            browse.Click += new EventHandler(browse_Click);
+            Add.Click += new EventHandler(AddDynamic_Click);
+            exportButton.Click += new EventHandler(exportButton_Click);
+        }
 
         public HACCP(PolyChocolates.ProductEntryControl.ProductRow productRow)
         {
             InitializeComponent();
-            row = productRow;
-            setPhoto(row.haacp);
+            OldProductRow = productRow;
+            setPhoto(OldProductRow.haacp);
             if (haacpImage.Image != null)
             {
                 panel.Width = Math.Min(haacpImage.Image.Width + 22, 1200);
@@ -104,9 +121,15 @@ namespace PolyChocolates
             }
         }
 
+        private void AddDynamic_Click(object sender, EventArgs e)
+        {
+            DynamicProductRow.HaacpBytes = convertImage();
+            this.Dispose();
+        }
+
         private void Add_Click(object sender, EventArgs e)
         {
-            row.haacp = convertImage();
+            OldProductRow.haacp = convertImage();
             this.Dispose();
         }
 

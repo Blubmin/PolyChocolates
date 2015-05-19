@@ -18,7 +18,7 @@ namespace PolyChocolates
         public List<QuantitativeRow> quantList;
         public List<QualitativeRow> newQualList;
         public List<QuantitativeRow> newQuantList;
-        private int view;
+        public bool isComplete = false;
         private databaseDataContext db =  new databaseDataContext();
         HashSet<String> names;
 
@@ -129,11 +129,10 @@ namespace PolyChocolates
             quantitativeTable.ColumnStyles[0].Width = 1;
         }
 
-        public GenericQualityControl(Recipe recipe, int view)
+        public GenericQualityControl(Recipe recipe)
         {
             InitializeComponent();
             this.recipe = recipe;
-            this.view = view;
             titleTextBox.Visible = false;
             addQualRow.Visible = false;
             addQuantRow.Visible = false;
@@ -315,8 +314,8 @@ namespace PolyChocolates
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            ProductEntryControl.qcComplete[view] = true;
-            Home.changeViewToProductEntry();
+            isComplete = true;
+            Home.ChangeMainViewControl(Home.Instance.);
         }
 
         private void backButton_Click(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -152,5 +153,13 @@ namespace PolyChocolates
             }
         }
 
+        public static void CenterPictureBox(PictureBox picBox)
+        {
+            picBox.SizeMode = PictureBoxSizeMode.AutoSize;
+            picBox.Anchor = AnchorStyles.None;
+            picBox.Location = new Point((picBox.Parent.ClientSize.Width / 2) - (picBox.Image.Width / 2),
+                                        (picBox.Parent.ClientSize.Height / 2) - (picBox.Image.Height / 2));
+            picBox.Refresh();
+        }
     }
 }

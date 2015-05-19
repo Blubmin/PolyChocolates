@@ -45,6 +45,8 @@ namespace PolyChocolates
         public static InvoicingControl invoiceControl;
         private static InvoiceSearch pastInvoices;
 
+        private static Stack<UserControl> _controlStack; 
+
         public static readonly Image Document = Image.FromFile("../../IconImages/document.png");
         public static readonly Image BlankDocument = Image.FromFile("../../IconImages/blankDocument.png");
         public static readonly Image XMark = Image.FromFile("../../IconImages/x_mark.png");
@@ -57,6 +59,7 @@ namespace PolyChocolates
             InitializeComponent();
 
             Instance = this;
+            _controlStack = new Stack<UserControl>();
 
             ReadPreferencesFromFile();
 
