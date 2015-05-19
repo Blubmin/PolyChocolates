@@ -1,0 +1,210 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PolyChocolates
+{
+    public partial class TraceabilityControl : UserControl
+    {
+        private databaseDataContext db = new databaseDataContext();
+        private int view;
+        private List<InventoryRow> inventoryList;
+        public List<TraceabilityRow> traceabilityList;
+        
+        public TraceabilityControl(int view)
+        {
+            InitializeComponent();
+            loadValues();
+            this.view = view;
+        }
+
+        public TraceabilityControl(ProductEntry productEntry)
+        {
+            InitializeComponent();
+            foreach (var row in productEntry.Traceabilities)
+            {
+                TraceabilityRow newRow = new TraceabilityRow(row.Inventory.Name, row.Inventory.Supplier, row.Inventory.LotCode + "", row.Inventory.Unit, row.AmountUsed + "");
+                traceabilityTable.Controls.Add(newRow.toRemove);
+                traceabilityTable.Controls.Add(newRow.item);
+                traceabilityTable.Controls.Add(newRow.supplier);
+                traceabilityTable.Controls.Add(newRow.lotCode);
+                traceabilityTable.Controls.Add(newRow.unit);
+                traceabilityTable.Controls.Add(newRow.amountUsed);
+            }
+        }
+
+        private void loadValues()
+        {
+            traceabilityList = new List<TraceabilityRow>();
+            inventoryList = new List<InventoryRow>();
+            var query =
+                from inv in db.Inventories
+                orderby inv.Name
+                where inv.Stock > 0 
+                && inv.SnapshotDate == null 
+                && inv.Enabled == "Y"
+                && inv.Type == "raw"
+                select inv;
+            foreach (var inv in query)
+            {
+                InventoryRow row = new InventoryRow(inv);
+                inventoryList.Add(row);
+                inventoryTable.Controls.Add(row.toAdd);
+                inventoryTable.Controls.Add(row.name);
+                inventoryTable.Controls.Add(row.supplier);
+                inventoryTable.Controls.Add(row.lotCode);
+            }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Home.changeViewToProductEntry();
+        }
+
+        private void submitTraceabilityButton_Click(object sender, EventArgs e)
+        {
+            ProductEntryControl.traceabilityComplete[view] = true;
+            Home.changeViewToProductEntry();
+        }
+
+        public class InventoryRow
+        {
+            public Inventory inv;
+            public CheckBox toAdd = new CheckBox();
+            public Label name = new Label();
+            public Label supplier = new Label();
+            public Label lotCode = new Label();
+
+            public InventoryRow(Inventory inv) : this(inv, inv.Name, inv.Supplier, inv.LotCode + "") { }
+
+            public InventoryRow(TraceabilityRow row)
+            {
+                inv = row.inv;
+                this.name = row.item;
+                this.lotCode = row.lotCode;
+                this.supplier = row.supplier;
+            }
+
+            private InventoryRow(Inventory inv, String name, String supplier, String lotCode)
+            {
+                this.inv = inv;
+                this.toAdd.AutoSize = true;
+                this.toAdd.Text = "";
+                this.name.AutoSize = true;
+                this.name.Text = name;
+                this.name.Dock = DockStyle.Fill;
+                this.name.Padding = new Padding(3);
+                this.supplier.AutoSize = true;
+                this.supplier.Text = supplier;
+                this.supplier.Dock = DockStyle.Fill;
+                this.supplier.Padding = new Padding(3);
+                this.lotCode.AutoSize = true;
+                this.lotCode.Text = lotCode;
+                this.lotCode.Dock = DockStyle.Fill;
+                this.lotCode.Padding = new Padding(3);
+            }
+        }
+
+        public class TraceabilityRow
+        {
+            public Inventory inv;
+            public CheckBox toRemove = new CheckBox();
+            public Label item = new Label();
+            public Label supplier = new Label();
+            public Label lotCode = new Label();
+            public Label unit = new Label();
+            public TextBox amountUsed = new TextBox();
+
+            public TraceabilityRow(InventoryRow row)
+            {
+                inv = row.inv;
+                this.toRemove.AutoSize = true;
+                this.toRemove.Text = "";
+                this.item = row.name;
+                this.lotCode = row.lotCode;
+                this.supplier = row.supplier;
+                this.unit.AutoSize = true;
+                this.unit.Text = inv.Unit;
+                this.unit.Padding = new Padding(3);
+                this.unit.Dock = DockStyle.Fill;
+                this.amountUsed.Text = "0";
+                this.amountUsed.Dock = DockStyle.Fill;
+                this.amountUsed.Leave += new EventHandler(Library.onlyAllowFloats);
+            }
+
+            public TraceabilityRow(String item, String supplier, String lotCode, String units, String amountUsed)
+            {
+                this.item.Text = item;
+                this.supplier.Text = supplier;
+                this.lotCode.Text = lotCode;
+                this.unit.Text = units;
+                this.amountUsed.Text = amountUsed;
+            }
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            List<InventoryRow> toRemove = new List<InventoryRow>();
+            foreach (var row in inventoryList)
+            {
+                if (row.toAdd.Checked)
+                {
+                    TraceabilityRow newRow = new TraceabilityRow(row);
+                    traceabilityList.Add(newRow);
+                    traceabilityTable.Controls.Add(newRow.toRemove);
+                    traceabilityTable.Controls.Add(newRow.item);
+                    traceabilityTable.Controls.Add(newRow.supplier);
+                    traceabilityTable.Controls.Add(newRow.lotCode);
+                    traceabilityTable.Controls.Add(newRow.unit);
+                    traceabilityTable.Controls.Add(newRow.amountUsed);
+                    toRemove.Add(row);
+                }
+            }
+            foreach (var row in toRemove)
+            {
+                inventoryTable.Controls.Remove(row.toAdd);
+                inventoryList.Remove(row);
+            }
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            List<TraceabilityRow> toRemove = new List<TraceabilityRow>();
+            foreach (var row in traceabilityList)
+            {
+                if (row.toRemove.Checked)
+                {
+                    InventoryRow newRow = new InventoryRow(row);
+                    inventoryList.Add(newRow);
+                    inventoryTable.Controls.Add(newRow.toAdd);
+                    inventoryTable.Controls.Add(newRow.name);
+                    inventoryTable.Controls.Add(newRow.supplier);
+                    inventoryTable.Controls.Add(newRow.lotCode);
+                    toRemove.Add(row);
+                }
+            }
+            foreach (var row in toRemove)
+            {
+                traceabilityTable.Controls.Remove(row.toRemove);
+                traceabilityTable.Controls.Remove(row.unit);
+                traceabilityTable.Controls.Remove(row.amountUsed);
+                traceabilityList.Remove(row);
+            }
+        }
+
+        public void reset()
+        {
+            foreach(var row in traceabilityList)
+            {
+                row.toRemove.Checked = true;
+            }
+            removeButton_Click(null, null);
+        }
+    }
+}

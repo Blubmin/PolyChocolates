@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D1F5F4B-4125-4AE0-9FD9-F90D280A7990}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PolyChocolates</RootNamespace>
+    <AssemblyName>PolyChocolates</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BBQSetupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BBQSetupControl.Designer.cs">
+      <DependentUpon>BBQSetupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BBQShutdownControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BBQShutdownControl.Designer.cs">
+      <DependentUpon>BBQShutdownControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAL_POLY_CHOC_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CAL_POLY_CHOC_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ChocolateQualityControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChocolateQualityControl.designer.cs">
+      <DependentUpon>ChocolateQualityControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chocolatesDb.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>chocolatesDb.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="COA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COA.designer.cs">
+      <DependentUpon>COA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerManager.Designer.cs">
+      <DependentUpon>CustomerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="database.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="databaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="databaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>databaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ChocolateShutdownControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChocolateShutdownControl.Designer.cs">
+      <DependentUpon>ChocolateShutdownControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericEfficiencyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericEfficiencyControl.Designer.cs">
+      <DependentUpon>GenericEfficiencyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericQualityControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GenericQualityControl.Designer.cs">
+      <DependentUpon>GenericQualityControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HACCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HACCP.Designer.cs">
+      <DependentUpon>HACCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeControl.Designer.cs">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitialStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialStock.Designer.cs">
+      <DependentUpon>InitialStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InventoryControl.designer.cs">
+      <DependentUpon>InventoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvoiceSearch.Designer.cs">
+      <DependentUpon>InvoiceSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceSpielControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvoiceSpielControl.designer.cs">
+      <DependentUpon>InvoiceSpielControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvoicingControl.Designer.cs">
+      <DependentUpon>InvoicingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JamSetupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JamSetupControl.Designer.cs">
+      <DependentUpon>JamSetupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JamShutdownControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JamShutdownControl.Designer.cs">
+      <DependentUpon>JamShutdownControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library.cs" />
+    <Compile Include="NewRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewRecipe.Designer.cs">
+      <DependentUpon>NewRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordProtectWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordProtectWindow.Designer.cs">
+      <DependentUpon>PasswordProtectWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PastInventoriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PastInventoriesControl.designer.cs">
+      <DependentUpon>PastInventoriesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PastInvoiceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PastInvoiceWindow.Designer.cs">
+      <DependentUpon>PastInvoiceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductEntryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductEntryControl.Designer.cs">
+      <DependentUpon>ProductEntryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ChocolateSetupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChocolateSetupControl.Designer.cs">
+      <DependentUpon>ChocolateSetupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QualityWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QualityWindow.Designer.cs">
+      <DependentUpon>QualityWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecipeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecipeControl.Designer.cs">
+      <DependentUpon>RecipeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecipeDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecipeDetails.Designer.cs">
+      <DependentUpon>RecipeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchControl.Designer.cs">
+      <DependentUpon>SearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchEntry.Designer.cs">
+      <DependentUpon>SearchEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchProductEntryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchProductEntryControl.Designer.cs">
+      <DependentUpon>SearchProductEntryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraceabilityControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TraceabilityControl.Designer.cs">
+      <DependentUpon>TraceabilityControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BBQSetupControl.resx">
+      <DependentUpon>BBQSetupControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BBQShutdownControl.resx">
+      <DependentUpon>BBQShutdownControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChocolateQualityControl.resx">
+      <DependentUpon>ChocolateQualityControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChocolateShutdownControl.resx">
+      <DependentUpon>ChocolateShutdownControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="database.dbml.layout">
+      <DependentUpon>database.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="COA.resx">
+      <DependentUpon>COA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager.resx">
+      <DependentUpon>CustomerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericEfficiencyControl.resx">
+      <DependentUpon>GenericEfficiencyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenericQualityControl.resx">
+      <DependentUpon>GenericQualityControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HACCP.resx">
+      <DependentUpon>HACCP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeControl.resx">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChocolateSetupControl.resx">
+      <DependentUpon>ChocolateSetupControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialStock.resx">
+      <DependentUpon>InitialStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryControl.resx">
+      <DependentUpon>InventoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceSearch.resx">
+      <DependentUpon>InvoiceSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceSpielControl.resx">
+      <DependentUpon>InvoiceSpielControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoicingControl.resx">
+      <DependentUpon>InvoicingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JamSetupControl.resx">
+      <DependentUpon>JamSetupControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JamShutdownControl.resx">
+      <DependentUpon>JamShutdownControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewRecipe.resx">
+      <DependentUpon>NewRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordProtectWindow.resx">
+      <DependentUpon>PasswordProtectWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PastInventoriesControl.resx">
+      <DependentUpon>PastInventoriesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PastInvoiceWindow.resx">
+      <DependentUpon>PastInvoiceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QualityWindow.resx">
+      <DependentUpon>QualityWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecipeControl.resx">
+      <DependentUpon>RecipeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecipeDetails.resx">
+      <DependentUpon>RecipeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchControl.resx">
+      <DependentUpon>SearchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchEntry.resx">
+      <DependentUpon>SearchEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchProductEntryControl.resx">
+      <DependentUpon>SearchProductEntryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraceabilityControl.resx">
+      <DependentUpon>TraceabilityControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="chocolatesDb.dbml.layout">
+      <DependentUpon>chocolatesDb.dbml</DependentUpon>
+    </None>
+    <None Include="chocolatesDb.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>chocolatesDb.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductEntryControl.resx">
+      <DependentUpon>ProductEntryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="CAL_POLY_CHOC_DBDataSet.xsc">
+      <DependentUpon>CAL_POLY_CHOC_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CAL_POLY_CHOC_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CAL_POLY_CHOC_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CAL_POLY_CHOC_DBDataSet.xss">
+      <DependentUpon>CAL_POLY_CHOC_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="database.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>database.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="databaseDataSet.xsc">
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="databaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>databaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="databaseDataSet.xss">
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="databaseDataSet1.xsc">
+      <DependentUpon>databaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="databaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>databaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="databaseDataSet1.xss">
+      <DependentUpon>databaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CAL_POLY_CHOC_DBDataSet.datasource" />
+    <None Include="Properties\DataSources\ClockInControl.datasource" />
+    <None Include="Properties\DataSources\Home.datasource" />
+    <None Include="Properties\DataSources\PolyChocolates.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\PolyChocolates.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CAL_POLY_CHOC_DB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CAL_POLY_CHOC_DB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CAL_POLY_CHOC_DB.mdf</DependentUpon>
+    </Content>
+    <Content Include="check_mark.png" />
+    <Content Include="database.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="database_log.ldf">
+      <DependentUpon>database.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="document.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="favicon2.ico" />
+    <None Include="IconImages\InvoiceLogo.png" />
+    <Content Include="x_mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

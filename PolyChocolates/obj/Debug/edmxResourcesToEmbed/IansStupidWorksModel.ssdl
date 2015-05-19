@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CAL_POLY_CHOC_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PRODUCT_ENTRY">
+    <Key>
+      <PropertyRef Name="PRODUCT_ENTRY_ID" />
+    </Key>
+    <Property Name="PRODUCT_ENTRY_ID" Type="int" Nullable="false" />
+    <Property Name="RECIPE_ENTRY_ID" Type="int" Nullable="false" />
+    <Property Name="LOT_CODE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AMOUNT_PACKAGED" Type="int" Nullable="false" />
+    <Property Name="AMOUNT_PRODUCED" Type="int" Nullable="false" />
+    <Property Name="QUALITY_ENTRY_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CAL_POLY_CHOC_DBModelStoreContainer">
+    <EntitySet Name="PRODUCT_ENTRY" EntityType="Self.PRODUCT_ENTRY" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

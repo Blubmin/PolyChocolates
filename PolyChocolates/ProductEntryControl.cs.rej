@@ -1,0 +1,11 @@
+diff a/master/PolyChocolates/PolyChocolates/ProductEntryControl.cs b/master/PolyChocolates/PolyChocolates/ProductEntryControl.cs	(rejected hunks)
+@@ -69,7 +69,8 @@
+             }
+             catch (FormatException exception)
+             {
+-                AmountPackagedTextField1.Text = Regex.Replace(AmountPackagedTextField1.Text.ToString(), "[A-Za-z]", "");
++                Regex digitsOnly = new Regex(@"[^\d]");
++                AmountPackagedTextField1.Text = digitsOnly.Replace(AmountPackagedTextField1.Text.ToString(), "");
+             }
+         }
+         private void AmountProducedTextField1_TextChanged(object sender, EventArgs e)

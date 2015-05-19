@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="chocolatesDb">
+  <DataContextMoniker Name="/chocolatesDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dfbdbbbe-8302-4271-9f39-46811049d7f9" absoluteBounds="6.25, 5.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/chocolatesDbDataContext/BAR_WEIGHT_CHECK_ENTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="42973b5e-e6ae-457e-87b0-9156c49662ba" absoluteBounds="6.265, 5.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b237a89a-340f-48fc-863f-55b0789ec08b" absoluteBounds="9, 2.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/chocolatesDbDataContext/TRACE_ENTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2678435c-aa89-426a-a9ac-05626a417bf6" absoluteBounds="9.015, 3.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="299c3bea-75e3-473a-bb0c-876fa00dd3e8" absoluteBounds="0.75, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/chocolatesDbDataContext/MOLD_WEIGHT_CHECK_ENTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f85c9bb7-8de8-4630-a36a-f940763b09d1" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61b3685c-5190-422d-a81f-4a5e84a48f1e" absoluteBounds="6.25, 2.625, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/chocolatesDbDataContext/PRODUCT_ENTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0acd20d-7e4c-40f4-99af-0d4475f7da54" absoluteBounds="6.265, 3.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad956a74-5fb8-4c6e-9c9b-32c78c191a23" absoluteBounds="3.5, 5.125, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/chocolatesDbDataContext/QUALITY_ENTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89d1927f-4a35-449a-afc8-0380efe24d0d" absoluteBounds="3.515, 5.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e64fe58d-2b96-4e3c-97a5-81e1c7a92ae3" absoluteBounds="0.75, 3.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/chocolatesDbDataContext/RECIPE_ENTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2b03fba-81ed-49b0-b217-620988371132" absoluteBounds="0.765, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 3.63544840494792); (9 : 3.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chocolatesDbDataContext/PRODUCT_ENTRY/PRODUCT_ENTRY_TRACE_ENTRY" />
+      <nodes>
+        <classShapeMoniker Id="61b3685c-5190-422d-a81f-4a5e84a48f1e" />
+        <classShapeMoniker Id="b237a89a-340f-48fc-863f-55b0789ec08b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.57774983723958); (6.25 : 6.57774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chocolatesDbDataContext/QUALITY_ENTRY/QUALITY_ENTRY_BAR_WEIGHT_CHECK_ENTRY" />
+      <nodes>
+        <classShapeMoniker Id="ad956a74-5fb8-4c6e-9c9b-32c78c191a23" />
+        <classShapeMoniker Id="dfbdbbbe-8302-4271-9f39-46811049d7f9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 5.125); (4.5 : 3.60659912109375); (6.25 : 3.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chocolatesDbDataContext/QUALITY_ENTRY/QUALITY_ENTRY_PRODUCT_ENTRY" />
+      <nodes>
+        <classShapeMoniker Id="ad956a74-5fb8-4c6e-9c9b-32c78c191a23" />
+        <classShapeMoniker Id="61b3685c-5190-422d-a81f-4a5e84a48f1e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.15989868164062); (3.88541416666667 : 4.15989868164062 : JumpStart); (4.05208083333333 : 4.15989868164062 : JumpEnd); (4.41666666666667 : 4.15989868164062 : JumpStart); (4.58333333333333 : 4.15989868164062 : JumpEnd); (6.25 : 4.15989868164062)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chocolatesDbDataContext/RECIPE_ENTRY/RECIPE_ENTRY_PRODUCT_ENTRY" />
+      <nodes>
+        <classShapeMoniker Id="e64fe58d-2b96-4e3c-97a5-81e1c7a92ae3" />
+        <classShapeMoniker Id="61b3685c-5190-422d-a81f-4a5e84a48f1e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.85199640136719); (3.9687475 : 3.85199640136719); (3.9687475 : 5.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/chocolatesDbDataContext/RECIPE_ENTRY/RECIPE_ENTRY_QUALITY_ENTRY" />
+      <nodes>
+        <classShapeMoniker Id="e64fe58d-2b96-4e3c-97a5-81e1c7a92ae3" />
+        <classShapeMoniker Id="ad956a74-5fb8-4c6e-9c9b-32c78c191a23" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

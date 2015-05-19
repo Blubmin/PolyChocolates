@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CAL_POLY_CHOC_DB" Class="chocolatesDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\CAL_POLY_CHOC_DB.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="PolyChocolates.Properties.Settings" SettingsPropertyName="CAL_POLY_CHOC_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BAR_WEIGHT_CHECK_ENTRY" Member="BAR_WEIGHT_CHECK_ENTRies">
+    <Type Name="BAR_WEIGHT_CHECK_ENTRY">
+      <Column Name="BAR_WEIGHT_CHECK_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BAR_1_WEIGHT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BAR_2_WEIGHT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BAR_3_WEIGHT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BAR_4_WEIGHT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BAR_5_WEIGHT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="QUALITY_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="QUALITY_ENTRY_BAR_WEIGHT_CHECK_ENTRY" Member="QUALITY_ENTRY" ThisKey="QUALITY_ENTRY_ID" OtherKey="QUALITY_ENTRY_ID" Type="QUALITY_ENTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRACE_ENTRY" Member="TRACE_ENTRies">
+    <Type Name="TRACE_ENTRY">
+      <Column Name="TRACE_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRODUCT_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INGREDIENT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AMOUNT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="SUPPLIER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCT_ENTRY_TRACE_ENTRY" Member="PRODUCT_ENTRY" ThisKey="PRODUCT_ENTRY_ID" OtherKey="PRODUCT_ENTRY_ID" Type="PRODUCT_ENTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MOLD_WEIGHT_CHECK_ENTRY" Member="MOLD_WEIGHT_CHECK_ENTRies">
+    <Type Name="MOLD_WEIGHT_CHECK_ENTRY">
+      <Column Name="MOLD_WEIGHT_CHECK_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MEASURED_WEIGHT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="QUALITY_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCT_ENTRY" Member="PRODUCT_ENTRies">
+    <Type Name="PRODUCT_ENTRY">
+      <Column Name="PRODUCT_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RECIPE_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LOT_CODE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AMOUNT_PACKAGED" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AMOUNT_PRODUCED" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUALITY_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCT_ENTRY_TRACE_ENTRY" Member="TRACE_ENTRies" ThisKey="PRODUCT_ENTRY_ID" OtherKey="PRODUCT_ENTRY_ID" Type="TRACE_ENTRY" />
+      <Association Name="QUALITY_ENTRY_PRODUCT_ENTRY" Member="QUALITY_ENTRY" ThisKey="QUALITY_ENTRY_ID" OtherKey="QUALITY_ENTRY_ID" Type="QUALITY_ENTRY" IsForeignKey="true" />
+      <Association Name="RECIPE_ENTRY_PRODUCT_ENTRY" Member="RECIPE_ENTRY" ThisKey="RECIPE_ENTRY_ID" OtherKey="RECIPE_ENTRY_ID" Type="RECIPE_ENTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUALITY_ENTRY" Member="QUALITY_ENTRies">
+    <Type Name="QUALITY_ENTRY">
+      <Column Name="QUALITY_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TIME" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="EMPLOYEE_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RECIPE_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WEIGHT_1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="WEIGHT_2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="WEIGHT_3" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="TEMPER" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="APPEARANCE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TASTE_TEST" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Association Name="QUALITY_ENTRY_BAR_WEIGHT_CHECK_ENTRY" Member="BAR_WEIGHT_CHECK_ENTRies" ThisKey="QUALITY_ENTRY_ID" OtherKey="QUALITY_ENTRY_ID" Type="BAR_WEIGHT_CHECK_ENTRY" />
+      <Association Name="QUALITY_ENTRY_PRODUCT_ENTRY" Member="PRODUCT_ENTRies" ThisKey="QUALITY_ENTRY_ID" OtherKey="QUALITY_ENTRY_ID" Type="PRODUCT_ENTRY" />
+      <Association Name="RECIPE_ENTRY_QUALITY_ENTRY" Member="RECIPE_ENTRY" ThisKey="RECIPE_ENTRY_ID" OtherKey="RECIPE_ENTRY_ID" Type="RECIPE_ENTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RECIPE_ENTRY" Member="RECIPE_ENTRies">
+    <Type Name="RECIPE_ENTRY">
+      <Column Name="RECIPE_ENTRY_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RECIPE_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MOLD_GOAL_WEIGHT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="RECIPE_ENTRY_PRODUCT_ENTRY" Member="PRODUCT_ENTRies" ThisKey="RECIPE_ENTRY_ID" OtherKey="RECIPE_ENTRY_ID" Type="PRODUCT_ENTRY" />
+      <Association Name="RECIPE_ENTRY_QUALITY_ENTRY" Member="QUALITY_ENTRies" ThisKey="RECIPE_ENTRY_ID" OtherKey="RECIPE_ENTRY_ID" Type="QUALITY_ENTRY" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CAL_POLY_CHOC_DBModelStoreContainer" CdmEntityContainer="CAL_POLY_CHOC_DBEntities">
+    <EntitySetMapping Name="PRODUCT_ENTRY">
+      <EntityTypeMapping TypeName="CAL_POLY_CHOC_DBModel.PRODUCT_ENTRY">
+        <MappingFragment StoreEntitySet="PRODUCT_ENTRY">
+          <ScalarProperty Name="PRODUCT_ENTRY_ID" ColumnName="PRODUCT_ENTRY_ID" />
+          <ScalarProperty Name="RECIPE_ENTRY_ID" ColumnName="RECIPE_ENTRY_ID" />
+          <ScalarProperty Name="LOT_CODE" ColumnName="LOT_CODE" />
+          <ScalarProperty Name="AMOUNT_PACKAGED" ColumnName="AMOUNT_PACKAGED" />
+          <ScalarProperty Name="AMOUNT_PRODUCED" ColumnName="AMOUNT_PRODUCED" />
+          <ScalarProperty Name="QUALITY_ENTRY_ID" ColumnName="QUALITY_ENTRY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

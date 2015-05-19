@@ -1,0 +1,433 @@
+c:\users\connor batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.pdb
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ClockInControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.dll
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.xml
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+C:\Users\Connor Batch\Documents\Visual Studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.EfficiencyControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\database.mdf
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\bin\Debug\database_log.ldf
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ReportControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQQualityControl.resources
+C:\Users\Connor Batch\documents\visual studio 2013\Projects\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamQualityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\database.mdf
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\database_log.ldf
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.pdb
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.dll
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.xml
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\database.mdf
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\database_log.ldf
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.pdb
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.dll
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.xml
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamQualityControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQQualityControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeDetails.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ReportControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.EfficiencyControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateQualityControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.NewRecipe.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InventoryControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInventoriesControl.resources
+C:\Users\Ian\Documents\Visual Studio 2013\Projects\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.COA.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\database.mdf
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\database_log.ldf
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.pdb
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.dll
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.xml
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateQualityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.COA.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InventoryControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamQualityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQQualityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.NewRecipe.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInventoriesControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeDetails.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ReportControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.EfficiencyControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+C:\Users\Ian\Desktop\PolyChocolates\master\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\database.mdf
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\database_log.ldf
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.pdb
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.dll
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.xml
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateQualityControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InventoryControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.NewRecipe.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInventoriesControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeDetails.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchEntry.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateQualityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.COA.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.GenericQualityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InventoryControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.NewRecipe.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInventoriesControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeDetails.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchEntry.resources
+F:\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.exe
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.pdb
+F:\PolyChocolates\PolyChocolates\bin\Debug\database.mdf
+F:\PolyChocolates\PolyChocolates\bin\Debug\database_log.ldf
+F:\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+F:\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+F:\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe
+F:\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.pdb
+F:\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.dll
+F:\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+F:\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.xml
+F:\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateQualityControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.COA.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.GenericQualityControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InventoryControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamQualityControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQQualityControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.NewRecipe.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInventoriesControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeDetails.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ReportControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchEntry.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.EfficiencyControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+F:\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.GenericQualityControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchProductEntryControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchProductEntryControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.QualityWindow.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.QualityWindow.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PasswordProtectWindow.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PasswordProtectWindow.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.GenericEfficiencyControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InitialStock.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.GenericEfficiencyControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InitialStock.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.COA.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HACCP.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoicingControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HACCP.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoicingControl.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.CustomerManager.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.CustomerManager.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInvoiceWindow.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSearch.resources
+C:\Users\Ian\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInvoiceWindow.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSearch.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\database.mdf
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\database_log.ldf
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\PolyChocolates.exe
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\PolyChocolates.pdb
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\EntityFramework.dll
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\EntityFramework.xml
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.ChocolateQualityControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.COA.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.CustomerManager.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.GenericEfficiencyControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.GenericQualityControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.HACCP.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InitialStock.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InventoryControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSearch.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InvoicingControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.NewRecipe.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.PasswordProtectWindow.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.PastInventoriesControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.PastInvoiceWindow.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.QualityWindow.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.RecipeDetails.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.SearchEntry.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.SearchProductEntryControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Connor Batch\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSpielControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\database.mdf
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\database_log.ldf
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\PolyChocolates.exe
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\PolyChocolates.pdb
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\EntityFramework.dll
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\EntityFramework.xml
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.ChocolateQualityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.COA.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.CustomerManager.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.GenericEfficiencyControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.GenericQualityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.HACCP.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InitialStock.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InventoryControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSearch.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSpielControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.InvoicingControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.NewRecipe.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.PasswordProtectWindow.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.PastInventoriesControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.PastInvoiceWindow.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.QualityWindow.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.RecipeDetails.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.SearchEntry.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.SearchProductEntryControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+C:\Users\Ian\Desktop\PolyChocolates2\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\database.mdf
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\database_log.ldf
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.pdb
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.dll
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.xml
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateQualityControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.COA.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.CustomerManager.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.GenericEfficiencyControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.GenericQualityControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HACCP.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InitialStock.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InventoryControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSearch.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSpielControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoicingControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.NewRecipe.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PasswordProtectWindow.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInventoriesControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInvoiceWindow.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.QualityWindow.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeDetails.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchEntry.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchProductEntryControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+C:\Users\foodfactory\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Connor Batch\Desktop\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSpielControl.resources
+C:\Users\foodfactory\Desktop\PolyChocolates1.1\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\foodfactory\Desktop\PolyChocolates1.1\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\foodfactory\Desktop\PolyChocolates1.1\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe.config
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.exe
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.pdb
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\database.mdf
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\database_log.ldf
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB.mdf
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\CAL_POLY_CHOC_DB_log.ldf
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.exe
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\PolyChocolates.pdb
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.dll
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.xml
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csprojResolveAssemblyReference.cache
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQSetupControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.BBQShutdownControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateQualityControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateShutdownControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.COA.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.CustomerManager.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.GenericEfficiencyControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.GenericQualityControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HACCP.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.HomeControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ChocolateSetupControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InitialStock.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InventoryControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSearch.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoiceSpielControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.InvoicingControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamSetupControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.JamShutdownControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.NewRecipe.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PasswordProtectWindow.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInventoriesControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.PastInvoiceWindow.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.QualityWindow.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.RecipeDetails.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchEntry.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.SearchProductEntryControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.TraceabilityControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Home.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
+C:\Users\Ian\Desktop\Chocolates_final rework\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
