@@ -13,15 +13,14 @@ namespace PolyChocolates
     public partial class TraceabilityControl : UserControl
     {
         private databaseDataContext db = new databaseDataContext();
-        private int view;
+        public bool IsComplete = false;
         private List<InventoryRow> inventoryList;
         public List<TraceabilityRow> traceabilityList;
         
-        public TraceabilityControl(int view)
+        public TraceabilityControl()
         {
             InitializeComponent();
             loadValues();
-            this.view = view;
         }
 
         public TraceabilityControl(ProductEntry productEntry)
@@ -64,13 +63,14 @@ namespace PolyChocolates
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            Home.changeViewToProductEntry();
+            IsComplete = false;
+            Home.ChangeToPreviousControl();
         }
 
         private void submitTraceabilityButton_Click(object sender, EventArgs e)
         {
-            ProductEntryControl.traceabilityComplete[view] = true;
-            Home.changeViewToProductEntry();
+            IsComplete = true;
+            Home.ChangeToPreviousControl();
         }
 
         public class InventoryRow

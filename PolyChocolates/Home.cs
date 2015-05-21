@@ -52,7 +52,7 @@ namespace PolyChocolates
         public static readonly Image XMark = Image.FromFile("../../IconImages/x_mark.png");
         public static readonly Image CheckMark = Image.FromFile("../../IconImages/check_mark.png");
 
-        public static Point controlStartingPoint;
+        public static Point ControlStartingPoint;
 
         public Home()
         {
@@ -63,45 +63,45 @@ namespace PolyChocolates
 
             ReadPreferencesFromFile();
 
-            controlStartingPoint = new Point(SidePanel.Right, TopPanel.Bottom);
+            ControlStartingPoint = new Point(SidePanel.Right, TopPanel.Bottom);
             // Home Display
             homeControl = new HomeControl();
-            homeControl.Location = controlStartingPoint;
+            homeControl.Location = ControlStartingPoint;
             homeControl.Visible = true;
 
             // Product Entry
             productEntryControl = new ProductEntryControl(this);
-            productEntryControl.Location = controlStartingPoint;
+            productEntryControl.Location = ControlStartingPoint;
             productEntryControl.Visible = false;
 
             _dynamicProductEntryControl = new DynamicProductEntryControl();
-            _dynamicProductEntryControl.Location = controlStartingPoint;
+            _dynamicProductEntryControl.Location = ControlStartingPoint;
             _dynamicProductEntryControl.Visible = false;
 
             // Setup/Shutdown Controls
             // General Setup
             chocolateSetupControl = new ChocolateSetupControl(this);
-            chocolateSetupControl.Location = controlStartingPoint;
+            chocolateSetupControl.Location = ControlStartingPoint;
             chocolateSetupControl.Visible = false;
             // Chocolate Shutdown
             chocolateShutdownControl = new ChocolateShutdownControl(this);
-            chocolateShutdownControl.Location = controlStartingPoint;
+            chocolateShutdownControl.Location = ControlStartingPoint;
             chocolateShutdownControl.Visible = false;
             // Jam Setup
             jamSetupControl = new JamSetupControl(this);
-            jamSetupControl.Location = controlStartingPoint;
+            jamSetupControl.Location = ControlStartingPoint;
             jamSetupControl.Visible = false;
             // Jam Shutdown
             jamShutdownControl = new JamShutdownControl(this);
-            jamShutdownControl.Location = controlStartingPoint;
+            jamShutdownControl.Location = ControlStartingPoint;
             jamShutdownControl.Visible = false;
             // BBQ Setup
             bbqSetupControl = new BBQSetupControl(this);
-            bbqSetupControl.Location = controlStartingPoint;
+            bbqSetupControl.Location = ControlStartingPoint;
             bbqSetupControl.Visible = false;
             // BBQ Shutdown
             bbqShutdownControl = new BBQShutdownControl(this);
-            bbqShutdownControl.Location = controlStartingPoint;
+            bbqShutdownControl.Location = ControlStartingPoint;
             bbqShutdownControl.Visible = false;
 
 
@@ -113,30 +113,30 @@ namespace PolyChocolates
 
             // Search
             searchControl = new SearchControl(this);
-            searchControl.Location = controlStartingPoint;
+            searchControl.Location = ControlStartingPoint;
             searchControl.Visible = false;
 
             // Recipes
             recipeControl = new RecipeControl(this);
-            recipeControl.Location = controlStartingPoint;
+            recipeControl.Location = ControlStartingPoint;
             recipeControl.Visible = false;
 
             // Inventory
             inventoryControl = new InventoryControl(this);
-            inventoryControl.Location = controlStartingPoint;
+            inventoryControl.Location = ControlStartingPoint;
             inventoryControl.Visible = false;
             pastInventoriesControl = new PastInventoriesControl();
-            pastInventoriesControl.Location = controlStartingPoint;
+            pastInventoriesControl.Location = ControlStartingPoint;
             pastInventoriesControl.Visible = false;
 
             // Invoicing
             invoiceControl = new InvoicingControl(this);
-            invoiceControl.Location = controlStartingPoint;
+            invoiceControl.Location = ControlStartingPoint;
             invoiceControl.Visible = false;
 
             // Invoice Search
             pastInvoices = new InvoiceSearch(this);
-            pastInvoices.Location = controlStartingPoint;
+            pastInvoices.Location = ControlStartingPoint;
             pastInvoices.Visible = false;
 
             // End
@@ -194,8 +194,8 @@ namespace PolyChocolates
                     changeViewToHome();
                     break;
                 case "Product Entry":
-                    //ChangeMainViewControl(_dynamicProductEntryControl);
-                    changeViewToProductEntry();
+                    ChangeMainViewControl(_dynamicProductEntryControl);
+                    //changeViewToProductEntry();
                     break;
                 case "Search":
                     changeViewToSearch();
@@ -218,6 +218,17 @@ namespace PolyChocolates
         }
 
         /**
+         * Changes the main panel to the previous control that ChangeMainViewControl was called on.
+         */
+        public static void ChangeToPreviousControl()
+        {
+            if (mainPanel != null)
+                mainPanel.Visible = false;
+            mainPanel = _controlStack.Pop();
+            mainPanel.Visible = true;
+        }
+
+        /**
          * Changes the main panel to the input control.
          */
         public static void ChangeMainViewControl(UserControl control)
@@ -226,6 +237,7 @@ namespace PolyChocolates
                 Instance.Controls.Add(control);
             if (mainPanel != null)
                 mainPanel.Visible = false;
+            _controlStack.Push(mainPanel);
             mainPanel = control;
             mainPanel.Visible = true;
         }
@@ -337,7 +349,7 @@ namespace PolyChocolates
         public void setupQC(int row, UserControl qc)
         {
             qcControls[row] = qc;
-            qcControls[row].Location = controlStartingPoint;
+            qcControls[row].Location = ControlStartingPoint;
             qcControls[row].Visible = false;
             this.Controls.Add(qc);
         }
@@ -354,7 +366,7 @@ namespace PolyChocolates
         {
             this.Controls.Remove(recipeControl);
             recipeControl = new RecipeControl(this);
-            recipeControl.Location = controlStartingPoint;
+            recipeControl.Location = ControlStartingPoint;
             recipeControl.Visible = false;
             this.Controls.Add(recipeControl);
         }
@@ -363,7 +375,7 @@ namespace PolyChocolates
         {
             this.Controls.Remove(productEntryControl);
             productEntryControl = new ProductEntryControl(this);
-            productEntryControl.Location = controlStartingPoint;
+            productEntryControl.Location = ControlStartingPoint;
             productEntryControl.Visible = false;
             this.Controls.Add(productEntryControl);
         }
@@ -372,7 +384,7 @@ namespace PolyChocolates
         {
             this.Controls.Remove(inventoryControl);
             inventoryControl = new InventoryControl(this);
-            inventoryControl.Location = controlStartingPoint;
+            inventoryControl.Location = ControlStartingPoint;
             inventoryControl.Visible = false;
             this.Controls.Add(inventoryControl);
             runningInventoryMenuItem_Click(null, null);
@@ -382,7 +394,7 @@ namespace PolyChocolates
         {
             this.Controls.Remove(pastInventoriesControl);
             pastInventoriesControl = new PastInventoriesControl();
-            pastInventoriesControl.Location = controlStartingPoint;
+            pastInventoriesControl.Location = ControlStartingPoint;
             pastInventoriesControl.Visible = false;
             this.Controls.Add(pastInventoriesControl);
         }
@@ -391,7 +403,7 @@ namespace PolyChocolates
         {
             this.Controls.Remove(invoiceControl);
             invoiceControl = new InvoicingControl(this);
-            invoiceControl.Location = controlStartingPoint;
+            invoiceControl.Location = ControlStartingPoint;
             invoiceControl.Visible = false;
             this.Controls.Add(invoiceControl);
         }
@@ -403,37 +415,37 @@ namespace PolyChocolates
             {
                 case ("bbqsetup"):
                     bbqSetupControl = new BBQSetupControl(this);
-                    bbqSetupControl.Location = controlStartingPoint;
+                    bbqSetupControl.Location = ControlStartingPoint;
                     bbqSetupControl.Visible = false;
                     this.Controls.Add(bbqSetupControl);
                     break;
                 case ("bbqshutdown"):
                     bbqShutdownControl = new BBQShutdownControl(this);
-                    bbqShutdownControl.Location = controlStartingPoint;
+                    bbqShutdownControl.Location = ControlStartingPoint;
                     bbqShutdownControl.Visible = false;
                     this.Controls.Add(bbqShutdownControl);
                     break;
                 case ("chocolatesetup"):
                     chocolateSetupControl = new ChocolateSetupControl(this);
-                    chocolateSetupControl.Location = controlStartingPoint;
+                    chocolateSetupControl.Location = ControlStartingPoint;
                     chocolateSetupControl.Visible = false;
                     this.Controls.Add(chocolateSetupControl);
                     break;
                 case ("chocolateshutdown"):
                     chocolateShutdownControl = new ChocolateShutdownControl(this);
-                    chocolateShutdownControl.Location = controlStartingPoint;
+                    chocolateShutdownControl.Location = ControlStartingPoint;
                     chocolateShutdownControl.Visible = false;
                     this.Controls.Add(chocolateShutdownControl);
                     break;
                 case ("jamsetup"):
                     jamSetupControl = new JamSetupControl(this);
-                    jamSetupControl.Location = controlStartingPoint;
+                    jamSetupControl.Location = ControlStartingPoint;
                     jamSetupControl.Visible = false;
                     this.Controls.Add(jamSetupControl);
                     break;
                 case ("jamshutdown"):
                     jamShutdownControl = new JamShutdownControl(this);
-                    jamShutdownControl.Location = controlStartingPoint;
+                    jamShutdownControl.Location = ControlStartingPoint;
                     jamShutdownControl.Visible = false;
                     this.Controls.Add(jamShutdownControl);
                     break;
@@ -469,11 +481,11 @@ namespace PolyChocolates
             {
                 if (recipe.QualityControlId > Library.CHOCOLATE_QUALITY_CONTROL)
                 {
-                    qcControls[view] = new GenericQualityControl(recipe, view);
+                    qcControls[view] = new GenericQualityControl(recipe);
                 }
                 else if (recipe.QualityControlId == Library.CHOCOLATE_QUALITY_CONTROL)
                 {
-                    qcControls[view] = new ChocolateQualityControl(view);
+                    qcControls[view] = new ChocolateQualityControl();
                 }
                 qcControls[view].Location = new Point(home.SidePanel.Right, home.TopPanel.Bottom);
                 qcControls[view].Visible = false;
@@ -481,7 +493,7 @@ namespace PolyChocolates
             }
             if (efficiencyControls[view] != null)
                 home.Controls.Remove(efficiencyControls[view]);
-            efficiencyControls[view] = new GenericEfficiencyControl(recipe, view);
+            efficiencyControls[view] = new GenericEfficiencyControl(recipe);
             efficiencyControls[view].Location = new Point(home.SidePanel.Right, home.TopPanel.Bottom);
             efficiencyControls[view].Visible = false;
             home.Controls.Add(efficiencyControls[view]);

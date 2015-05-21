@@ -14,18 +14,22 @@ namespace PolyChocolates
     public partial class DynamicProductEntryControl : UserControl
     {
 
-        private databaseDataContext _db;
         private List<ProductRow> _productRows;
-        private List<ProductRow> _selectedRows;
 
         public DynamicProductEntryControl()
         {
             InitializeComponent();
 
-            _db = new databaseDataContext();
             _productRows = new List<ProductRow>();
-            _selectedRows = new List<ProductRow>();
             AddNewProductRow();
+        }
+
+        public DynamicProductEntryControl(ProductEntry productEntry)
+        {
+            InitializeComponent();
+
+            databaseDataContext db = new databaseDataContext();
+
         }
 
         private void AddNewProductRow()
@@ -54,7 +58,8 @@ namespace PolyChocolates
             public PictureBox HaacpPic = new PictureBox();
             public byte[] HaacpBytes = null;
             public Button QualityButton = new Button();
-            public UserControl QualityControl = null;
+            public UserControl ChocolateQualityControl = null;
+            public UserControl GenericQualityControl = null;
             public Button TraceabilityButton = new Button();
             public UserControl TraceabilityControl = null;
             public Button EfficiencyButton = new Button();
@@ -92,38 +97,84 @@ namespace PolyChocolates
                 Product.DataSource = recipes;
                 Product.DisplayMember = "Name";
                 Product.Width = 215;
-                Product.SelectedIndexChanged += new EventHandler(ProductChanged);
+                Product.SelectedIndexChanged += ProductChanged;
 
                 // Haacp Init
                 HaacpPic.Image = Home.BlankDocument;
-                HaacpPic.Click += new EventHandler(AttachHaacpWindow);
-                HaacpPic.VisibleChanged += new EventHandler(LoadCoaIcon);
+                HaacpPic.Click += AttachHaacpWindow;
+                HaacpPic.VisibleChanged += LoadCoaIcon;
 
                 // Quality Button Init
                 QualityButton.Text = "Quality";
                 QualityButton.Enabled = false;
+                QualityButton.UseVisualStyleBackColor = true;
+                QualityButton.Click += QuialityButton_Click;
 
                 // Traceability Button Init
                 TraceabilityButton.Text = "Traceability";
                 TraceabilityButton.Enabled = false;
+                TraceabilityButton.UseVisualStyleBackColor = true;
+                TraceabilityButton.Click += TraceabilityButton_Click;
 
                 // Efficiency Button Init
                 EfficiencyButton.Text = "Efficiency";
                 EfficiencyButton.Enabled = false;
+                EfficiencyButton.UseVisualStyleBackColor = true;
+                EfficiencyButton.Click += EfficiencyButton_Click;
 
                 // Status Icon Init
                 Status.Image = Home.XMark;
             }
 
+            private void QuialityButton_Click(object sender, EventArgs e)
+            {
+                Recipe selectedRecipe = (Recipe) Product.SelectedItem;
+                if (selectedRecipe.QualityControlId == Library.CHOCOLATE_QUALITY_CONTROL)
+                {
+                    if (ChocolateQualityControl == null)
+                    {
+                        ChocolateQualityControl = new ChocolateQualityControl();
+                        ChocolateQualityControl.Location = Home.ControlStartingPoint;
+                    }
+                    Home.ChangeMainViewControl(ChocolateQualityControl);
+                }
+                else
+                {
+                    if (GenericQualityControl == null)
+                    {
+                        GenericQualityControl = new GenericQualityControl(selectedRecipe);
+                        GenericQualityControl.Location = Home.ControlStartingPoint;
+                    }
+                    Home.ChangeMainViewControl(GenericQualityControl);
+                }
+            }
+
+            private void TraceabilityButton_Click(object sender, EventArgs e)
+            {
+                Recipe selectedRecipe = (Recipe)Product.SelectedItem;
+                if (TraceabilityButton.Enabled && TraceabilityControl == null)
+                {
+                    TraceabilityControl = new TraceabilityControl();
+                    TraceabilityControl.Location = Home.ControlStartingPoint;
+                }
+                Home.ChangeMainViewControl(TraceabilityControl);
+            }
+
+            private void EfficiencyButton_Click(object sender, EventArgs e)
+            {
+                Recipe selectedRecipe = (Recipe)Product.SelectedItem;
+                if (EfficiencyControl == null)
+                {
+                    EfficiencyControl = new GenericEfficiencyControl(selectedRecipe);
+                    EfficiencyControl.Location = Home.ControlStartingPoint;
+                }
+                Home.ChangeMainViewControl(EfficiencyControl);
+            }
+
             private void ProductChanged(object sender, EventArgs e)
             {
                 Recipe selectedRecipe = (Recipe) Product.SelectedItem;
-
-                QualityButton.Enabled = selectedRecipe.QualityControlId > 0;
-                if (QualityButton.Enabled && selectedRecipe.QualityControlId == 1)
-                    QualityControl = new ChocolateQualityControl();
-                else if (QualityButton.Enabled)
-                    QualityControl = new GenericQualityControl(selectedRecipe);
+                QualityButton.Enabled = selectedRecipe.QualityControlId > Library.CHOCOLATE_QUALITY_CONTROL;
                 TraceabilityButton.Enabled = selectedRecipe.TraceabilityRequired == "Y";
                 EfficiencyButton.Enabled = selectedRecipe.EfficiencyRequired == "Y";
             }
@@ -132,15 +183,12 @@ namespace PolyChocolates
             {
                 HACCP haacp = new HACCP(this);
                 haacp.ShowDialog();
-                if (this.HaacpBytes != null)
-                    HaacpPic.Image = Home.Document;
-                else
-                    HaacpPic.Image = Home.BlankDocument;
+                HaacpPic.Image = HaacpBytes != null ? Home.Document : Home.BlankDocument;
             }
 
             private void LoadCoaIcon(object sender, EventArgs e)
             {
-                if (this.HaacpBytes != null && this.HaacpBytes.Length > 0)
+                if (HaacpBytes != null && HaacpBytes.Length > 0)
                     HaacpPic.Image = Home.Document;
                 else
                     HaacpPic.Image = Home.BlankDocument;

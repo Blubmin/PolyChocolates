@@ -155,8 +155,8 @@ namespace PolyChocolates
                 {
                     if (Home.traceabilityControls[row] == null)
                     {
-                        Home.traceabilityControls[row] = new TraceabilityControl(row);
-                        Home.traceabilityControls[row].Location = Home.controlStartingPoint;
+                        Home.traceabilityControls[row] = new TraceabilityControl();
+                        Home.traceabilityControls[row].Location = Home.ControlStartingPoint;
                         Home.traceabilityControls[row].Visible = false;
                         home.Controls.Add(Home.traceabilityControls[row]);
                     }

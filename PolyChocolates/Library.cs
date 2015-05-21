@@ -12,7 +12,7 @@ namespace PolyChocolates
     class Library
     {
 
-        public static int CHOCOLATE_QUALITY_CONTROL = 2;
+        public static readonly int CHOCOLATE_QUALITY_CONTROL = 2;
 
         public static void onlyAllowNumerics(Object sender, EventArgs e)
         {

@@ -315,12 +315,13 @@ namespace PolyChocolates
         private void submitButton_Click(object sender, EventArgs e)
         {
             isComplete = true;
-            Home.ChangeMainViewControl(Home.Instance.);
+            Home.ChangeToPreviousControl();
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            Home.changeViewToProductEntry();
+            isComplete = false;
+            Home.ChangeToPreviousControl();
         }
 
         private void addQualRow_Click(object sender, EventArgs e)

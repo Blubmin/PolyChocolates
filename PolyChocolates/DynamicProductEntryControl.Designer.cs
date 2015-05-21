@@ -30,6 +30,7 @@
         {
             this.TitleLabel = new System.Windows.Forms.Label();
             this.ProductionSummaryTable = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.AmountPackagedLabel = new System.Windows.Forms.Label();
             this.LotCodeLabel = new System.Windows.Forms.Label();
             this.ProductLabel = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SubmitButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.ProductionSummaryTable.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -99,10 +99,19 @@
             this.ProductionSummaryTable.Location = new System.Drawing.Point(3, 3);
             this.ProductionSummaryTable.Name = "ProductionSummaryTable";
             this.ProductionSummaryTable.RowCount = 1;
-            this.ProductionSummaryTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ProductionSummaryTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ProductionSummaryTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.ProductionSummaryTable.Size = new System.Drawing.Size(1056, 28);
             this.ProductionSummaryTable.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.TabIndex = 85;
             // 
             // AmountPackagedLabel
             // 
@@ -365,20 +374,10 @@
             this.SubmitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.SubmitButton.Location = new System.Drawing.Point(1002, 544);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(123, 30);
+            this.SubmitButton.Size = new System.Drawing.Size(123, 32);
             this.SubmitButton.TabIndex = 87;
             this.SubmitButton.Text = "Submit All";
             this.SubmitButton.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 20);
-            this.label4.TabIndex = 85;
             // 
             // DynamicProductEntryControl
             // 

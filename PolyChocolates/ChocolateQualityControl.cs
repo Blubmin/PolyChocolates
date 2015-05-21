@@ -13,7 +13,7 @@ namespace PolyChocolates
     public partial class ChocolateQualityControl : UserControl
     {
         public List<WeightRow> weightsList;
-        private int row;
+        public bool IsComplete = false;
 
         public ChocolateQualityControl(ProductEntry entry)
         {
@@ -43,10 +43,9 @@ namespace PolyChocolates
             }
         }
 
-        public ChocolateQualityControl(int row)
+        public ChocolateQualityControl()
         {
             InitializeComponent();
-            this.row = row;
             weightsList = new List<WeightRow>();
         }
 
@@ -114,13 +113,14 @@ namespace PolyChocolates
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            Home.changeViewToProductEntry();
+            IsComplete = false;
+            Home.ChangeToPreviousControl();
         }
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            ProductEntryControl.qcComplete[row] = true;
-            Home.changeViewToProductEntry();
+            IsComplete = true;
+            Home.ChangeToPreviousControl();
         }
     }
 }

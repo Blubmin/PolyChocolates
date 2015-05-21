@@ -14,7 +14,7 @@ namespace PolyChocolates
     {
 
         public List<EfficiencyRow> wasteList;
-        int view;
+        public bool IsComplete = false;
         Recipe recipe;
 
         public GenericEfficiencyControl(ProductEntry entry)
@@ -36,11 +36,10 @@ namespace PolyChocolates
             }
         }
 
-        public GenericEfficiencyControl(Recipe recipe, int view)
+        public GenericEfficiencyControl(Recipe recipe)
         {
             InitializeComponent();
             this.recipe = recipe;
-            this.view = view;
             wasteList = new List<EfficiencyRow>();
             RecipeWeightTextField.Text = recipe.ExpectedWeight + "";
             ItemWeightTextField.Leave += new EventHandler(Library.onlyAllowFloats);
@@ -125,13 +124,14 @@ namespace PolyChocolates
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            Home.changeViewToProductEntry();
+            IsComplete = false;
+            Home.ChangeToPreviousControl();
         }
 
         private void submitEfficiencyButton_Click(object sender, EventArgs e)
         {
-            ProductEntryControl.efficiencyComplete[view] = true;
-            Home.changeViewToProductEntry();
+            IsComplete = true;
+            Home.ChangeToPreviousControl();
         }
     }
 }
