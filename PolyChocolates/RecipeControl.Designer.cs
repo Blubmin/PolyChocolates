@@ -33,6 +33,7 @@
             this.recipeList = new System.Windows.Forms.TableLayoutPanel();
             this.recipeDetails = new System.Windows.Forms.Panel();
             this.newRecipeButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,18 +83,30 @@
             // newRecipeButton
             // 
             this.newRecipeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newRecipeButton.Location = new System.Drawing.Point(130, 559);
+            this.newRecipeButton.Location = new System.Drawing.Point(128, 559);
             this.newRecipeButton.Name = "newRecipeButton";
-            this.newRecipeButton.Size = new System.Drawing.Size(241, 23);
+            this.newRecipeButton.Size = new System.Drawing.Size(119, 23);
             this.newRecipeButton.TabIndex = 16;
             this.newRecipeButton.Text = "New Recipe";
             this.newRecipeButton.UseVisualStyleBackColor = true;
             this.newRecipeButton.Click += new System.EventHandler(this.newRecipe_Click);
             // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.Location = new System.Drawing.Point(253, 559);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(118, 23);
+            this.DeleteButton.TabIndex = 17;
+            this.DeleteButton.Text = "Delete Recipe";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
             // RecipeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.newRecipeButton);
             this.Controls.Add(this.recipeDetails);
             this.Controls.Add(this.panel1);
@@ -114,5 +127,6 @@
         private System.Windows.Forms.Panel recipeDetails;
         private System.Windows.Forms.Button newRecipeButton;
         private System.Windows.Forms.TableLayoutPanel recipeList;
+        private System.Windows.Forms.Button DeleteButton;
     }
 }

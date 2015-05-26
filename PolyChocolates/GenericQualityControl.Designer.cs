@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.submitButton = new System.Windows.Forms.Button();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.addQuantRow = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.submitButton = new System.Windows.Forms.Button();
             this.container.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -71,15 +71,6 @@
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // submitButton
-            // 
-            this.submitButton.Location = new System.Drawing.Point(1028, 574);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(75, 23);
-            this.submitButton.TabIndex = 19;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
             // 
             // TitleLabel
             // 
@@ -493,16 +484,24 @@
             this.titleTextBox.Enter += new System.EventHandler(this.removeExisting);
             this.titleTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nameValidation);
             // 
+            // submitButton
+            // 
+            this.submitButton.Location = new System.Drawing.Point(1030, 574);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(75, 23);
+            this.submitButton.TabIndex = 100;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = true;
+            // 
             // GenericQualityControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.submitButton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.performedBy);
             this.Controls.Add(this.backButton);
-            this.Controls.Add(this.submitButton);
             this.Controls.Add(this.container);
             this.Name = "GenericQualityControl";
             this.Size = new System.Drawing.Size(1166, 605);
@@ -531,7 +530,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label label11;
@@ -564,6 +562,7 @@
         private System.Windows.Forms.Button removeQual;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button removeQuant;
+        private System.Windows.Forms.Button submitButton;
 
 
     }

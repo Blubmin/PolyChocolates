@@ -29,7 +29,8 @@ namespace PolyChocolates
             var newRecipe = new Recipe
             {
                 Name = textBox1.Text,
-                QualityControlId = 1
+                QualityControlId = 1,
+                Enabled = "Y"
             };
             db.Recipes.InsertOnSubmit(newRecipe);
             db.SubmitChanges();

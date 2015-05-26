@@ -49,7 +49,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.searchResults);
-            this.panel1.Location = new System.Drawing.Point(141, 82);
+            this.panel1.Location = new System.Drawing.Point(141, 88);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 509);
             this.panel1.TabIndex = 25;
@@ -161,7 +161,7 @@
             this.ResultsLabel.AutoSize = true;
             this.ResultsLabel.Font = new System.Drawing.Font("Eras Light ITC", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResultsLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ResultsLabel.Location = new System.Drawing.Point(141, 62);
+            this.ResultsLabel.Location = new System.Drawing.Point(141, 69);
             this.ResultsLabel.Name = "ResultsLabel";
             this.ResultsLabel.Size = new System.Drawing.Size(0, 17);
             this.ResultsLabel.TabIndex = 23;

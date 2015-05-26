@@ -14,6 +14,7 @@ namespace PolyChocolates
     public partial class SearchControl : UserControl
     {
         databaseDataContext db = new databaseDataContext();
+        List<SearchRow> _searchRows = new List<SearchRow>();
         Home home;
 
         public SearchControl(Home home)
@@ -26,66 +27,52 @@ namespace PolyChocolates
 
         public void clearTable()
         {
-            Font bolded = new Font(label1.Font, FontStyle.Bold);
-
-            Label LotCode = new Label();
-            LotCode.AutoSize = true;
-            LotCode.Font = bolded;
-            LotCode.Text = "Code Date";
-            Label Product = new Label();
-            Product.AutoSize = true;
-            Product.Font = bolded;
-            Product.Text = "Product";
-            Label Date = new Label();
-            Date.AutoSize = true;
-            Date.Font = bolded;
-            Date.Text = "Date";
-            Label Student = new Label();
-            Student.AutoSize = true;
-            Student.Font = bolded;
-            Student.Text = "Student Manager";
-            Label Manager = new Label();
-            Manager.AutoSize = true;
-            Manager.Font = bolded;
-            Manager.Text = "Pilot Manager";
-
-            searchResults.Controls.Clear();
-            searchResults.Controls.Add(LotCode);
-            searchResults.Controls.Add(Product);
-            searchResults.Controls.Add(Date);
-            searchResults.Controls.Add(Student);
-            searchResults.Controls.Add(Manager);
+            foreach (var row in _searchRows)
+            {
+                searchResults.Controls.Remove(row.viewButton);
+                searchResults.Controls.Remove(row.codeDate);
+                searchResults.Controls.Remove(row.date);
+                searchResults.Controls.Remove(row.product);
+                searchResults.Controls.Remove(row.studentManager);
+                searchResults.Controls.Remove(row.plantManager);
+                searchResults.Controls.Remove(row.Status);
+            }
         }
 
         private void search()
         {
             searchResults.Visible = false;
             clearTable();
-            IQueryable<ProductEntry> query = null;
+            IOrderedEnumerable<ProductEntry> query = null;
             switch (searchType.SelectedIndex)
             {
                 case 0:
                     query =
-                        from productEntries in db.ProductEntries
+                       (from productEntries in db.ProductEntries
                         where SqlMethods.Like(productEntries.CodeDate, "%" + searchBox.Text + "%")
-                        orderby productEntries.Date descending
-                        select productEntries;
+                        group productEntries by productEntries.ProductEntryId into entries
+                        select entries.OrderByDescending(x => x.ProductEntryVersion).First()).ToList().OrderBy(x => x.Date);
                     break;
                 case 1:
                     query =
-                        from productEntries in db.ProductEntries
+                        (from productEntries in db.ProductEntries
                         where SqlMethods.Like(productEntries.Recipe.Name, "%" + searchBox.Text + "%")
-                        orderby productEntries.Date descending
-                        select productEntries;
+                        group productEntries by productEntries.ProductEntryId into entries
+                        select entries.OrderByDescending(x => x.ProductEntryVersion).First()).ToList().OrderBy(x => x.Date);
                     break;
                 case 2:
                     query =
-                        from traces in db.Traceabilities
+                        (from traces in db.Traceabilities
                         where SqlMethods.Like(traces.Inventory.LotCode, "%" + searchBox.Text + "%")
-                        orderby traces.ProductEntry.Date descending
-                        select traces.ProductEntry;
+                        group traces.ProductEntry by traces.ProductEntry.ProductEntryId into entries
+                        select entries.OrderByDescending(x => x.ProductEntryVersion).First()).ToList().OrderBy(x => x.Date);
                     break;
-                default:
+                case 3:
+                    query =
+                        (from productEntries in db.ProductEntries
+                        where SqlMethods.Like(productEntries.Complete, "%N%")
+                        group productEntries by productEntries.ProductEntryId into entries
+                        select entries.OrderByDescending(x => x.ProductEntryVersion).First()).ToList().OrderBy(x => x.Date);
                     break;
             }
 
@@ -103,25 +90,18 @@ namespace PolyChocolates
             foreach (var pe in query)
             {
                 SearchRow search = new SearchRow(pe, this);
-                search.codeDate.Click += new EventHandler(codedate_Click);
+                _searchRows.Add(search);
+                searchResults.Controls.Add(search.viewButton);
                 searchResults.Controls.Add(search.codeDate);
                 searchResults.Controls.Add(search.product);
                 searchResults.Controls.Add(search.date);
                 searchResults.Controls.Add(search.studentManager);
                 searchResults.Controls.Add(search.plantManager);
+                searchResults.Controls.Add(search.Status);
+                Library.CenterPictureBox(search.Status);
+                search.Status.Dock = DockStyle.Left;
             }
-            searchResults.Controls.Add(new Label());
             searchResults.Visible = true;
-        }
-
-        private void codedate_Click(object sender, EventArgs e)
-        {
-
-            Label theLbl = (Label)sender;
-            theLbl.ForeColor = Color.FromArgb(102, 51, 102);
-
-            SearchEntry se = new SearchEntry(theLbl.Text);
-            se.ShowDialog();
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -131,19 +111,22 @@ namespace PolyChocolates
 
         private class SearchRow
         {
+            public ProductEntry ProductEntry= null;
+            public Button viewButton = new Button();
             public Label codeDate = new Label();
             public Label product = new Label();
             public Label date = new Label();
             public Label studentManager = new Label();
-            public Label plantManager = new Label();
-            
+            public Label plantManager = new Label();        
+            public PictureBox Status = new PictureBox();
 
             public SearchRow(ProductEntry entry, SearchControl s)
             {
+                ProductEntry = entry;
+                viewButton.Text = "View";
+                viewButton.Click += View_Click;
+                viewButton.UseVisualStyleBackColor = true;
                 codeDate.AutoSize = true;
-                codeDate.Font = new Font(s.searchResults.Font, FontStyle.Bold | FontStyle.Underline);
-                codeDate.ForeColor = Color.FromArgb(6, 69, 173);
-                codeDate.Cursor = Cursors.Hand;
                 codeDate.Text = entry.CodeDate;
                 product.AutoSize = true;
                 product.Text = entry.Recipe.Name;
@@ -153,7 +136,19 @@ namespace PolyChocolates
                 studentManager.Text = entry.StudentManager;
                 plantManager.AutoSize = true;
                 plantManager.Text = entry.PlantManager;
+                Status.Image = entry.Complete == "Y" ? Home.CheckMark : Home.XMark;
             }
+
+            public void View_Click(object sender, EventArgs e)
+            {
+                Home.ChangeMainViewControl(new EditExistingProductEntryControl(ProductEntry.ProductEntryId));
+                ((EditExistingProductEntryControl) Home.mainPanel).SelectedProductEntry.LoadSelectedRecipe();
+            }
+        }
+
+        private void searchType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            searchBox.Enabled = searchType.SelectedIndex != 3;
         }
     }
 }

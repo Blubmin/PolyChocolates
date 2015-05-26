@@ -529,3 +529,4 @@ C:\Users\Connor Batch\Documents\GitHub\PolyChocolates\PolyChocolates\obj\Debug\P
 C:\Users\Connor Batch\Documents\GitHub\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.ProductEntryControl.resources
 C:\Users\Connor Batch\Documents\GitHub\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.Properties.Resources.resources
 C:\Users\Connor Batch\Documents\GitHub\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.csproj.GenerateResource.Cache
+C:\Users\Ian\Documents\PolyChocolates\PolyChocolates\obj\Debug\PolyChocolates.EditExistingProductEntryControl.resources

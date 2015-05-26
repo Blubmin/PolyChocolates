@@ -140,6 +140,12 @@
     <Compile Include="DynamicProductEntryControl.Designer.cs">
       <DependentUpon>DynamicProductEntryControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditExistingProductEntryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditExistingProductEntryControl.Designer.cs">
+      <DependentUpon>EditExistingProductEntryControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenericEfficiencyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DynamicProductEntryControl.resx">
       <DependentUpon>DynamicProductEntryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditExistingProductEntryControl.resx">
+      <DependentUpon>EditExistingProductEntryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenericEfficiencyControl.resx">
       <DependentUpon>GenericEfficiencyControl.cs</DependentUpon>

@@ -48,9 +48,9 @@
             this.container.BackColor = System.Drawing.Color.White;
             this.container.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.container.Controls.Add(this.ResultsTable);
-            this.container.Location = new System.Drawing.Point(4, 25);
+            this.container.Location = new System.Drawing.Point(9, 25);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1075, 620);
+            this.container.Size = new System.Drawing.Size(1195, 620);
             this.container.TabIndex = 48;
             // 
             // ResultsTable
@@ -71,7 +71,7 @@
             this.ResultsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.ResultsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.ResultsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.ResultsTable.Size = new System.Drawing.Size(1049, 612);
+            this.ResultsTable.Size = new System.Drawing.Size(1167, 612);
             this.ResultsTable.TabIndex = 19;
             // 
             // panel1
@@ -101,7 +101,7 @@
             this.printToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1091, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1213, 24);
             this.menuStrip1.TabIndex = 49;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1091, 649);
+            this.ClientSize = new System.Drawing.Size(1213, 649);
             this.Controls.Add(this.container);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

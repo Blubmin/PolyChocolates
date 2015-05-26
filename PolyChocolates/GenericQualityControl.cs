@@ -14,11 +14,11 @@ namespace PolyChocolates
     {
         private Recipe recipe;
         private QualityControl control;
-        public List<QualitativeRow> qualList;
-        public List<QuantitativeRow> quantList;
+        public List<QualitativeRow> qualList = new List<QualitativeRow>();
+        public List<QuantitativeRow> quantList = new List<QuantitativeRow>();
         public List<QualitativeRow> newQualList;
         public List<QuantitativeRow> newQuantList;
-        public bool isComplete = false;
+        public bool IsComplete = false;
         private databaseDataContext db =  new databaseDataContext();
         HashSet<String> names;
 
@@ -94,6 +94,48 @@ namespace PolyChocolates
             submitButton.Click += new EventHandler(this.creation_Save);
         }
 
+        public GenericQualityControl(ProductEntry entry, bool uneditable)
+        {
+            InitializeComponent();
+            TitleLabel.Text = entry.Recipe.Name + " " + TitleLabel.Text;
+            performedBy.Text = entry.QualityPerformer;
+
+            qualList = new List<QualitativeRow>();
+            quantList = new List<QuantitativeRow>();
+
+            foreach (var row in entry.ProductQualityEntryQuals)
+            {
+                QualitativeRow newRow = new QualitativeRow(row, true);
+                qualitativeTable.Controls.Add(new Label());
+                qualitativeTable.Controls.Add(newRow.attribute);
+                qualitativeTable.Controls.Add(newRow.sustainTakeAction);
+                qualitativeTable.Controls.Add(newRow.comments);
+                qualList.Add(newRow);
+            }
+            foreach (var row in entry.ProductQualityEntryQuants)
+            {
+                QuantitativeRow newRow = new QuantitativeRow(row, true);
+                quantitativeTable.Controls.Add(new Label());
+                quantitativeTable.Controls.Add(newRow.test);
+                quantitativeTable.Controls.Add(newRow.unit);
+                quantitativeTable.Controls.Add(newRow.value);
+                quantitativeTable.Controls.Add(newRow.aim);
+                quantitativeTable.Controls.Add(newRow.sustain);
+                quantitativeTable.Controls.Add(newRow.takeAction);
+                quantitativeTable.Controls.Add(newRow.abort);
+                quantitativeTable.Controls.Add(newRow.action);
+                quantList.Add(newRow);
+            }
+            titleTextBox.Visible = false;
+            addQuantRow.Visible = false;
+            addQualRow.Visible = false;
+            removeQual.Visible = false;
+            removeQuant.Visible = false;
+            qualitativeTable.ColumnStyles[0].Width = 1;
+            quantitativeTable.ColumnStyles[0].Width = 1;
+            submitButton.Click += submitButton_Click;
+        }
+
         public GenericQualityControl(ProductEntry entry)
         {
             InitializeComponent();
@@ -101,7 +143,7 @@ namespace PolyChocolates
             performedBy.Text = entry.QualityPerformer;
             foreach (var row in entry.ProductQualityEntryQuals)
             {
-                QualitativeRow newRow = new QualitativeRow(row);
+                QualitativeRow newRow = new QualitativeRow(row, false);
                 qualitativeTable.Controls.Add(new Label());
                 qualitativeTable.Controls.Add(newRow.attribute);
                 qualitativeTable.Controls.Add(newRow.sustainTakeAction);
@@ -109,7 +151,7 @@ namespace PolyChocolates
             }
             foreach (var row in entry.ProductQualityEntryQuants)
             {
-                QuantitativeRow newRow = new QuantitativeRow(row);
+                QuantitativeRow newRow = new QuantitativeRow(row, false);
                 quantitativeTable.Controls.Add(new Label());
                 quantitativeTable.Controls.Add(newRow.test);
                 quantitativeTable.Controls.Add(newRow.unit);
@@ -188,13 +230,13 @@ namespace PolyChocolates
             public ComboBox sustainTakeAction = new ComboBox();
             public TextBox comments = new TextBox();
 
-            public QualitativeRow(ProductQualityEntryQual entry)
-                : this(entry.QualityLabelQual, true)
+            public QualitativeRow(ProductQualityEntryQual entry, Boolean isDisabled)
+                : this(entry.QualityLabelQual, !isDisabled)
             {
-                sustainTakeAction.SelectedValue = entry.SustainTakeAction;
-                sustainTakeAction.Enabled = false;
+                sustainTakeAction.SelectedItem = entry.SustainTakeAction;
+                sustainTakeAction.Enabled = !isDisabled;
                 comments.Text = entry.Comments;
-                comments.ReadOnly = true;
+                comments.ReadOnly = isDisabled;
             }
 
             public QualitativeRow(QualityLabelQual row, Boolean isEnabled)
@@ -226,13 +268,13 @@ namespace PolyChocolates
             public TextBox abort = new TextBox();
             public TextBox action = new TextBox();
 
-            public QuantitativeRow(ProductQualityEntryQuant entry)
+            public QuantitativeRow(ProductQualityEntryQuant entry, Boolean isEnabled)
                 : this(entry.QualityLabelQuant, true)
             {
                 value.Text = entry.Value;
-                value.ReadOnly = true;
+                value.ReadOnly = isEnabled;
                 action.Text = entry.Action;
-                action.ReadOnly = true;
+                action.ReadOnly = isEnabled;
             }
 
             public QuantitativeRow(QualityLabelQuant row, Boolean isEnabled)
@@ -314,13 +356,13 @@ namespace PolyChocolates
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            isComplete = true;
+            IsComplete = true;
             Home.ChangeToPreviousControl();
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            isComplete = false;
+            IsComplete = false;
             Home.ChangeToPreviousControl();
         }
 

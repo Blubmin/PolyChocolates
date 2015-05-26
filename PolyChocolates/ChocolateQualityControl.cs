@@ -13,7 +13,7 @@ namespace PolyChocolates
     public partial class ChocolateQualityControl : UserControl
     {
         public List<WeightRow> weightsList;
-        public bool IsComplete = false;
+        public bool IsComplete;
 
         public ChocolateQualityControl(ProductEntry entry)
         {

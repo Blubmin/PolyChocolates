@@ -51,11 +51,8 @@
             this.StudentManagerLabel = new System.Windows.Forms.Label();
             this.pilotPlantManagerTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.StudentApprovalStatus = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.SubmitButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.ProductionSummaryTable.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -278,16 +275,17 @@
             // 
             this.date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date.Location = new System.Drawing.Point(517, 56);
+            this.date.Location = new System.Drawing.Point(924, 415);
             this.date.MinDate = new System.DateTime(2014, 7, 2, 0, 0, 0, 0);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(129, 26);
+            this.date.Size = new System.Drawing.Size(202, 26);
             this.date.TabIndex = 78;
+            this.date.ValueChanged += new System.EventHandler(this.date_ValueChanged);
             // 
             // StudentManagerNameTextField
             // 
             this.StudentManagerNameTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.StudentManagerNameTextField.Location = new System.Drawing.Point(924, 405);
+            this.StudentManagerNameTextField.Location = new System.Drawing.Point(925, 458);
             this.StudentManagerNameTextField.Name = "StudentManagerNameTextField";
             this.StudentManagerNameTextField.Size = new System.Drawing.Size(201, 26);
             this.StudentManagerNameTextField.TabIndex = 80;
@@ -297,7 +295,7 @@
             // 
             this.StudentManagerLabel.AutoSize = true;
             this.StudentManagerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.StudentManagerLabel.Location = new System.Drawing.Point(739, 407);
+            this.StudentManagerLabel.Location = new System.Drawing.Point(740, 460);
             this.StudentManagerLabel.Name = "StudentManagerLabel";
             this.StudentManagerLabel.Size = new System.Drawing.Size(179, 20);
             this.StudentManagerLabel.TabIndex = 79;
@@ -306,7 +304,7 @@
             // pilotPlantManagerTextBox
             // 
             this.pilotPlantManagerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.pilotPlantManagerTextBox.Location = new System.Drawing.Point(924, 468);
+            this.pilotPlantManagerTextBox.Location = new System.Drawing.Point(924, 503);
             this.pilotPlantManagerTextBox.Name = "pilotPlantManagerTextBox";
             this.pilotPlantManagerTextBox.Size = new System.Drawing.Size(201, 26);
             this.pilotPlantManagerTextBox.TabIndex = 82;
@@ -316,57 +314,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(772, 471);
+            this.label1.Location = new System.Drawing.Point(772, 506);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 20);
             this.label1.TabIndex = 81;
             this.label1.Text = "Pilot Plant Manager";
-            // 
-            // StudentApprovalStatus
-            // 
-            this.StudentApprovalStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.StudentApprovalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.StudentApprovalStatus.FormattingEnabled = true;
-            this.StudentApprovalStatus.Items.AddRange(new object[] {
-            "Approved",
-            "Not Approved"});
-            this.StudentApprovalStatus.Location = new System.Drawing.Point(924, 435);
-            this.StudentApprovalStatus.Name = "StudentApprovalStatus";
-            this.StudentApprovalStatus.Size = new System.Drawing.Size(201, 28);
-            this.StudentApprovalStatus.TabIndex = 84;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(796, 438);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
-            this.label2.TabIndex = 83;
-            this.label2.Text = "Approval Status";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Approved",
-            "Not Approved"});
-            this.comboBox1.Location = new System.Drawing.Point(924, 500);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 28);
-            this.comboBox1.TabIndex = 86;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(796, 503);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 20);
-            this.label3.TabIndex = 85;
-            this.label3.Text = "Approval Status";
             // 
             // SubmitButton
             // 
@@ -378,16 +330,24 @@
             this.SubmitButton.TabIndex = 87;
             this.SubmitButton.Text = "Submit All";
             this.SubmitButton.UseVisualStyleBackColor = true;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(874, 420);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.TabIndex = 88;
+            this.label2.Text = "Date";
             // 
             // DynamicProductEntryControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.SubmitButton);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.StudentApprovalStatus);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.SubmitButton);
             this.Controls.Add(this.pilotPlantManagerTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.StudentManagerNameTextField);
@@ -434,11 +394,8 @@
         private System.Windows.Forms.Label StudentManagerLabel;
         private System.Windows.Forms.TextBox pilotPlantManagerTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox StudentApprovalStatus;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button SubmitButton;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }

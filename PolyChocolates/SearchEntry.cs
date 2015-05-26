@@ -14,28 +14,18 @@ namespace PolyChocolates
     public partial class SearchEntry : Form
     {
         databaseDataContext db = new databaseDataContext();
-        ProductEntry productEntry = null;
+        ProductEntry ProductEntry = null;
         String codeDate = "";
 
-        public SearchEntry(String codeDate)
+        public SearchEntry(ProductEntry productEntry)
         {
             InitializeComponent();
 
             this.Resize += new EventHandler(resized);
 
-            this.codeDate = codeDate;
+            ProductEntry = (from pe in db.ProductEntries where pe == productEntry select pe).First();
 
-            this.Text = codeDate;
-
-            var query =
-                from entries in db.ProductEntries
-                where entries.CodeDate == codeDate
-                select entries;
-
-            foreach (var p in query)
-            {
-                productEntry = p;
-            }
+            this.Text = ProductEntry.CodeDate;
 
             setupViewableForms();
         }
@@ -49,18 +39,18 @@ namespace PolyChocolates
 
         private void setupViewableForms()
         {
-            addControl(new SearchProductEntryControl(productEntry));
+            addControl(new EditExistingProductEntryControl(ProductEntry));
 
-            if (productEntry.QualityControlId == Library.CHOCOLATE_QUALITY_CONTROL)
-                addControl(new ChocolateQualityControl(productEntry));
-            else if (productEntry.QualityControlId > Library.CHOCOLATE_QUALITY_CONTROL)
-                addControl(new GenericQualityControl(productEntry));
+            if (ProductEntry.QualityControlId == Library.CHOCOLATE_QUALITY_CONTROL)
+                addControl(new ChocolateQualityControl(ProductEntry));
+            else if (ProductEntry.QualityControlId > Library.CHOCOLATE_QUALITY_CONTROL)
+                addControl(new GenericQualityControl(ProductEntry));
 
-            if (productEntry.Traceabilities.Count() > 0)
-                addControl(new TraceabilityControl(productEntry));
+            if (ProductEntry.Traceabilities.Count() > 0)
+                addControl(new TraceabilityControl(ProductEntry));
 
-            if (productEntry.Efficiencies.Count() > 0)
-                addControl(new GenericEfficiencyControl(productEntry));
+            if (ProductEntry.Efficiencies.Count() > 0)
+                addControl(new GenericEfficiencyControl(ProductEntry));
 
 
             // If there are checklists associated with this code date

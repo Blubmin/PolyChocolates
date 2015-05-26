@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.container = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -59,18 +57,21 @@
             this.packagingMaterialsTable = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.submitSnapshotButton = new System.Windows.Forms.Button();
             this.SaveChanges = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
             this.monthlyReport = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.container.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -82,6 +83,7 @@
             this.panel6.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // container
@@ -89,41 +91,11 @@
             this.container.AutoScroll = true;
             this.container.BackColor = System.Drawing.Color.White;
             this.container.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.container.Controls.Add(this.label13);
-            this.container.Controls.Add(this.label11);
             this.container.Controls.Add(this.tableLayoutPanel7);
-            this.container.Controls.Add(this.label8);
-            this.container.Controls.Add(this.label7);
-            this.container.Controls.Add(this.label6);
-            this.container.Controls.Add(this.label2);
-            this.container.Controls.Add(this.label1);
-            this.container.Controls.Add(this.label4);
-            this.container.Controls.Add(this.label5);
-            this.container.Controls.Add(this.label3);
-            this.container.Location = new System.Drawing.Point(42, 29);
+            this.container.Location = new System.Drawing.Point(42, 51);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1040, 548);
+            this.container.Size = new System.Drawing.Size(1040, 526);
             this.container.TabIndex = 47;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(279, -1);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 16);
-            this.label13.TabIndex = 53;
-            this.label13.Text = "Lot Code";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(173, -1);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 16);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Supplier";
             // 
             // tableLayoutPanel7
             // 
@@ -136,7 +108,7 @@
             this.tableLayoutPanel7.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.panel6, 0, 5);
             this.tableLayoutPanel7.Controls.Add(this.panel3, 0, 2);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(-2, 18);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(-2, -2);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 7;
@@ -148,7 +120,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1020, 518);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1020, 538);
             this.tableLayoutPanel7.TabIndex = 19;
             // 
             // panel7
@@ -175,7 +147,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.2549F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.47059F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.2549F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.packagingMaterialsButton, 2, 0);
@@ -204,7 +176,7 @@
             this.packagingMaterialsTotalAssets.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.packagingMaterialsTotalAssets.AutoSize = true;
             this.packagingMaterialsTotalAssets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.packagingMaterialsTotalAssets.Location = new System.Drawing.Point(701, 6);
+            this.packagingMaterialsTotalAssets.Location = new System.Drawing.Point(700, 6);
             this.packagingMaterialsTotalAssets.Name = "packagingMaterialsTotalAssets";
             this.packagingMaterialsTotalAssets.Size = new System.Drawing.Size(16, 16);
             this.packagingMaterialsTotalAssets.TabIndex = 53;
@@ -246,7 +218,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.2549F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.47059F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.2549F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Controls.Add(this.rawMaterialsTotalAssets, 7, 0);
@@ -264,7 +236,7 @@
             this.rawMaterialsTotalAssets.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rawMaterialsTotalAssets.AutoSize = true;
             this.rawMaterialsTotalAssets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rawMaterialsTotalAssets.Location = new System.Drawing.Point(701, 6);
+            this.rawMaterialsTotalAssets.Location = new System.Drawing.Point(700, 6);
             this.rawMaterialsTotalAssets.Name = "rawMaterialsTotalAssets";
             this.rawMaterialsTotalAssets.Size = new System.Drawing.Size(16, 16);
             this.rawMaterialsTotalAssets.TabIndex = 57;
@@ -321,7 +293,7 @@
             this.finishedProductTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
             this.finishedProductTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.finishedProductTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.finishedProductTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.finishedProductTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.finishedProductTable.Location = new System.Drawing.Point(-1, 22);
             this.finishedProductTable.Name = "finishedProductTable";
             this.finishedProductTable.RowCount = 1;
@@ -454,7 +426,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.2549F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.47059F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.2549F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Controls.Add(this.finishedProductButton, 2, 0);
@@ -483,7 +455,7 @@
             this.finishedProductTotalAssets.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.finishedProductTotalAssets.AutoSize = true;
             this.finishedProductTotalAssets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finishedProductTotalAssets.Location = new System.Drawing.Point(701, 6);
+            this.finishedProductTotalAssets.Location = new System.Drawing.Point(700, 6);
             this.finishedProductTotalAssets.Name = "finishedProductTotalAssets";
             this.finishedProductTotalAssets.Size = new System.Drawing.Size(16, 16);
             this.finishedProductTotalAssets.TabIndex = 54;
@@ -570,86 +542,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1011, 27);
             this.tableLayoutPanel4.TabIndex = 18;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(975, -1);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 16);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Dif.";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(888, -1);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 16);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Actual";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(766, -1);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 16);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Predicted";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(690, -1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 16);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Assets";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(608, -1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Stock";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(473, -1);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 16);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Price per Unit";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(399, -1);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 16);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Units";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, -1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Item";
-            // 
             // submitSnapshotButton
             // 
             this.submitSnapshotButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -694,10 +586,131 @@
             this.monthlyReport.UseVisualStyleBackColor = true;
             this.monthlyReport.Click += new System.EventHandler(this.monthlyReport_Click);
             // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.label24);
+            this.panel2.Controls.Add(this.label25);
+            this.panel2.Controls.Add(this.label26);
+            this.panel2.Controls.Add(this.label27);
+            this.panel2.Controls.Add(this.label28);
+            this.panel2.Controls.Add(this.label29);
+            this.panel2.Location = new System.Drawing.Point(42, 29);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1040, 23);
+            this.panel2.TabIndex = 59;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(279, -1);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 16);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "Lot Code";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(173, -1);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 16);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "Supplier";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(975, -1);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(31, 16);
+            this.label22.TabIndex = 17;
+            this.label22.Text = "Dif.";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(888, -1);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 16);
+            this.label23.TabIndex = 16;
+            this.label23.Text = "Actual";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(766, -1);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(75, 16);
+            this.label24.TabIndex = 15;
+            this.label24.Text = "Predicted";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(690, -1);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(55, 16);
+            this.label25.TabIndex = 14;
+            this.label25.Text = "Assets";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(608, -1);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(47, 16);
+            this.label26.TabIndex = 13;
+            this.label26.Text = "Stock";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(473, -1);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(102, 16);
+            this.label27.TabIndex = 11;
+            this.label27.Text = "Price per Unit";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(399, -1);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(43, 16);
+            this.label28.TabIndex = 12;
+            this.label28.Text = "Units";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(81, -1);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(37, 16);
+            this.label29.TabIndex = 10;
+            this.label29.Text = "Item";
+            // 
             // InventoryControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.monthlyReport);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.SaveChanges);
@@ -728,6 +741,8 @@
             this.tableLayoutPanel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -747,14 +762,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button rawMaterialsButton;
         private System.Windows.Forms.Panel panel7;
@@ -763,13 +770,11 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label finishedProductTotalAssets;
         private System.Windows.Forms.Button finishedProductButton;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button removeSelectedPackagingMaterials;
         private System.Windows.Forms.Button removeSelectedRawMaterials;
         private System.Windows.Forms.Button removeSelectedFinishedProducts;
         private System.Windows.Forms.Button submitSnapshotButton;
         private System.Windows.Forms.Button SaveChanges;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel finishedProductTable;
         private System.Windows.Forms.TableLayoutPanel packagingMaterialsTable;
@@ -778,6 +783,17 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Button monthlyReport;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
 
     }
 }

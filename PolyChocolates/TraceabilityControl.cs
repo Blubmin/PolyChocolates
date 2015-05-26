@@ -38,6 +38,29 @@ namespace PolyChocolates
             }
         }
 
+        public TraceabilityControl(ProductEntry productEntry, bool editable)
+        {
+            InitializeComponent();
+            loadValues();
+            int i = 0;
+            IOrderedEnumerable<Traceability> traceabilities = productEntry.Traceabilities.OrderBy(x => x.Inventory.Name);
+            foreach (var row in inventoryList)
+            {
+                if (i < traceabilities.Count() && row.inv.InventoryId == traceabilities.ElementAt(i).Inventory.InventoryId)
+                {
+                    row.toAdd.Checked = true;
+                    i++;
+                }
+            }
+            addButton.PerformClick();    
+            i = 0;
+            foreach (var row in traceabilityList)
+            {
+                row.amountUsed.Text = traceabilities.ElementAt(i).AmountUsed.ToString();
+                i++;
+            }
+        }
+
         private void loadValues()
         {
             traceabilityList = new List<TraceabilityRow>();

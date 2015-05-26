@@ -55,16 +55,16 @@ namespace PolyChocolates
         {
             InitializeComponent();
             EditProductRow = productRow;
-            setPhoto(OldProductRow.haacp);
+            setPhoto(EditProductRow.HaacpBytes);
             if (haacpImage.Image != null)
             {
                 panel.Width = Math.Min(haacpImage.Image.Width + 22, 1200);
                 this.Width = Math.Min(panel.Width + 20, 1200);
             }
 
-            browse.Click += browse_Click;
-            Add.Click += AddEdit_Click;
-            exportButton.Click += exportButton_Click;
+            browse.Click += new EventHandler(browse_Click);
+            Add.Click += new EventHandler(AddEdit_Click);
+            exportButton.Click += new EventHandler(exportButton_Click);
         }
 
         public HACCP(byte[] image)
@@ -147,7 +147,7 @@ namespace PolyChocolates
         private void AddEdit_Click(object sender, EventArgs e)
         {
             EditProductRow.HaacpBytes = convertImage();
-            Dispose();
+            this.Dispose();
         }
 
         private void Add_Click(object sender, EventArgs e)

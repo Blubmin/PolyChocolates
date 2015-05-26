@@ -13,7 +13,7 @@ namespace PolyChocolates
     public partial class GenericEfficiencyControl : UserControl
     {
 
-        public List<EfficiencyRow> wasteList;
+        public List<EfficiencyRow> wasteList = new List<EfficiencyRow>();
         public bool IsComplete = false;
         Recipe recipe;
 
@@ -33,6 +33,7 @@ namespace PolyChocolates
                 wasteTable.Controls.Add(newRow.toRemove);
                 wasteTable.Controls.Add(newRow.weight);
                 wasteTable.Controls.Add(newRow.amount);
+                wasteList.Add(newRow);
             }
         }
 
@@ -46,7 +47,6 @@ namespace PolyChocolates
             ItemWeightTextField.Validated += new EventHandler(updateExpected);
             ActualYieldTextField.Leave += new EventHandler(Library.onlyAllowFloats);
             ActualYieldTextField.Validated += new EventHandler(updateEfficiency);
-            ActualYieldTextField.ReadOnly = false;
         }
 
         public class EfficiencyRow
@@ -58,12 +58,9 @@ namespace PolyChocolates
             public EfficiencyRow(EfficiencyWaste waste)
             {
                 toRemove.Dock = DockStyle.Fill;
-                toRemove.Enabled = false;
                 weight.Dock = DockStyle.Fill;
-                weight.ReadOnly = true;
                 weight.Text = waste.WasteType;
                 amount.Dock = DockStyle.Fill;
-                amount.ReadOnly = true;
             }
 
             public EfficiencyRow()

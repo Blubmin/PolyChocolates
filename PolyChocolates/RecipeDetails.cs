@@ -28,7 +28,7 @@ namespace PolyChocolates
             this.parent = parent;
             var query =
                 from recipes in db.Recipes
-                where recipes.Name == recipeName
+                where recipes.Name == recipeName && recipes.Enabled == "Y"
                 select recipes;
             foreach (var r in query)
             {

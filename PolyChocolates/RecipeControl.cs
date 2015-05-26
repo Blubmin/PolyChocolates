@@ -29,7 +29,7 @@ namespace PolyChocolates
 
             var query =
                 from recipes in db.Recipes
-                where recipes.RecipeId > 1
+                where recipes.RecipeId > 1 && recipes.Enabled == "Y"
                 orderby recipes.Name
                 select recipes;
             recipeList.Controls.Clear();
@@ -90,23 +90,19 @@ namespace PolyChocolates
             initializeList();
         }
 
-        private void deleteRecipeButton_Click(object sender, EventArgs e)
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this recipe?", "Delete Recipe", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
-            var query =
-                from recipe in db.Recipes
-                where recipe.Name == selectedRecipe.Text
-                select recipe;
-            db.Recipes.DeleteAllOnSubmit(query);
-            foreach (var recipe in query)
+            if (result == DialogResult.Yes)
             {
-                db.RecipeSteps.DeleteAllOnSubmit(recipe.RecipeSteps);
-                db.RecipeIngredients.DeleteAllOnSubmit(recipe.RecipeIngredients);
-                //db.ProductEntries.DeleteAllOnSubmit();
+                databaseDataContext db1 = new databaseDataContext();
+                (from recipe in db1.Recipes where recipe.Name == selectedRecipe.Text select recipe).First().Enabled = "N";
+                db1.SubmitChanges();
+                initializeList();
+                recipeDetails.Controls.Clear();
             }
-            db.SubmitChanges();
-            initializeList();
-            selectedRecipe = null;
         }
     }
 }

@@ -49,10 +49,16 @@ namespace PolyChocolates
                     // remove event handlers
                     row.removeHandlers();
 
-                    row.product.Text = invoiceRow.Product;
-                    row.product.Enabled = false;
-                    row.codeDate.Text = invoiceRow.CodeDate;
-                    row.codeDate.Enabled = false;
+                    TextBox product = new TextBox();
+                    product.Dock = DockStyle.Fill;
+                    product.Text = invoiceRow.Product;
+                    product.Enabled = false;
+
+                    TextBox codeDate = new TextBox();
+                    codeDate.Dock = DockStyle.Fill;
+                    codeDate.Text = invoiceRow.CodeDate;
+                    codeDate.Enabled = false;
+
                     row.quantity.Text = invoiceRow.Quantity.ToString();
                     row.quantity.ReadOnly = true;
                     row.ratePer.Text = Convert.ToDouble(invoiceRow.RatePer) + "";
@@ -63,8 +69,8 @@ namespace PolyChocolates
                     row.creditAccount.Text = invoiceRow.CreditAccount;
                     row.creditAccount.ReadOnly = true;
 
-                    table.Controls.Add(row.product);
-                    table.Controls.Add(row.codeDate);
+                    table.Controls.Add(product);
+                    table.Controls.Add(codeDate);
                     table.Controls.Add(row.quantity);
                     table.Controls.Add(row.ratePer);
                     table.Controls.Add(row.price);

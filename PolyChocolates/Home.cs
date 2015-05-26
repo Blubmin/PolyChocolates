@@ -21,11 +21,11 @@ namespace PolyChocolates
 
         public static Home Instance;
 
-        private static UserControl mainPanel;
+        public static UserControl mainPanel;
         private static HomeControl homeControl;
 
         private static ProductEntryControl productEntryControl;
-        private static DynamicProductEntryControl _dynamicProductEntryControl;
+        public static DynamicProductEntryControl _dynamicProductEntryControl;
 
         public static UserControl[] qcControls = new UserControl[4];
         public static TraceabilityControl[] traceabilityControls = new TraceabilityControl[4];
@@ -223,7 +223,10 @@ namespace PolyChocolates
         public static void ChangeToPreviousControl()
         {
             if (mainPanel != null)
+            {
                 mainPanel.Visible = false;
+                Instance.Controls.Remove(mainPanel);
+            }
             mainPanel = _controlStack.Pop();
             mainPanel.Visible = true;
         }
@@ -234,7 +237,10 @@ namespace PolyChocolates
         public static void ChangeMainViewControl(UserControl control)
         {
             if (!Instance.Controls.Contains(control))
+            {
                 Instance.Controls.Add(control);
+                control.Location = ControlStartingPoint;
+            }
             if (mainPanel != null)
                 mainPanel.Visible = false;
             _controlStack.Push(mainPanel);

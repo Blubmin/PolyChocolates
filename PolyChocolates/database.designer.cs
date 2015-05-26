@@ -30,12 +30,12 @@ namespace PolyChocolates
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertChecklist(Checklist instance);
-    partial void UpdateChecklist(Checklist instance);
-    partial void DeleteChecklist(Checklist instance);
     partial void InsertTraceability(Traceability instance);
     partial void UpdateTraceability(Traceability instance);
     partial void DeleteTraceability(Traceability instance);
+    partial void InsertChecklist(Checklist instance);
+    partial void UpdateChecklist(Checklist instance);
+    partial void DeleteChecklist(Checklist instance);
     partial void InsertChocolateBarWeight(ChocolateBarWeight instance);
     partial void UpdateChocolateBarWeight(ChocolateBarWeight instance);
     partial void DeleteChocolateBarWeight(ChocolateBarWeight instance);
@@ -45,12 +45,27 @@ namespace PolyChocolates
     partial void InsertChocolateQuality(ChocolateQuality instance);
     partial void UpdateChocolateQuality(ChocolateQuality instance);
     partial void DeleteChocolateQuality(ChocolateQuality instance);
+    partial void InsertCustomer(Customer instance);
+    partial void UpdateCustomer(Customer instance);
+    partial void DeleteCustomer(Customer instance);
     partial void InsertEfficiency(Efficiency instance);
     partial void UpdateEfficiency(Efficiency instance);
     partial void DeleteEfficiency(Efficiency instance);
     partial void InsertEfficiencyWaste(EfficiencyWaste instance);
     partial void UpdateEfficiencyWaste(EfficiencyWaste instance);
     partial void DeleteEfficiencyWaste(EfficiencyWaste instance);
+    partial void InsertInventory(Inventory instance);
+    partial void UpdateInventory(Inventory instance);
+    partial void DeleteInventory(Inventory instance);
+    partial void InsertInvoice(Invoice instance);
+    partial void UpdateInvoice(Invoice instance);
+    partial void DeleteInvoice(Invoice instance);
+    partial void InsertInvoiceRow(InvoiceRow instance);
+    partial void UpdateInvoiceRow(InvoiceRow instance);
+    partial void DeleteInvoiceRow(InvoiceRow instance);
+    partial void InsertProductEntry(ProductEntry instance);
+    partial void UpdateProductEntry(ProductEntry instance);
+    partial void DeleteProductEntry(ProductEntry instance);
     partial void InsertProductQualityEntryQual(ProductQualityEntryQual instance);
     partial void UpdateProductQualityEntryQual(ProductQualityEntryQual instance);
     partial void DeleteProductQualityEntryQual(ProductQualityEntryQual instance);
@@ -66,30 +81,15 @@ namespace PolyChocolates
     partial void InsertQualityLabelQuant(QualityLabelQuant instance);
     partial void UpdateQualityLabelQuant(QualityLabelQuant instance);
     partial void DeleteQualityLabelQuant(QualityLabelQuant instance);
+    partial void InsertRecipe(Recipe instance);
+    partial void UpdateRecipe(Recipe instance);
+    partial void DeleteRecipe(Recipe instance);
     partial void InsertRecipeIngredient(RecipeIngredient instance);
     partial void UpdateRecipeIngredient(RecipeIngredient instance);
     partial void DeleteRecipeIngredient(RecipeIngredient instance);
     partial void InsertRecipeStep(RecipeStep instance);
     partial void UpdateRecipeStep(RecipeStep instance);
     partial void DeleteRecipeStep(RecipeStep instance);
-    partial void InsertInventory(Inventory instance);
-    partial void UpdateInventory(Inventory instance);
-    partial void DeleteInventory(Inventory instance);
-    partial void InsertRecipe(Recipe instance);
-    partial void UpdateRecipe(Recipe instance);
-    partial void DeleteRecipe(Recipe instance);
-    partial void InsertInvoiceRow(InvoiceRow instance);
-    partial void UpdateInvoiceRow(InvoiceRow instance);
-    partial void DeleteInvoiceRow(InvoiceRow instance);
-    partial void InsertInvoice(Invoice instance);
-    partial void UpdateInvoice(Invoice instance);
-    partial void DeleteInvoice(Invoice instance);
-    partial void InsertCustomer(Customer instance);
-    partial void UpdateCustomer(Customer instance);
-    partial void DeleteCustomer(Customer instance);
-    partial void InsertProductEntry(ProductEntry instance);
-    partial void UpdateProductEntry(ProductEntry instance);
-    partial void DeleteProductEntry(ProductEntry instance);
     #endregion
 		
 		public databaseDataContext() : 
@@ -122,19 +122,19 @@ namespace PolyChocolates
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Checklist> Checklists
-		{
-			get
-			{
-				return this.GetTable<Checklist>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Traceability> Traceabilities
 		{
 			get
 			{
 				return this.GetTable<Traceability>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Checklist> Checklists
+		{
+			get
+			{
+				return this.GetTable<Checklist>();
 			}
 		}
 		
@@ -162,6 +162,14 @@ namespace PolyChocolates
 			}
 		}
 		
+		public System.Data.Linq.Table<Customer> Customers
+		{
+			get
+			{
+				return this.GetTable<Customer>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Efficiency> Efficiencies
 		{
 			get
@@ -175,6 +183,38 @@ namespace PolyChocolates
 			get
 			{
 				return this.GetTable<EfficiencyWaste>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Inventory> Inventories
+		{
+			get
+			{
+				return this.GetTable<Inventory>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Invoice> Invoices
+		{
+			get
+			{
+				return this.GetTable<Invoice>();
+			}
+		}
+		
+		public System.Data.Linq.Table<InvoiceRow> InvoiceRows
+		{
+			get
+			{
+				return this.GetTable<InvoiceRow>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ProductEntry> ProductEntries
+		{
+			get
+			{
+				return this.GetTable<ProductEntry>();
 			}
 		}
 		
@@ -218,6 +258,14 @@ namespace PolyChocolates
 			}
 		}
 		
+		public System.Data.Linq.Table<Recipe> Recipes
+		{
+			get
+			{
+				return this.GetTable<Recipe>();
+			}
+		}
+		
 		public System.Data.Linq.Table<RecipeIngredient> RecipeIngredients
 		{
 			get
@@ -233,52 +281,220 @@ namespace PolyChocolates
 				return this.GetTable<RecipeStep>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Traceability")]
+	public partial class Traceability : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<Inventory> Inventories
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TraceabilityId;
+		
+		private System.Nullable<int> _ProductEntryKey;
+		
+		private System.Nullable<int> _InventoryId;
+		
+		private System.Nullable<double> _AmountUsed;
+		
+		private EntityRef<Inventory> _Inventory;
+		
+		private EntityRef<ProductEntry> _ProductEntry;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTraceabilityIdChanging(int value);
+    partial void OnTraceabilityIdChanged();
+    partial void OnProductEntryKeyChanging(System.Nullable<int> value);
+    partial void OnProductEntryKeyChanged();
+    partial void OnInventoryIdChanging(System.Nullable<int> value);
+    partial void OnInventoryIdChanged();
+    partial void OnAmountUsedChanging(System.Nullable<double> value);
+    partial void OnAmountUsedChanged();
+    #endregion
+		
+		public Traceability()
+		{
+			this._Inventory = default(EntityRef<Inventory>);
+			this._ProductEntry = default(EntityRef<ProductEntry>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TraceabilityId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int TraceabilityId
 		{
 			get
 			{
-				return this.GetTable<Inventory>();
+				return this._TraceabilityId;
+			}
+			set
+			{
+				if ((this._TraceabilityId != value))
+				{
+					this.OnTraceabilityIdChanging(value);
+					this.SendPropertyChanging();
+					this._TraceabilityId = value;
+					this.SendPropertyChanged("TraceabilityId");
+					this.OnTraceabilityIdChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<Recipe> Recipes
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryKey", DbType="Int")]
+		public System.Nullable<int> ProductEntryKey
 		{
 			get
 			{
-				return this.GetTable<Recipe>();
+				return this._ProductEntryKey;
+			}
+			set
+			{
+				if ((this._ProductEntryKey != value))
+				{
+					if (this._ProductEntry.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProductEntryKeyChanging(value);
+					this.SendPropertyChanging();
+					this._ProductEntryKey = value;
+					this.SendPropertyChanged("ProductEntryKey");
+					this.OnProductEntryKeyChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<InvoiceRow> InvoiceRows
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InventoryId", DbType="Int")]
+		public System.Nullable<int> InventoryId
 		{
 			get
 			{
-				return this.GetTable<InvoiceRow>();
+				return this._InventoryId;
+			}
+			set
+			{
+				if ((this._InventoryId != value))
+				{
+					if (this._Inventory.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnInventoryIdChanging(value);
+					this.SendPropertyChanging();
+					this._InventoryId = value;
+					this.SendPropertyChanged("InventoryId");
+					this.OnInventoryIdChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<Invoice> Invoices
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountUsed", DbType="Float")]
+		public System.Nullable<double> AmountUsed
 		{
 			get
 			{
-				return this.GetTable<Invoice>();
+				return this._AmountUsed;
+			}
+			set
+			{
+				if ((this._AmountUsed != value))
+				{
+					this.OnAmountUsedChanging(value);
+					this.SendPropertyChanging();
+					this._AmountUsed = value;
+					this.SendPropertyChanged("AmountUsed");
+					this.OnAmountUsedChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<Customer> Customers
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Inventory_Traceability", Storage="_Inventory", ThisKey="InventoryId", OtherKey="InventoryId", IsForeignKey=true)]
+		public Inventory Inventory
 		{
 			get
 			{
-				return this.GetTable<Customer>();
+				return this._Inventory.Entity;
+			}
+			set
+			{
+				Inventory previousValue = this._Inventory.Entity;
+				if (((previousValue != value) 
+							|| (this._Inventory.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Inventory.Entity = null;
+						previousValue.Traceabilities.Remove(this);
+					}
+					this._Inventory.Entity = value;
+					if ((value != null))
+					{
+						value.Traceabilities.Add(this);
+						this._InventoryId = value.InventoryId;
+					}
+					else
+					{
+						this._InventoryId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Inventory");
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<ProductEntry> ProductEntries
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_Traceability", Storage="_ProductEntry", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey", IsForeignKey=true)]
+		public ProductEntry ProductEntry
 		{
 			get
 			{
-				return this.GetTable<ProductEntry>();
+				return this._ProductEntry.Entity;
+			}
+			set
+			{
+				ProductEntry previousValue = this._ProductEntry.Entity;
+				if (((previousValue != value) 
+							|| (this._ProductEntry.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ProductEntry.Entity = null;
+						previousValue.Traceabilities.Remove(this);
+					}
+					this._ProductEntry.Entity = value;
+					if ((value != null))
+					{
+						value.Traceabilities.Add(this);
+						this._ProductEntryKey = value.ProductEntryKey;
+					}
+					else
+					{
+						this._ProductEntryKey = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ProductEntry");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -440,222 +656,6 @@ namespace PolyChocolates
 					this._Notes = value;
 					this.SendPropertyChanged("Notes");
 					this.OnNotesChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Traceability")]
-	public partial class Traceability : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _TraceabilityId;
-		
-		private System.Nullable<int> _ProductEntryId;
-		
-		private System.Nullable<int> _InventoryId;
-		
-		private System.Nullable<double> _AmountUsed;
-		
-		private EntityRef<Inventory> _Inventory;
-		
-		private EntityRef<ProductEntry> _ProductEntry;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTraceabilityIdChanging(int value);
-    partial void OnTraceabilityIdChanged();
-    partial void OnProductEntryIdChanging(System.Nullable<int> value);
-    partial void OnProductEntryIdChanged();
-    partial void OnInventoryIdChanging(System.Nullable<int> value);
-    partial void OnInventoryIdChanged();
-    partial void OnAmountUsedChanging(System.Nullable<double> value);
-    partial void OnAmountUsedChanged();
-    #endregion
-		
-		public Traceability()
-		{
-			this._Inventory = default(EntityRef<Inventory>);
-			this._ProductEntry = default(EntityRef<ProductEntry>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TraceabilityId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int TraceabilityId
-		{
-			get
-			{
-				return this._TraceabilityId;
-			}
-			set
-			{
-				if ((this._TraceabilityId != value))
-				{
-					this.OnTraceabilityIdChanging(value);
-					this.SendPropertyChanging();
-					this._TraceabilityId = value;
-					this.SendPropertyChanged("TraceabilityId");
-					this.OnTraceabilityIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryId", DbType="Int")]
-		public System.Nullable<int> ProductEntryId
-		{
-			get
-			{
-				return this._ProductEntryId;
-			}
-			set
-			{
-				if ((this._ProductEntryId != value))
-				{
-					if (this._ProductEntry.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProductEntryIdChanging(value);
-					this.SendPropertyChanging();
-					this._ProductEntryId = value;
-					this.SendPropertyChanged("ProductEntryId");
-					this.OnProductEntryIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InventoryId", DbType="Int")]
-		public System.Nullable<int> InventoryId
-		{
-			get
-			{
-				return this._InventoryId;
-			}
-			set
-			{
-				if ((this._InventoryId != value))
-				{
-					if (this._Inventory.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnInventoryIdChanging(value);
-					this.SendPropertyChanging();
-					this._InventoryId = value;
-					this.SendPropertyChanged("InventoryId");
-					this.OnInventoryIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountUsed", DbType="Float")]
-		public System.Nullable<double> AmountUsed
-		{
-			get
-			{
-				return this._AmountUsed;
-			}
-			set
-			{
-				if ((this._AmountUsed != value))
-				{
-					this.OnAmountUsedChanging(value);
-					this.SendPropertyChanging();
-					this._AmountUsed = value;
-					this.SendPropertyChanged("AmountUsed");
-					this.OnAmountUsedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Inventory_Traceability", Storage="_Inventory", ThisKey="InventoryId", OtherKey="InventoryId", IsForeignKey=true)]
-		public Inventory Inventory
-		{
-			get
-			{
-				return this._Inventory.Entity;
-			}
-			set
-			{
-				Inventory previousValue = this._Inventory.Entity;
-				if (((previousValue != value) 
-							|| (this._Inventory.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Inventory.Entity = null;
-						previousValue.Traceabilities.Remove(this);
-					}
-					this._Inventory.Entity = value;
-					if ((value != null))
-					{
-						value.Traceabilities.Add(this);
-						this._InventoryId = value.InventoryId;
-					}
-					else
-					{
-						this._InventoryId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Inventory");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_Traceability", Storage="_ProductEntry", ThisKey="ProductEntryId", OtherKey="ProductEntryId", IsForeignKey=true)]
-		public ProductEntry ProductEntry
-		{
-			get
-			{
-				return this._ProductEntry.Entity;
-			}
-			set
-			{
-				ProductEntry previousValue = this._ProductEntry.Entity;
-				if (((previousValue != value) 
-							|| (this._ProductEntry.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ProductEntry.Entity = null;
-						previousValue.Traceabilities.Remove(this);
-					}
-					this._ProductEntry.Entity = value;
-					if ((value != null))
-					{
-						value.Traceabilities.Add(this);
-						this._ProductEntryId = value.ProductEntryId;
-					}
-					else
-					{
-						this._ProductEntryId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("ProductEntry");
 				}
 			}
 		}
@@ -936,7 +936,7 @@ namespace PolyChocolates
 		
 		private int _ChocolateControlId;
 		
-		private System.Nullable<int> _ProductEntryId;
+		private System.Nullable<int> _ProductEntryKey;
 		
 		private string _MilkMachine1;
 		
@@ -966,8 +966,8 @@ namespace PolyChocolates
     partial void OnCreated();
     partial void OnChocolateControlIdChanging(int value);
     partial void OnChocolateControlIdChanged();
-    partial void OnProductEntryIdChanging(System.Nullable<int> value);
-    partial void OnProductEntryIdChanged();
+    partial void OnProductEntryKeyChanging(System.Nullable<int> value);
+    partial void OnProductEntryKeyChanged();
     partial void OnMilkMachine1Changing(string value);
     partial void OnMilkMachine1Changed();
     partial void OnMilkMachine2Changing(string value);
@@ -1016,26 +1016,26 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryId", DbType="Int")]
-		public System.Nullable<int> ProductEntryId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryKey", DbType="Int")]
+		public System.Nullable<int> ProductEntryKey
 		{
 			get
 			{
-				return this._ProductEntryId;
+				return this._ProductEntryKey;
 			}
 			set
 			{
-				if ((this._ProductEntryId != value))
+				if ((this._ProductEntryKey != value))
 				{
 					if (this._ProductEntry.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnProductEntryIdChanging(value);
+					this.OnProductEntryKeyChanging(value);
 					this.SendPropertyChanging();
-					this._ProductEntryId = value;
-					this.SendPropertyChanged("ProductEntryId");
-					this.OnProductEntryIdChanged();
+					this._ProductEntryKey = value;
+					this.SendPropertyChanged("ProductEntryKey");
+					this.OnProductEntryKeyChanged();
 				}
 			}
 		}
@@ -1240,7 +1240,7 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ChocolateControl", Storage="_ProductEntry", ThisKey="ProductEntryId", OtherKey="ProductEntryId", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ChocolateControl", Storage="_ProductEntry", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey", IsForeignKey=true)]
 		public ProductEntry ProductEntry
 		{
 			get
@@ -1263,11 +1263,11 @@ namespace PolyChocolates
 					if ((value != null))
 					{
 						value.ChocolateControls.Add(this);
-						this._ProductEntryId = value.ProductEntryId;
+						this._ProductEntryKey = value.ProductEntryKey;
 					}
 					else
 					{
-						this._ProductEntryId = default(Nullable<int>);
+						this._ProductEntryKey = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("ProductEntry");
 				}
@@ -1303,7 +1303,7 @@ namespace PolyChocolates
 		
 		private int _ChocolateQualityId;
 		
-		private System.Nullable<int> _ProductEntryId;
+		private System.Nullable<int> _ProductEntryKey;
 		
 		private string _MilkMachine1;
 		
@@ -1335,8 +1335,8 @@ namespace PolyChocolates
     partial void OnCreated();
     partial void OnChocolateQualityIdChanging(int value);
     partial void OnChocolateQualityIdChanged();
-    partial void OnProductEntryIdChanging(System.Nullable<int> value);
-    partial void OnProductEntryIdChanged();
+    partial void OnProductEntryKeyChanging(System.Nullable<int> value);
+    partial void OnProductEntryKeyChanged();
     partial void OnMilkMachine1Changing(string value);
     partial void OnMilkMachine1Changed();
     partial void OnMilkMachine2Changing(string value);
@@ -1386,26 +1386,26 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryId", DbType="Int")]
-		public System.Nullable<int> ProductEntryId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryKey", DbType="Int")]
+		public System.Nullable<int> ProductEntryKey
 		{
 			get
 			{
-				return this._ProductEntryId;
+				return this._ProductEntryKey;
 			}
 			set
 			{
-				if ((this._ProductEntryId != value))
+				if ((this._ProductEntryKey != value))
 				{
 					if (this._ProductEntry.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnProductEntryIdChanging(value);
+					this.OnProductEntryKeyChanging(value);
 					this.SendPropertyChanging();
-					this._ProductEntryId = value;
-					this.SendPropertyChanged("ProductEntryId");
-					this.OnProductEntryIdChanged();
+					this._ProductEntryKey = value;
+					this.SendPropertyChanged("ProductEntryKey");
+					this.OnProductEntryKeyChanged();
 				}
 			}
 		}
@@ -1623,7 +1623,7 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ChocolateQuality", Storage="_ProductEntry", ThisKey="ProductEntryId", OtherKey="ProductEntryId", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ChocolateQuality", Storage="_ProductEntry", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey", IsForeignKey=true)]
 		public ProductEntry ProductEntry
 		{
 			get
@@ -1646,11 +1646,11 @@ namespace PolyChocolates
 					if ((value != null))
 					{
 						value.ChocolateQualities.Add(this);
-						this._ProductEntryId = value.ProductEntryId;
+						this._ProductEntryKey = value.ProductEntryKey;
 					}
 					else
 					{
-						this._ProductEntryId = default(Nullable<int>);
+						this._ProductEntryKey = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("ProductEntry");
 				}
@@ -1690,6 +1690,312 @@ namespace PolyChocolates
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer")]
+	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CustomerId;
+		
+		private string _Name;
+		
+		private string _AccountNumber;
+		
+		private string _Address;
+		
+		private string _City;
+		
+		private string _State;
+		
+		private string _ZipCode;
+		
+		private string _PhoneNumber;
+		
+		private string _Type;
+		
+		private string _Enabled;
+		
+		private EntitySet<Invoice> _Invoices;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCustomerIdChanging(int value);
+    partial void OnCustomerIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnAccountNumberChanging(string value);
+    partial void OnAccountNumberChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnCityChanging(string value);
+    partial void OnCityChanged();
+    partial void OnStateChanging(string value);
+    partial void OnStateChanged();
+    partial void OnZipCodeChanging(string value);
+    partial void OnZipCodeChanged();
+    partial void OnPhoneNumberChanging(string value);
+    partial void OnPhoneNumberChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnEnabledChanging(string value);
+    partial void OnEnabledChanged();
+    #endregion
+		
+		public Customer()
+		{
+			this._Invoices = new EntitySet<Invoice>(new Action<Invoice>(this.attach_Invoices), new Action<Invoice>(this.detach_Invoices));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					this.OnCustomerIdChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerId = value;
+					this.SendPropertyChanged("CustomerId");
+					this.OnCustomerIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountNumber", DbType="VarChar(MAX)")]
+		public string AccountNumber
+		{
+			get
+			{
+				return this._AccountNumber;
+			}
+			set
+			{
+				if ((this._AccountNumber != value))
+				{
+					this.OnAccountNumberChanging(value);
+					this.SendPropertyChanging();
+					this._AccountNumber = value;
+					this.SendPropertyChanged("AccountNumber");
+					this.OnAccountNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(MAX)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="VarChar(MAX)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this.OnCityChanging(value);
+					this.SendPropertyChanging();
+					this._City = value;
+					this.SendPropertyChanged("City");
+					this.OnCityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="VarChar(MAX)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this.OnStateChanging(value);
+					this.SendPropertyChanging();
+					this._State = value;
+					this.SendPropertyChanged("State");
+					this.OnStateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ZipCode", DbType="VarChar(MAX)")]
+		public string ZipCode
+		{
+			get
+			{
+				return this._ZipCode;
+			}
+			set
+			{
+				if ((this._ZipCode != value))
+				{
+					this.OnZipCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ZipCode = value;
+					this.SendPropertyChanged("ZipCode");
+					this.OnZipCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(MAX)")]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this.OnPhoneNumberChanging(value);
+					this.SendPropertyChanging();
+					this._PhoneNumber = value;
+					this.SendPropertyChanged("PhoneNumber");
+					this.OnPhoneNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(MAX)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enabled", DbType="VarChar(1)")]
+		public string Enabled
+		{
+			get
+			{
+				return this._Enabled;
+			}
+			set
+			{
+				if ((this._Enabled != value))
+				{
+					this.OnEnabledChanging(value);
+					this.SendPropertyChanging();
+					this._Enabled = value;
+					this.SendPropertyChanged("Enabled");
+					this.OnEnabledChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Invoice", Storage="_Invoices", ThisKey="CustomerId", OtherKey="CustomerId")]
+		public EntitySet<Invoice> Invoices
+		{
+			get
+			{
+				return this._Invoices;
+			}
+			set
+			{
+				this._Invoices.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Invoices(Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = this;
+		}
+		
+		private void detach_Invoices(Invoice entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Efficiency")]
 	public partial class Efficiency : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1698,7 +2004,7 @@ namespace PolyChocolates
 		
 		private int _EfficiencyId;
 		
-		private System.Nullable<int> _ProductEntryId;
+		private System.Nullable<int> _ProductEntryKey;
 		
 		private System.Nullable<double> _ActualYield;
 		
@@ -1714,8 +2020,8 @@ namespace PolyChocolates
     partial void OnCreated();
     partial void OnEfficiencyIdChanging(int value);
     partial void OnEfficiencyIdChanged();
-    partial void OnProductEntryIdChanging(System.Nullable<int> value);
-    partial void OnProductEntryIdChanged();
+    partial void OnProductEntryKeyChanging(System.Nullable<int> value);
+    partial void OnProductEntryKeyChanged();
     partial void OnActualYieldChanging(System.Nullable<double> value);
     partial void OnActualYieldChanged();
     partial void OnItemWeightChanging(System.Nullable<double> value);
@@ -1749,26 +2055,26 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryId", DbType="Int")]
-		public System.Nullable<int> ProductEntryId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryKey", DbType="Int")]
+		public System.Nullable<int> ProductEntryKey
 		{
 			get
 			{
-				return this._ProductEntryId;
+				return this._ProductEntryKey;
 			}
 			set
 			{
-				if ((this._ProductEntryId != value))
+				if ((this._ProductEntryKey != value))
 				{
 					if (this._ProductEntry.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnProductEntryIdChanging(value);
+					this.OnProductEntryKeyChanging(value);
 					this.SendPropertyChanging();
-					this._ProductEntryId = value;
-					this.SendPropertyChanged("ProductEntryId");
-					this.OnProductEntryIdChanged();
+					this._ProductEntryKey = value;
+					this.SendPropertyChanged("ProductEntryKey");
+					this.OnProductEntryKeyChanged();
 				}
 			}
 		}
@@ -1826,7 +2132,7 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_Efficiency", Storage="_ProductEntry", ThisKey="ProductEntryId", OtherKey="ProductEntryId", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_Efficiency", Storage="_ProductEntry", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey", IsForeignKey=true)]
 		public ProductEntry ProductEntry
 		{
 			get
@@ -1849,11 +2155,11 @@ namespace PolyChocolates
 					if ((value != null))
 					{
 						value.Efficiencies.Add(this);
-						this._ProductEntryId = value.ProductEntryId;
+						this._ProductEntryKey = value.ProductEntryKey;
 					}
 					else
 					{
-						this._ProductEntryId = default(Nullable<int>);
+						this._ProductEntryKey = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("ProductEntry");
 				}
@@ -2068,6 +2374,1578 @@ namespace PolyChocolates
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Inventory")]
+	public partial class Inventory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _InventoryId;
+		
+		private string _Unit;
+		
+		private System.Nullable<decimal> _PricePerUnit;
+		
+		private System.Nullable<double> _PreviousStock;
+		
+		private System.Nullable<double> _Stock;
+		
+		private System.Nullable<double> _ActualUsage;
+		
+		private System.Nullable<double> _PredictedUsage;
+		
+		private string _Supplier;
+		
+		private System.Data.Linq.Binary _Certificate;
+		
+		private string _Name;
+		
+		private System.Nullable<System.DateTime> _SnapshotDate;
+		
+		private string _Enabled;
+		
+		private string _Type;
+		
+		private string _LotCode;
+		
+		private EntitySet<Traceability> _Traceabilities;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnInventoryIdChanging(int value);
+    partial void OnInventoryIdChanged();
+    partial void OnUnitChanging(string value);
+    partial void OnUnitChanged();
+    partial void OnPricePerUnitChanging(System.Nullable<decimal> value);
+    partial void OnPricePerUnitChanged();
+    partial void OnPreviousStockChanging(System.Nullable<double> value);
+    partial void OnPreviousStockChanged();
+    partial void OnStockChanging(System.Nullable<double> value);
+    partial void OnStockChanged();
+    partial void OnActualUsageChanging(System.Nullable<double> value);
+    partial void OnActualUsageChanged();
+    partial void OnPredictedUsageChanging(System.Nullable<double> value);
+    partial void OnPredictedUsageChanged();
+    partial void OnSupplierChanging(string value);
+    partial void OnSupplierChanged();
+    partial void OnCertificateChanging(System.Data.Linq.Binary value);
+    partial void OnCertificateChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSnapshotDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnSnapshotDateChanged();
+    partial void OnEnabledChanging(string value);
+    partial void OnEnabledChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnLotCodeChanging(string value);
+    partial void OnLotCodeChanged();
+    #endregion
+		
+		public Inventory()
+		{
+			this._Traceabilities = new EntitySet<Traceability>(new Action<Traceability>(this.attach_Traceabilities), new Action<Traceability>(this.detach_Traceabilities));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InventoryId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int InventoryId
+		{
+			get
+			{
+				return this._InventoryId;
+			}
+			set
+			{
+				if ((this._InventoryId != value))
+				{
+					this.OnInventoryIdChanging(value);
+					this.SendPropertyChanging();
+					this._InventoryId = value;
+					this.SendPropertyChanged("InventoryId");
+					this.OnInventoryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unit", DbType="VarChar(50)")]
+		public string Unit
+		{
+			get
+			{
+				return this._Unit;
+			}
+			set
+			{
+				if ((this._Unit != value))
+				{
+					this.OnUnitChanging(value);
+					this.SendPropertyChanging();
+					this._Unit = value;
+					this.SendPropertyChanged("Unit");
+					this.OnUnitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricePerUnit", DbType="Money")]
+		public System.Nullable<decimal> PricePerUnit
+		{
+			get
+			{
+				return this._PricePerUnit;
+			}
+			set
+			{
+				if ((this._PricePerUnit != value))
+				{
+					this.OnPricePerUnitChanging(value);
+					this.SendPropertyChanging();
+					this._PricePerUnit = value;
+					this.SendPropertyChanged("PricePerUnit");
+					this.OnPricePerUnitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PreviousStock", DbType="Float")]
+		public System.Nullable<double> PreviousStock
+		{
+			get
+			{
+				return this._PreviousStock;
+			}
+			set
+			{
+				if ((this._PreviousStock != value))
+				{
+					this.OnPreviousStockChanging(value);
+					this.SendPropertyChanging();
+					this._PreviousStock = value;
+					this.SendPropertyChanged("PreviousStock");
+					this.OnPreviousStockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Stock", DbType="Float")]
+		public System.Nullable<double> Stock
+		{
+			get
+			{
+				return this._Stock;
+			}
+			set
+			{
+				if ((this._Stock != value))
+				{
+					this.OnStockChanging(value);
+					this.SendPropertyChanging();
+					this._Stock = value;
+					this.SendPropertyChanged("Stock");
+					this.OnStockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActualUsage", DbType="Float")]
+		public System.Nullable<double> ActualUsage
+		{
+			get
+			{
+				return this._ActualUsage;
+			}
+			set
+			{
+				if ((this._ActualUsage != value))
+				{
+					this.OnActualUsageChanging(value);
+					this.SendPropertyChanging();
+					this._ActualUsage = value;
+					this.SendPropertyChanged("ActualUsage");
+					this.OnActualUsageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PredictedUsage", DbType="Float")]
+		public System.Nullable<double> PredictedUsage
+		{
+			get
+			{
+				return this._PredictedUsage;
+			}
+			set
+			{
+				if ((this._PredictedUsage != value))
+				{
+					this.OnPredictedUsageChanging(value);
+					this.SendPropertyChanging();
+					this._PredictedUsage = value;
+					this.SendPropertyChanged("PredictedUsage");
+					this.OnPredictedUsageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supplier", DbType="VarChar(50)")]
+		public string Supplier
+		{
+			get
+			{
+				return this._Supplier;
+			}
+			set
+			{
+				if ((this._Supplier != value))
+				{
+					this.OnSupplierChanging(value);
+					this.SendPropertyChanging();
+					this._Supplier = value;
+					this.SendPropertyChanged("Supplier");
+					this.OnSupplierChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Certificate", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Certificate
+		{
+			get
+			{
+				return this._Certificate;
+			}
+			set
+			{
+				if ((this._Certificate != value))
+				{
+					this.OnCertificateChanging(value);
+					this.SendPropertyChanging();
+					this._Certificate = value;
+					this.SendPropertyChanged("Certificate");
+					this.OnCertificateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SnapshotDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SnapshotDate
+		{
+			get
+			{
+				return this._SnapshotDate;
+			}
+			set
+			{
+				if ((this._SnapshotDate != value))
+				{
+					this.OnSnapshotDateChanging(value);
+					this.SendPropertyChanging();
+					this._SnapshotDate = value;
+					this.SendPropertyChanged("SnapshotDate");
+					this.OnSnapshotDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enabled", DbType="VarChar(1)")]
+		public string Enabled
+		{
+			get
+			{
+				return this._Enabled;
+			}
+			set
+			{
+				if ((this._Enabled != value))
+				{
+					this.OnEnabledChanging(value);
+					this.SendPropertyChanging();
+					this._Enabled = value;
+					this.SendPropertyChanged("Enabled");
+					this.OnEnabledChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(MAX)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LotCode", DbType="VarChar(MAX)")]
+		public string LotCode
+		{
+			get
+			{
+				return this._LotCode;
+			}
+			set
+			{
+				if ((this._LotCode != value))
+				{
+					this.OnLotCodeChanging(value);
+					this.SendPropertyChanging();
+					this._LotCode = value;
+					this.SendPropertyChanged("LotCode");
+					this.OnLotCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Inventory_Traceability", Storage="_Traceabilities", ThisKey="InventoryId", OtherKey="InventoryId")]
+		public EntitySet<Traceability> Traceabilities
+		{
+			get
+			{
+				return this._Traceabilities;
+			}
+			set
+			{
+				this._Traceabilities.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Traceabilities(Traceability entity)
+		{
+			this.SendPropertyChanging();
+			entity.Inventory = this;
+		}
+		
+		private void detach_Traceabilities(Traceability entity)
+		{
+			this.SendPropertyChanging();
+			entity.Inventory = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Invoice")]
+	public partial class Invoice : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _InvoiceId;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _InvoiceNumber;
+		
+		private System.Nullable<int> _CustomerId;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private string _Status;
+		
+		private EntitySet<InvoiceRow> _InvoiceRows;
+		
+		private EntityRef<Customer> _Customer;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnInvoiceIdChanging(int value);
+    partial void OnInvoiceIdChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnInvoiceNumberChanging(string value);
+    partial void OnInvoiceNumberChanged();
+    partial void OnCustomerIdChanging(System.Nullable<int> value);
+    partial void OnCustomerIdChanged();
+    partial void OnTotalChanging(System.Nullable<decimal> value);
+    partial void OnTotalChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
+    #endregion
+		
+		public Invoice()
+		{
+			this._InvoiceRows = new EntitySet<InvoiceRow>(new Action<InvoiceRow>(this.attach_InvoiceRows), new Action<InvoiceRow>(this.detach_InvoiceRows));
+			this._Customer = default(EntityRef<Customer>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int InvoiceId
+		{
+			get
+			{
+				return this._InvoiceId;
+			}
+			set
+			{
+				if ((this._InvoiceId != value))
+				{
+					this.OnInvoiceIdChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceId = value;
+					this.SendPropertyChanged("InvoiceId");
+					this.OnInvoiceIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNumber", DbType="NVarChar(MAX)")]
+		public string InvoiceNumber
+		{
+			get
+			{
+				return this._InvoiceNumber;
+			}
+			set
+			{
+				if ((this._InvoiceNumber != value))
+				{
+					this.OnInvoiceNumberChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceNumber = value;
+					this.SendPropertyChanged("InvoiceNumber");
+					this.OnInvoiceNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int")]
+		public System.Nullable<int> CustomerId
+		{
+			get
+			{
+				return this._CustomerId;
+			}
+			set
+			{
+				if ((this._CustomerId != value))
+				{
+					if (this._Customer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCustomerIdChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerId = value;
+					this.SendPropertyChanged("CustomerId");
+					this.OnCustomerIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Money")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this.OnTotalChanging(value);
+					this.SendPropertyChanging();
+					this._Total = value;
+					this.SendPropertyChanged("Total");
+					this.OnTotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(MAX)")]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Invoice_InvoiceRow", Storage="_InvoiceRows", ThisKey="InvoiceId", OtherKey="InvoiceId")]
+		public EntitySet<InvoiceRow> InvoiceRows
+		{
+			get
+			{
+				return this._InvoiceRows;
+			}
+			set
+			{
+				this._InvoiceRows.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Invoice", Storage="_Customer", ThisKey="CustomerId", OtherKey="CustomerId", IsForeignKey=true)]
+		public Customer Customer
+		{
+			get
+			{
+				return this._Customer.Entity;
+			}
+			set
+			{
+				Customer previousValue = this._Customer.Entity;
+				if (((previousValue != value) 
+							|| (this._Customer.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Customer.Entity = null;
+						previousValue.Invoices.Remove(this);
+					}
+					this._Customer.Entity = value;
+					if ((value != null))
+					{
+						value.Invoices.Add(this);
+						this._CustomerId = value.CustomerId;
+					}
+					else
+					{
+						this._CustomerId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Customer");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_InvoiceRows(InvoiceRow entity)
+		{
+			this.SendPropertyChanging();
+			entity.Invoice = this;
+		}
+		
+		private void detach_InvoiceRows(InvoiceRow entity)
+		{
+			this.SendPropertyChanging();
+			entity.Invoice = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.InvoiceRow")]
+	public partial class InvoiceRow : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _InvoiceRowId;
+		
+		private string _Product;
+		
+		private double _Quantity;
+		
+		private decimal _RatePer;
+		
+		private string _CreditAccount;
+		
+		private System.Nullable<int> _InvoiceId;
+		
+		private string _CodeDate;
+		
+		private EntityRef<Invoice> _Invoice;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnInvoiceRowIdChanging(int value);
+    partial void OnInvoiceRowIdChanged();
+    partial void OnProductChanging(string value);
+    partial void OnProductChanged();
+    partial void OnQuantityChanging(double value);
+    partial void OnQuantityChanged();
+    partial void OnRatePerChanging(decimal value);
+    partial void OnRatePerChanged();
+    partial void OnCreditAccountChanging(string value);
+    partial void OnCreditAccountChanged();
+    partial void OnInvoiceIdChanging(System.Nullable<int> value);
+    partial void OnInvoiceIdChanged();
+    partial void OnCodeDateChanging(string value);
+    partial void OnCodeDateChanged();
+    #endregion
+		
+		public InvoiceRow()
+		{
+			this._Invoice = default(EntityRef<Invoice>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceRowId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int InvoiceRowId
+		{
+			get
+			{
+				return this._InvoiceRowId;
+			}
+			set
+			{
+				if ((this._InvoiceRowId != value))
+				{
+					this.OnInvoiceRowIdChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceRowId = value;
+					this.SendPropertyChanged("InvoiceRowId");
+					this.OnInvoiceRowIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Product
+		{
+			get
+			{
+				return this._Product;
+			}
+			set
+			{
+				if ((this._Product != value))
+				{
+					this.OnProductChanging(value);
+					this.SendPropertyChanging();
+					this._Product = value;
+					this.SendPropertyChanged("Product");
+					this.OnProductChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Float NOT NULL")]
+		public double Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RatePer", DbType="Decimal(18,0) NOT NULL")]
+		public decimal RatePer
+		{
+			get
+			{
+				return this._RatePer;
+			}
+			set
+			{
+				if ((this._RatePer != value))
+				{
+					this.OnRatePerChanging(value);
+					this.SendPropertyChanging();
+					this._RatePer = value;
+					this.SendPropertyChanged("RatePer");
+					this.OnRatePerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreditAccount", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string CreditAccount
+		{
+			get
+			{
+				return this._CreditAccount;
+			}
+			set
+			{
+				if ((this._CreditAccount != value))
+				{
+					this.OnCreditAccountChanging(value);
+					this.SendPropertyChanging();
+					this._CreditAccount = value;
+					this.SendPropertyChanged("CreditAccount");
+					this.OnCreditAccountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceId", DbType="Int")]
+		public System.Nullable<int> InvoiceId
+		{
+			get
+			{
+				return this._InvoiceId;
+			}
+			set
+			{
+				if ((this._InvoiceId != value))
+				{
+					if (this._Invoice.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnInvoiceIdChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceId = value;
+					this.SendPropertyChanged("InvoiceId");
+					this.OnInvoiceIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeDate", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string CodeDate
+		{
+			get
+			{
+				return this._CodeDate;
+			}
+			set
+			{
+				if ((this._CodeDate != value))
+				{
+					this.OnCodeDateChanging(value);
+					this.SendPropertyChanging();
+					this._CodeDate = value;
+					this.SendPropertyChanged("CodeDate");
+					this.OnCodeDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Invoice_InvoiceRow", Storage="_Invoice", ThisKey="InvoiceId", OtherKey="InvoiceId", IsForeignKey=true)]
+		public Invoice Invoice
+		{
+			get
+			{
+				return this._Invoice.Entity;
+			}
+			set
+			{
+				Invoice previousValue = this._Invoice.Entity;
+				if (((previousValue != value) 
+							|| (this._Invoice.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Invoice.Entity = null;
+						previousValue.InvoiceRows.Remove(this);
+					}
+					this._Invoice.Entity = value;
+					if ((value != null))
+					{
+						value.InvoiceRows.Add(this);
+						this._InvoiceId = value.InvoiceId;
+					}
+					else
+					{
+						this._InvoiceId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Invoice");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductEntry")]
+	public partial class ProductEntry : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ProductEntryKey;
+		
+		private int _ProductEntryId;
+		
+		private int _ProductEntryVersion;
+		
+		private System.Nullable<int> _RecipeEntryId;
+		
+		private string _CodeDate;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private System.Nullable<int> _AmountPackaged;
+		
+		private System.Nullable<int> _AmountProduced;
+		
+		private string _Downtime;
+		
+		private string _ProductionNotes;
+		
+		private string _StudentManager;
+		
+		private string _PlantManager;
+		
+		private string _QualityPerformer;
+		
+		private System.Nullable<int> _QualityControlId;
+		
+		private string _Complete;
+		
+		private System.Data.Linq.Binary _haacp;
+		
+		private EntitySet<Traceability> _Traceabilities;
+		
+		private EntitySet<ChocolateControl> _ChocolateControls;
+		
+		private EntitySet<ChocolateQuality> _ChocolateQualities;
+		
+		private EntitySet<Efficiency> _Efficiencies;
+		
+		private EntitySet<ProductQualityEntryQual> _ProductQualityEntryQuals;
+		
+		private EntitySet<ProductQualityEntryQuant> _ProductQualityEntryQuants;
+		
+		private EntityRef<QualityControl> _QualityControl;
+		
+		private EntityRef<Recipe> _Recipe;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnProductEntryKeyChanging(int value);
+    partial void OnProductEntryKeyChanged();
+    partial void OnProductEntryIdChanging(int value);
+    partial void OnProductEntryIdChanged();
+    partial void OnProductEntryVersionChanging(int value);
+    partial void OnProductEntryVersionChanged();
+    partial void OnRecipeEntryIdChanging(System.Nullable<int> value);
+    partial void OnRecipeEntryIdChanged();
+    partial void OnCodeDateChanging(string value);
+    partial void OnCodeDateChanged();
+    partial void OnDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateChanged();
+    partial void OnAmountPackagedChanging(System.Nullable<int> value);
+    partial void OnAmountPackagedChanged();
+    partial void OnAmountProducedChanging(System.Nullable<int> value);
+    partial void OnAmountProducedChanged();
+    partial void OnDowntimeChanging(string value);
+    partial void OnDowntimeChanged();
+    partial void OnProductionNotesChanging(string value);
+    partial void OnProductionNotesChanged();
+    partial void OnStudentManagerChanging(string value);
+    partial void OnStudentManagerChanged();
+    partial void OnPlantManagerChanging(string value);
+    partial void OnPlantManagerChanged();
+    partial void OnQualityPerformerChanging(string value);
+    partial void OnQualityPerformerChanged();
+    partial void OnQualityControlIdChanging(System.Nullable<int> value);
+    partial void OnQualityControlIdChanged();
+    partial void OnCompleteChanging(string value);
+    partial void OnCompleteChanged();
+    partial void OnhaacpChanging(System.Data.Linq.Binary value);
+    partial void OnhaacpChanged();
+    #endregion
+		
+		public ProductEntry()
+		{
+			this._Traceabilities = new EntitySet<Traceability>(new Action<Traceability>(this.attach_Traceabilities), new Action<Traceability>(this.detach_Traceabilities));
+			this._ChocolateControls = new EntitySet<ChocolateControl>(new Action<ChocolateControl>(this.attach_ChocolateControls), new Action<ChocolateControl>(this.detach_ChocolateControls));
+			this._ChocolateQualities = new EntitySet<ChocolateQuality>(new Action<ChocolateQuality>(this.attach_ChocolateQualities), new Action<ChocolateQuality>(this.detach_ChocolateQualities));
+			this._Efficiencies = new EntitySet<Efficiency>(new Action<Efficiency>(this.attach_Efficiencies), new Action<Efficiency>(this.detach_Efficiencies));
+			this._ProductQualityEntryQuals = new EntitySet<ProductQualityEntryQual>(new Action<ProductQualityEntryQual>(this.attach_ProductQualityEntryQuals), new Action<ProductQualityEntryQual>(this.detach_ProductQualityEntryQuals));
+			this._ProductQualityEntryQuants = new EntitySet<ProductQualityEntryQuant>(new Action<ProductQualityEntryQuant>(this.attach_ProductQualityEntryQuants), new Action<ProductQualityEntryQuant>(this.detach_ProductQualityEntryQuants));
+			this._QualityControl = default(EntityRef<QualityControl>);
+			this._Recipe = default(EntityRef<Recipe>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryKey", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ProductEntryKey
+		{
+			get
+			{
+				return this._ProductEntryKey;
+			}
+			set
+			{
+				if ((this._ProductEntryKey != value))
+				{
+					this.OnProductEntryKeyChanging(value);
+					this.SendPropertyChanging();
+					this._ProductEntryKey = value;
+					this.SendPropertyChanged("ProductEntryKey");
+					this.OnProductEntryKeyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryId", DbType="Int NOT NULL")]
+		public int ProductEntryId
+		{
+			get
+			{
+				return this._ProductEntryId;
+			}
+			set
+			{
+				if ((this._ProductEntryId != value))
+				{
+					this.OnProductEntryIdChanging(value);
+					this.SendPropertyChanging();
+					this._ProductEntryId = value;
+					this.SendPropertyChanged("ProductEntryId");
+					this.OnProductEntryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryVersion", DbType="Int NOT NULL")]
+		public int ProductEntryVersion
+		{
+			get
+			{
+				return this._ProductEntryVersion;
+			}
+			set
+			{
+				if ((this._ProductEntryVersion != value))
+				{
+					this.OnProductEntryVersionChanging(value);
+					this.SendPropertyChanging();
+					this._ProductEntryVersion = value;
+					this.SendPropertyChanged("ProductEntryVersion");
+					this.OnProductEntryVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecipeEntryId", DbType="Int")]
+		public System.Nullable<int> RecipeEntryId
+		{
+			get
+			{
+				return this._RecipeEntryId;
+			}
+			set
+			{
+				if ((this._RecipeEntryId != value))
+				{
+					if (this._Recipe.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRecipeEntryIdChanging(value);
+					this.SendPropertyChanging();
+					this._RecipeEntryId = value;
+					this.SendPropertyChanged("RecipeEntryId");
+					this.OnRecipeEntryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeDate", DbType="VarChar(50)")]
+		public string CodeDate
+		{
+			get
+			{
+				return this._CodeDate;
+			}
+			set
+			{
+				if ((this._CodeDate != value))
+				{
+					this.OnCodeDateChanging(value);
+					this.SendPropertyChanging();
+					this._CodeDate = value;
+					this.SendPropertyChanged("CodeDate");
+					this.OnCodeDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountPackaged", DbType="Int")]
+		public System.Nullable<int> AmountPackaged
+		{
+			get
+			{
+				return this._AmountPackaged;
+			}
+			set
+			{
+				if ((this._AmountPackaged != value))
+				{
+					this.OnAmountPackagedChanging(value);
+					this.SendPropertyChanging();
+					this._AmountPackaged = value;
+					this.SendPropertyChanged("AmountPackaged");
+					this.OnAmountPackagedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountProduced", DbType="Int")]
+		public System.Nullable<int> AmountProduced
+		{
+			get
+			{
+				return this._AmountProduced;
+			}
+			set
+			{
+				if ((this._AmountProduced != value))
+				{
+					this.OnAmountProducedChanging(value);
+					this.SendPropertyChanging();
+					this._AmountProduced = value;
+					this.SendPropertyChanged("AmountProduced");
+					this.OnAmountProducedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Downtime", DbType="VarChar(50)")]
+		public string Downtime
+		{
+			get
+			{
+				return this._Downtime;
+			}
+			set
+			{
+				if ((this._Downtime != value))
+				{
+					this.OnDowntimeChanging(value);
+					this.SendPropertyChanging();
+					this._Downtime = value;
+					this.SendPropertyChanged("Downtime");
+					this.OnDowntimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductionNotes", DbType="VarChar(MAX)")]
+		public string ProductionNotes
+		{
+			get
+			{
+				return this._ProductionNotes;
+			}
+			set
+			{
+				if ((this._ProductionNotes != value))
+				{
+					this.OnProductionNotesChanging(value);
+					this.SendPropertyChanging();
+					this._ProductionNotes = value;
+					this.SendPropertyChanged("ProductionNotes");
+					this.OnProductionNotesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentManager", DbType="VarChar(50)")]
+		public string StudentManager
+		{
+			get
+			{
+				return this._StudentManager;
+			}
+			set
+			{
+				if ((this._StudentManager != value))
+				{
+					this.OnStudentManagerChanging(value);
+					this.SendPropertyChanging();
+					this._StudentManager = value;
+					this.SendPropertyChanged("StudentManager");
+					this.OnStudentManagerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlantManager", DbType="VarChar(50)")]
+		public string PlantManager
+		{
+			get
+			{
+				return this._PlantManager;
+			}
+			set
+			{
+				if ((this._PlantManager != value))
+				{
+					this.OnPlantManagerChanging(value);
+					this.SendPropertyChanging();
+					this._PlantManager = value;
+					this.SendPropertyChanged("PlantManager");
+					this.OnPlantManagerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QualityPerformer", DbType="VarChar(50)")]
+		public string QualityPerformer
+		{
+			get
+			{
+				return this._QualityPerformer;
+			}
+			set
+			{
+				if ((this._QualityPerformer != value))
+				{
+					this.OnQualityPerformerChanging(value);
+					this.SendPropertyChanging();
+					this._QualityPerformer = value;
+					this.SendPropertyChanged("QualityPerformer");
+					this.OnQualityPerformerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QualityControlId", DbType="Int")]
+		public System.Nullable<int> QualityControlId
+		{
+			get
+			{
+				return this._QualityControlId;
+			}
+			set
+			{
+				if ((this._QualityControlId != value))
+				{
+					if (this._QualityControl.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnQualityControlIdChanging(value);
+					this.SendPropertyChanging();
+					this._QualityControlId = value;
+					this.SendPropertyChanged("QualityControlId");
+					this.OnQualityControlIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Complete", DbType="VarChar(1)")]
+		public string Complete
+		{
+			get
+			{
+				return this._Complete;
+			}
+			set
+			{
+				if ((this._Complete != value))
+				{
+					this.OnCompleteChanging(value);
+					this.SendPropertyChanging();
+					this._Complete = value;
+					this.SendPropertyChanged("Complete");
+					this.OnCompleteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_haacp", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary haacp
+		{
+			get
+			{
+				return this._haacp;
+			}
+			set
+			{
+				if ((this._haacp != value))
+				{
+					this.OnhaacpChanging(value);
+					this.SendPropertyChanging();
+					this._haacp = value;
+					this.SendPropertyChanged("haacp");
+					this.OnhaacpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_Traceability", Storage="_Traceabilities", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey")]
+		public EntitySet<Traceability> Traceabilities
+		{
+			get
+			{
+				return this._Traceabilities;
+			}
+			set
+			{
+				this._Traceabilities.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ChocolateControl", Storage="_ChocolateControls", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey")]
+		public EntitySet<ChocolateControl> ChocolateControls
+		{
+			get
+			{
+				return this._ChocolateControls;
+			}
+			set
+			{
+				this._ChocolateControls.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ChocolateQuality", Storage="_ChocolateQualities", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey")]
+		public EntitySet<ChocolateQuality> ChocolateQualities
+		{
+			get
+			{
+				return this._ChocolateQualities;
+			}
+			set
+			{
+				this._ChocolateQualities.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_Efficiency", Storage="_Efficiencies", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey")]
+		public EntitySet<Efficiency> Efficiencies
+		{
+			get
+			{
+				return this._Efficiencies;
+			}
+			set
+			{
+				this._Efficiencies.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ProductQualityEntryQual", Storage="_ProductQualityEntryQuals", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey")]
+		public EntitySet<ProductQualityEntryQual> ProductQualityEntryQuals
+		{
+			get
+			{
+				return this._ProductQualityEntryQuals;
+			}
+			set
+			{
+				this._ProductQualityEntryQuals.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ProductQualityEntryQuant", Storage="_ProductQualityEntryQuants", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey")]
+		public EntitySet<ProductQualityEntryQuant> ProductQualityEntryQuants
+		{
+			get
+			{
+				return this._ProductQualityEntryQuants;
+			}
+			set
+			{
+				this._ProductQualityEntryQuants.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QualityControl_ProductEntry", Storage="_QualityControl", ThisKey="QualityControlId", OtherKey="QualityControlId", IsForeignKey=true)]
+		public QualityControl QualityControl
+		{
+			get
+			{
+				return this._QualityControl.Entity;
+			}
+			set
+			{
+				QualityControl previousValue = this._QualityControl.Entity;
+				if (((previousValue != value) 
+							|| (this._QualityControl.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._QualityControl.Entity = null;
+						previousValue.ProductEntries.Remove(this);
+					}
+					this._QualityControl.Entity = value;
+					if ((value != null))
+					{
+						value.ProductEntries.Add(this);
+						this._QualityControlId = value.QualityControlId;
+					}
+					else
+					{
+						this._QualityControlId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("QualityControl");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Recipe_ProductEntry", Storage="_Recipe", ThisKey="RecipeEntryId", OtherKey="RecipeId", IsForeignKey=true)]
+		public Recipe Recipe
+		{
+			get
+			{
+				return this._Recipe.Entity;
+			}
+			set
+			{
+				Recipe previousValue = this._Recipe.Entity;
+				if (((previousValue != value) 
+							|| (this._Recipe.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Recipe.Entity = null;
+						previousValue.ProductEntries.Remove(this);
+					}
+					this._Recipe.Entity = value;
+					if ((value != null))
+					{
+						value.ProductEntries.Add(this);
+						this._RecipeEntryId = value.RecipeId;
+					}
+					else
+					{
+						this._RecipeEntryId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Recipe");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Traceabilities(Traceability entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = this;
+		}
+		
+		private void detach_Traceabilities(Traceability entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = null;
+		}
+		
+		private void attach_ChocolateControls(ChocolateControl entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = this;
+		}
+		
+		private void detach_ChocolateControls(ChocolateControl entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = null;
+		}
+		
+		private void attach_ChocolateQualities(ChocolateQuality entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = this;
+		}
+		
+		private void detach_ChocolateQualities(ChocolateQuality entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = null;
+		}
+		
+		private void attach_Efficiencies(Efficiency entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = this;
+		}
+		
+		private void detach_Efficiencies(Efficiency entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = null;
+		}
+		
+		private void attach_ProductQualityEntryQuals(ProductQualityEntryQual entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = this;
+		}
+		
+		private void detach_ProductQualityEntryQuals(ProductQualityEntryQual entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = null;
+		}
+		
+		private void attach_ProductQualityEntryQuants(ProductQualityEntryQuant entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = this;
+		}
+		
+		private void detach_ProductQualityEntryQuants(ProductQualityEntryQuant entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProductEntry = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductQualityEntryQual")]
 	public partial class ProductQualityEntryQual : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2076,7 +3954,7 @@ namespace PolyChocolates
 		
 		private int _ProductQualityEntryQualId;
 		
-		private System.Nullable<int> _ProductEntryId;
+		private System.Nullable<int> _ProductEntryKey;
 		
 		private System.Nullable<int> _QualityLabelQualId;
 		
@@ -2084,9 +3962,9 @@ namespace PolyChocolates
 		
 		private string _Comments;
 		
-		private EntityRef<QualityLabelQual> _QualityLabelQual;
-		
 		private EntityRef<ProductEntry> _ProductEntry;
+		
+		private EntityRef<QualityLabelQual> _QualityLabelQual;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2094,8 +3972,8 @@ namespace PolyChocolates
     partial void OnCreated();
     partial void OnProductQualityEntryQualIdChanging(int value);
     partial void OnProductQualityEntryQualIdChanged();
-    partial void OnProductEntryIdChanging(System.Nullable<int> value);
-    partial void OnProductEntryIdChanged();
+    partial void OnProductEntryKeyChanging(System.Nullable<int> value);
+    partial void OnProductEntryKeyChanged();
     partial void OnQualityLabelQualIdChanging(System.Nullable<int> value);
     partial void OnQualityLabelQualIdChanged();
     partial void OnSustainTakeActionChanging(string value);
@@ -2106,8 +3984,8 @@ namespace PolyChocolates
 		
 		public ProductQualityEntryQual()
 		{
-			this._QualityLabelQual = default(EntityRef<QualityLabelQual>);
 			this._ProductEntry = default(EntityRef<ProductEntry>);
+			this._QualityLabelQual = default(EntityRef<QualityLabelQual>);
 			OnCreated();
 		}
 		
@@ -2131,26 +4009,26 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryId", DbType="Int")]
-		public System.Nullable<int> ProductEntryId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryKey", DbType="Int")]
+		public System.Nullable<int> ProductEntryKey
 		{
 			get
 			{
-				return this._ProductEntryId;
+				return this._ProductEntryKey;
 			}
 			set
 			{
-				if ((this._ProductEntryId != value))
+				if ((this._ProductEntryKey != value))
 				{
 					if (this._ProductEntry.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnProductEntryIdChanging(value);
+					this.OnProductEntryKeyChanging(value);
 					this.SendPropertyChanging();
-					this._ProductEntryId = value;
-					this.SendPropertyChanged("ProductEntryId");
-					this.OnProductEntryIdChanged();
+					this._ProductEntryKey = value;
+					this.SendPropertyChanged("ProductEntryKey");
+					this.OnProductEntryKeyChanged();
 				}
 			}
 		}
@@ -2219,6 +4097,40 @@ namespace PolyChocolates
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ProductQualityEntryQual", Storage="_ProductEntry", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey", IsForeignKey=true)]
+		public ProductEntry ProductEntry
+		{
+			get
+			{
+				return this._ProductEntry.Entity;
+			}
+			set
+			{
+				ProductEntry previousValue = this._ProductEntry.Entity;
+				if (((previousValue != value) 
+							|| (this._ProductEntry.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ProductEntry.Entity = null;
+						previousValue.ProductQualityEntryQuals.Remove(this);
+					}
+					this._ProductEntry.Entity = value;
+					if ((value != null))
+					{
+						value.ProductQualityEntryQuals.Add(this);
+						this._ProductEntryKey = value.ProductEntryKey;
+					}
+					else
+					{
+						this._ProductEntryKey = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ProductEntry");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QualityLabelQual_ProductQualityEntryQual", Storage="_QualityLabelQual", ThisKey="QualityLabelQualId", OtherKey="QualityLabelQualId", IsForeignKey=true)]
 		public QualityLabelQual QualityLabelQual
 		{
@@ -2253,40 +4165,6 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ProductQualityEntryQual", Storage="_ProductEntry", ThisKey="ProductEntryId", OtherKey="ProductEntryId", IsForeignKey=true)]
-		public ProductEntry ProductEntry
-		{
-			get
-			{
-				return this._ProductEntry.Entity;
-			}
-			set
-			{
-				ProductEntry previousValue = this._ProductEntry.Entity;
-				if (((previousValue != value) 
-							|| (this._ProductEntry.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ProductEntry.Entity = null;
-						previousValue.ProductQualityEntryQuals.Remove(this);
-					}
-					this._ProductEntry.Entity = value;
-					if ((value != null))
-					{
-						value.ProductQualityEntryQuals.Add(this);
-						this._ProductEntryId = value.ProductEntryId;
-					}
-					else
-					{
-						this._ProductEntryId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("ProductEntry");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2316,7 +4194,7 @@ namespace PolyChocolates
 		
 		private int _ProductQualityEntryQuantId;
 		
-		private System.Nullable<int> _ProductEntryId;
+		private System.Nullable<int> _ProductEntryKey;
 		
 		private System.Nullable<int> _QualityLabelQuantId;
 		
@@ -2324,9 +4202,9 @@ namespace PolyChocolates
 		
 		private string _Action;
 		
-		private EntityRef<QualityLabelQuant> _QualityLabelQuant;
-		
 		private EntityRef<ProductEntry> _ProductEntry;
+		
+		private EntityRef<QualityLabelQuant> _QualityLabelQuant;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2334,8 +4212,8 @@ namespace PolyChocolates
     partial void OnCreated();
     partial void OnProductQualityEntryQuantIdChanging(int value);
     partial void OnProductQualityEntryQuantIdChanged();
-    partial void OnProductEntryIdChanging(System.Nullable<int> value);
-    partial void OnProductEntryIdChanged();
+    partial void OnProductEntryKeyChanging(System.Nullable<int> value);
+    partial void OnProductEntryKeyChanged();
     partial void OnQualityLabelQuantIdChanging(System.Nullable<int> value);
     partial void OnQualityLabelQuantIdChanged();
     partial void OnValueChanging(string value);
@@ -2346,8 +4224,8 @@ namespace PolyChocolates
 		
 		public ProductQualityEntryQuant()
 		{
-			this._QualityLabelQuant = default(EntityRef<QualityLabelQuant>);
 			this._ProductEntry = default(EntityRef<ProductEntry>);
+			this._QualityLabelQuant = default(EntityRef<QualityLabelQuant>);
 			OnCreated();
 		}
 		
@@ -2371,26 +4249,26 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryId", DbType="Int")]
-		public System.Nullable<int> ProductEntryId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryKey", DbType="Int")]
+		public System.Nullable<int> ProductEntryKey
 		{
 			get
 			{
-				return this._ProductEntryId;
+				return this._ProductEntryKey;
 			}
 			set
 			{
-				if ((this._ProductEntryId != value))
+				if ((this._ProductEntryKey != value))
 				{
 					if (this._ProductEntry.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnProductEntryIdChanging(value);
+					this.OnProductEntryKeyChanging(value);
 					this.SendPropertyChanging();
-					this._ProductEntryId = value;
-					this.SendPropertyChanged("ProductEntryId");
-					this.OnProductEntryIdChanged();
+					this._ProductEntryKey = value;
+					this.SendPropertyChanged("ProductEntryKey");
+					this.OnProductEntryKeyChanged();
 				}
 			}
 		}
@@ -2459,6 +4337,40 @@ namespace PolyChocolates
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ProductQualityEntryQuant", Storage="_ProductEntry", ThisKey="ProductEntryKey", OtherKey="ProductEntryKey", IsForeignKey=true)]
+		public ProductEntry ProductEntry
+		{
+			get
+			{
+				return this._ProductEntry.Entity;
+			}
+			set
+			{
+				ProductEntry previousValue = this._ProductEntry.Entity;
+				if (((previousValue != value) 
+							|| (this._ProductEntry.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ProductEntry.Entity = null;
+						previousValue.ProductQualityEntryQuants.Remove(this);
+					}
+					this._ProductEntry.Entity = value;
+					if ((value != null))
+					{
+						value.ProductQualityEntryQuants.Add(this);
+						this._ProductEntryKey = value.ProductEntryKey;
+					}
+					else
+					{
+						this._ProductEntryKey = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ProductEntry");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QualityLabelQuant_ProductQualityEntryQuant", Storage="_QualityLabelQuant", ThisKey="QualityLabelQuantId", OtherKey="QualityLabelQuantId", IsForeignKey=true)]
 		public QualityLabelQuant QualityLabelQuant
 		{
@@ -2489,40 +4401,6 @@ namespace PolyChocolates
 						this._QualityLabelQuantId = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("QualityLabelQuant");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ProductQualityEntryQuant", Storage="_ProductEntry", ThisKey="ProductEntryId", OtherKey="ProductEntryId", IsForeignKey=true)]
-		public ProductEntry ProductEntry
-		{
-			get
-			{
-				return this._ProductEntry.Entity;
-			}
-			set
-			{
-				ProductEntry previousValue = this._ProductEntry.Entity;
-				if (((previousValue != value) 
-							|| (this._ProductEntry.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ProductEntry.Entity = null;
-						previousValue.ProductQualityEntryQuants.Remove(this);
-					}
-					this._ProductEntry.Entity = value;
-					if ((value != null))
-					{
-						value.ProductQualityEntryQuants.Add(this);
-						this._ProductEntryId = value.ProductEntryId;
-					}
-					else
-					{
-						this._ProductEntryId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("ProductEntry");
 				}
 			}
 		}
@@ -2560,13 +4438,13 @@ namespace PolyChocolates
 		
 		private string _Enabled;
 		
+		private EntitySet<ProductEntry> _ProductEntries;
+		
 		private EntitySet<QualityLabelQual> _QualityLabelQuals;
 		
 		private EntitySet<QualityLabelQuant> _QualityLabelQuants;
 		
 		private EntitySet<Recipe> _Recipes;
-		
-		private EntitySet<ProductEntry> _ProductEntries;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2582,10 +4460,10 @@ namespace PolyChocolates
 		
 		public QualityControl()
 		{
+			this._ProductEntries = new EntitySet<ProductEntry>(new Action<ProductEntry>(this.attach_ProductEntries), new Action<ProductEntry>(this.detach_ProductEntries));
 			this._QualityLabelQuals = new EntitySet<QualityLabelQual>(new Action<QualityLabelQual>(this.attach_QualityLabelQuals), new Action<QualityLabelQual>(this.detach_QualityLabelQuals));
 			this._QualityLabelQuants = new EntitySet<QualityLabelQuant>(new Action<QualityLabelQuant>(this.attach_QualityLabelQuants), new Action<QualityLabelQuant>(this.detach_QualityLabelQuants));
 			this._Recipes = new EntitySet<Recipe>(new Action<Recipe>(this.attach_Recipes), new Action<Recipe>(this.detach_Recipes));
-			this._ProductEntries = new EntitySet<ProductEntry>(new Action<ProductEntry>(this.attach_ProductEntries), new Action<ProductEntry>(this.detach_ProductEntries));
 			OnCreated();
 		}
 		
@@ -2649,6 +4527,19 @@ namespace PolyChocolates
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QualityControl_ProductEntry", Storage="_ProductEntries", ThisKey="QualityControlId", OtherKey="QualityControlId")]
+		public EntitySet<ProductEntry> ProductEntries
+		{
+			get
+			{
+				return this._ProductEntries;
+			}
+			set
+			{
+				this._ProductEntries.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QualityControl_QualityLabelQual", Storage="_QualityLabelQuals", ThisKey="QualityControlId", OtherKey="QualityControlId")]
 		public EntitySet<QualityLabelQual> QualityLabelQuals
 		{
@@ -2688,19 +4579,6 @@ namespace PolyChocolates
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QualityControl_ProductEntry", Storage="_ProductEntries", ThisKey="QualityControlId", OtherKey="QualityControlId")]
-		public EntitySet<ProductEntry> ProductEntries
-		{
-			get
-			{
-				return this._ProductEntries;
-			}
-			set
-			{
-				this._ProductEntries.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2719,6 +4597,18 @@ namespace PolyChocolates
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_ProductEntries(ProductEntry entity)
+		{
+			this.SendPropertyChanging();
+			entity.QualityControl = this;
+		}
+		
+		private void detach_ProductEntries(ProductEntry entity)
+		{
+			this.SendPropertyChanging();
+			entity.QualityControl = null;
 		}
 		
 		private void attach_QualityLabelQuals(QualityLabelQual entity)
@@ -2752,18 +4642,6 @@ namespace PolyChocolates
 		}
 		
 		private void detach_Recipes(Recipe entity)
-		{
-			this.SendPropertyChanging();
-			entity.QualityControl = null;
-		}
-		
-		private void attach_ProductEntries(ProductEntry entity)
-		{
-			this.SendPropertyChanging();
-			entity.QualityControl = this;
-		}
-		
-		private void detach_ProductEntries(ProductEntry entity)
 		{
 			this.SendPropertyChanging();
 			entity.QualityControl = null;
@@ -3296,6 +5174,361 @@ namespace PolyChocolates
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Recipe")]
+	public partial class Recipe : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RecipeId;
+		
+		private string _Name;
+		
+		private string _TraceabilityRequired;
+		
+		private string _EfficiencyRequired;
+		
+		private System.Nullable<int> _QualityControlId;
+		
+		private System.Nullable<double> _ExpectedWeight;
+		
+		private System.Data.Linq.Binary _haccp;
+		
+		private string _Enabled;
+		
+		private EntitySet<ProductEntry> _ProductEntries;
+		
+		private EntitySet<RecipeIngredient> _RecipeIngredients;
+		
+		private EntitySet<RecipeStep> _RecipeSteps;
+		
+		private EntityRef<QualityControl> _QualityControl;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRecipeIdChanging(int value);
+    partial void OnRecipeIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnTraceabilityRequiredChanging(string value);
+    partial void OnTraceabilityRequiredChanged();
+    partial void OnEfficiencyRequiredChanging(string value);
+    partial void OnEfficiencyRequiredChanged();
+    partial void OnQualityControlIdChanging(System.Nullable<int> value);
+    partial void OnQualityControlIdChanged();
+    partial void OnExpectedWeightChanging(System.Nullable<double> value);
+    partial void OnExpectedWeightChanged();
+    partial void OnhaccpChanging(System.Data.Linq.Binary value);
+    partial void OnhaccpChanged();
+    partial void OnEnabledChanging(string value);
+    partial void OnEnabledChanged();
+    #endregion
+		
+		public Recipe()
+		{
+			this._ProductEntries = new EntitySet<ProductEntry>(new Action<ProductEntry>(this.attach_ProductEntries), new Action<ProductEntry>(this.detach_ProductEntries));
+			this._RecipeIngredients = new EntitySet<RecipeIngredient>(new Action<RecipeIngredient>(this.attach_RecipeIngredients), new Action<RecipeIngredient>(this.detach_RecipeIngredients));
+			this._RecipeSteps = new EntitySet<RecipeStep>(new Action<RecipeStep>(this.attach_RecipeSteps), new Action<RecipeStep>(this.detach_RecipeSteps));
+			this._QualityControl = default(EntityRef<QualityControl>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecipeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int RecipeId
+		{
+			get
+			{
+				return this._RecipeId;
+			}
+			set
+			{
+				if ((this._RecipeId != value))
+				{
+					this.OnRecipeIdChanging(value);
+					this.SendPropertyChanging();
+					this._RecipeId = value;
+					this.SendPropertyChanged("RecipeId");
+					this.OnRecipeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TraceabilityRequired", DbType="VarChar(1)")]
+		public string TraceabilityRequired
+		{
+			get
+			{
+				return this._TraceabilityRequired;
+			}
+			set
+			{
+				if ((this._TraceabilityRequired != value))
+				{
+					this.OnTraceabilityRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._TraceabilityRequired = value;
+					this.SendPropertyChanged("TraceabilityRequired");
+					this.OnTraceabilityRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EfficiencyRequired", DbType="VarChar(1)")]
+		public string EfficiencyRequired
+		{
+			get
+			{
+				return this._EfficiencyRequired;
+			}
+			set
+			{
+				if ((this._EfficiencyRequired != value))
+				{
+					this.OnEfficiencyRequiredChanging(value);
+					this.SendPropertyChanging();
+					this._EfficiencyRequired = value;
+					this.SendPropertyChanged("EfficiencyRequired");
+					this.OnEfficiencyRequiredChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QualityControlId", DbType="Int")]
+		public System.Nullable<int> QualityControlId
+		{
+			get
+			{
+				return this._QualityControlId;
+			}
+			set
+			{
+				if ((this._QualityControlId != value))
+				{
+					if (this._QualityControl.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnQualityControlIdChanging(value);
+					this.SendPropertyChanging();
+					this._QualityControlId = value;
+					this.SendPropertyChanged("QualityControlId");
+					this.OnQualityControlIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpectedWeight", DbType="Float")]
+		public System.Nullable<double> ExpectedWeight
+		{
+			get
+			{
+				return this._ExpectedWeight;
+			}
+			set
+			{
+				if ((this._ExpectedWeight != value))
+				{
+					this.OnExpectedWeightChanging(value);
+					this.SendPropertyChanging();
+					this._ExpectedWeight = value;
+					this.SendPropertyChanged("ExpectedWeight");
+					this.OnExpectedWeightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_haccp", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary haccp
+		{
+			get
+			{
+				return this._haccp;
+			}
+			set
+			{
+				if ((this._haccp != value))
+				{
+					this.OnhaccpChanging(value);
+					this.SendPropertyChanging();
+					this._haccp = value;
+					this.SendPropertyChanged("haccp");
+					this.OnhaccpChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enabled", DbType="VarChar(1)")]
+		public string Enabled
+		{
+			get
+			{
+				return this._Enabled;
+			}
+			set
+			{
+				if ((this._Enabled != value))
+				{
+					this.OnEnabledChanging(value);
+					this.SendPropertyChanging();
+					this._Enabled = value;
+					this.SendPropertyChanged("Enabled");
+					this.OnEnabledChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Recipe_ProductEntry", Storage="_ProductEntries", ThisKey="RecipeId", OtherKey="RecipeEntryId")]
+		public EntitySet<ProductEntry> ProductEntries
+		{
+			get
+			{
+				return this._ProductEntries;
+			}
+			set
+			{
+				this._ProductEntries.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Recipe_RecipeIngredient", Storage="_RecipeIngredients", ThisKey="RecipeId", OtherKey="RecipeId")]
+		public EntitySet<RecipeIngredient> RecipeIngredients
+		{
+			get
+			{
+				return this._RecipeIngredients;
+			}
+			set
+			{
+				this._RecipeIngredients.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Recipe_RecipeStep", Storage="_RecipeSteps", ThisKey="RecipeId", OtherKey="RecipeId")]
+		public EntitySet<RecipeStep> RecipeSteps
+		{
+			get
+			{
+				return this._RecipeSteps;
+			}
+			set
+			{
+				this._RecipeSteps.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QualityControl_Recipe", Storage="_QualityControl", ThisKey="QualityControlId", OtherKey="QualityControlId", IsForeignKey=true)]
+		public QualityControl QualityControl
+		{
+			get
+			{
+				return this._QualityControl.Entity;
+			}
+			set
+			{
+				QualityControl previousValue = this._QualityControl.Entity;
+				if (((previousValue != value) 
+							|| (this._QualityControl.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._QualityControl.Entity = null;
+						previousValue.Recipes.Remove(this);
+					}
+					this._QualityControl.Entity = value;
+					if ((value != null))
+					{
+						value.Recipes.Add(this);
+						this._QualityControlId = value.QualityControlId;
+					}
+					else
+					{
+						this._QualityControlId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("QualityControl");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ProductEntries(ProductEntry entity)
+		{
+			this.SendPropertyChanging();
+			entity.Recipe = this;
+		}
+		
+		private void detach_ProductEntries(ProductEntry entity)
+		{
+			this.SendPropertyChanging();
+			entity.Recipe = null;
+		}
+		
+		private void attach_RecipeIngredients(RecipeIngredient entity)
+		{
+			this.SendPropertyChanging();
+			entity.Recipe = this;
+		}
+		
+		private void detach_RecipeIngredients(RecipeIngredient entity)
+		{
+			this.SendPropertyChanging();
+			entity.Recipe = null;
+		}
+		
+		private void attach_RecipeSteps(RecipeStep entity)
+		{
+			this.SendPropertyChanging();
+			entity.Recipe = this;
+		}
+		
+		private void detach_RecipeSteps(RecipeStep entity)
+		{
+			this.SendPropertyChanging();
+			entity.Recipe = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RecipeIngredient")]
 	public partial class RecipeIngredient : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3667,2167 +5900,6 @@ namespace PolyChocolates
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Inventory")]
-	public partial class Inventory : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _InventoryId;
-		
-		private string _Unit;
-		
-		private System.Nullable<decimal> _PricePerUnit;
-		
-		private System.Nullable<double> _PreviousStock;
-		
-		private System.Nullable<double> _Stock;
-		
-		private System.Nullable<double> _ActualUsage;
-		
-		private System.Nullable<double> _PredictedUsage;
-		
-		private string _Supplier;
-		
-		private System.Data.Linq.Binary _Certificate;
-		
-		private string _Name;
-		
-		private System.Nullable<System.DateTime> _SnapshotDate;
-		
-		private string _Enabled;
-		
-		private string _Type;
-		
-		private string _LotCode;
-		
-		private EntitySet<Traceability> _Traceabilities;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnInventoryIdChanging(int value);
-    partial void OnInventoryIdChanged();
-    partial void OnUnitChanging(string value);
-    partial void OnUnitChanged();
-    partial void OnPricePerUnitChanging(System.Nullable<decimal> value);
-    partial void OnPricePerUnitChanged();
-    partial void OnPreviousStockChanging(System.Nullable<double> value);
-    partial void OnPreviousStockChanged();
-    partial void OnStockChanging(System.Nullable<double> value);
-    partial void OnStockChanged();
-    partial void OnActualUsageChanging(System.Nullable<double> value);
-    partial void OnActualUsageChanged();
-    partial void OnPredictedUsageChanging(System.Nullable<double> value);
-    partial void OnPredictedUsageChanged();
-    partial void OnSupplierChanging(string value);
-    partial void OnSupplierChanged();
-    partial void OnCertificateChanging(System.Data.Linq.Binary value);
-    partial void OnCertificateChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnSnapshotDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnSnapshotDateChanged();
-    partial void OnEnabledChanging(string value);
-    partial void OnEnabledChanged();
-    partial void OnTypeChanging(string value);
-    partial void OnTypeChanged();
-    partial void OnLotCodeChanging(string value);
-    partial void OnLotCodeChanged();
-    #endregion
-		
-		public Inventory()
-		{
-			this._Traceabilities = new EntitySet<Traceability>(new Action<Traceability>(this.attach_Traceabilities), new Action<Traceability>(this.detach_Traceabilities));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InventoryId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int InventoryId
-		{
-			get
-			{
-				return this._InventoryId;
-			}
-			set
-			{
-				if ((this._InventoryId != value))
-				{
-					this.OnInventoryIdChanging(value);
-					this.SendPropertyChanging();
-					this._InventoryId = value;
-					this.SendPropertyChanged("InventoryId");
-					this.OnInventoryIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unit", DbType="VarChar(50)")]
-		public string Unit
-		{
-			get
-			{
-				return this._Unit;
-			}
-			set
-			{
-				if ((this._Unit != value))
-				{
-					this.OnUnitChanging(value);
-					this.SendPropertyChanging();
-					this._Unit = value;
-					this.SendPropertyChanged("Unit");
-					this.OnUnitChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricePerUnit", DbType="Money")]
-		public System.Nullable<decimal> PricePerUnit
-		{
-			get
-			{
-				return this._PricePerUnit;
-			}
-			set
-			{
-				if ((this._PricePerUnit != value))
-				{
-					this.OnPricePerUnitChanging(value);
-					this.SendPropertyChanging();
-					this._PricePerUnit = value;
-					this.SendPropertyChanged("PricePerUnit");
-					this.OnPricePerUnitChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PreviousStock", DbType="Float")]
-		public System.Nullable<double> PreviousStock
-		{
-			get
-			{
-				return this._PreviousStock;
-			}
-			set
-			{
-				if ((this._PreviousStock != value))
-				{
-					this.OnPreviousStockChanging(value);
-					this.SendPropertyChanging();
-					this._PreviousStock = value;
-					this.SendPropertyChanged("PreviousStock");
-					this.OnPreviousStockChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Stock", DbType="Float")]
-		public System.Nullable<double> Stock
-		{
-			get
-			{
-				return this._Stock;
-			}
-			set
-			{
-				if ((this._Stock != value))
-				{
-					this.OnStockChanging(value);
-					this.SendPropertyChanging();
-					this._Stock = value;
-					this.SendPropertyChanged("Stock");
-					this.OnStockChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActualUsage", DbType="Float")]
-		public System.Nullable<double> ActualUsage
-		{
-			get
-			{
-				return this._ActualUsage;
-			}
-			set
-			{
-				if ((this._ActualUsage != value))
-				{
-					this.OnActualUsageChanging(value);
-					this.SendPropertyChanging();
-					this._ActualUsage = value;
-					this.SendPropertyChanged("ActualUsage");
-					this.OnActualUsageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PredictedUsage", DbType="Float")]
-		public System.Nullable<double> PredictedUsage
-		{
-			get
-			{
-				return this._PredictedUsage;
-			}
-			set
-			{
-				if ((this._PredictedUsage != value))
-				{
-					this.OnPredictedUsageChanging(value);
-					this.SendPropertyChanging();
-					this._PredictedUsage = value;
-					this.SendPropertyChanged("PredictedUsage");
-					this.OnPredictedUsageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supplier", DbType="VarChar(50)")]
-		public string Supplier
-		{
-			get
-			{
-				return this._Supplier;
-			}
-			set
-			{
-				if ((this._Supplier != value))
-				{
-					this.OnSupplierChanging(value);
-					this.SendPropertyChanging();
-					this._Supplier = value;
-					this.SendPropertyChanged("Supplier");
-					this.OnSupplierChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Certificate", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Certificate
-		{
-			get
-			{
-				return this._Certificate;
-			}
-			set
-			{
-				if ((this._Certificate != value))
-				{
-					this.OnCertificateChanging(value);
-					this.SendPropertyChanging();
-					this._Certificate = value;
-					this.SendPropertyChanged("Certificate");
-					this.OnCertificateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(MAX)")]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SnapshotDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> SnapshotDate
-		{
-			get
-			{
-				return this._SnapshotDate;
-			}
-			set
-			{
-				if ((this._SnapshotDate != value))
-				{
-					this.OnSnapshotDateChanging(value);
-					this.SendPropertyChanging();
-					this._SnapshotDate = value;
-					this.SendPropertyChanged("SnapshotDate");
-					this.OnSnapshotDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enabled", DbType="VarChar(1)")]
-		public string Enabled
-		{
-			get
-			{
-				return this._Enabled;
-			}
-			set
-			{
-				if ((this._Enabled != value))
-				{
-					this.OnEnabledChanging(value);
-					this.SendPropertyChanging();
-					this._Enabled = value;
-					this.SendPropertyChanged("Enabled");
-					this.OnEnabledChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(MAX)")]
-		public string Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this.OnTypeChanging(value);
-					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LotCode", DbType="VarChar(MAX)")]
-		public string LotCode
-		{
-			get
-			{
-				return this._LotCode;
-			}
-			set
-			{
-				if ((this._LotCode != value))
-				{
-					this.OnLotCodeChanging(value);
-					this.SendPropertyChanging();
-					this._LotCode = value;
-					this.SendPropertyChanged("LotCode");
-					this.OnLotCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Inventory_Traceability", Storage="_Traceabilities", ThisKey="InventoryId", OtherKey="InventoryId")]
-		public EntitySet<Traceability> Traceabilities
-		{
-			get
-			{
-				return this._Traceabilities;
-			}
-			set
-			{
-				this._Traceabilities.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Traceabilities(Traceability entity)
-		{
-			this.SendPropertyChanging();
-			entity.Inventory = this;
-		}
-		
-		private void detach_Traceabilities(Traceability entity)
-		{
-			this.SendPropertyChanging();
-			entity.Inventory = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Recipe")]
-	public partial class Recipe : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _RecipeId;
-		
-		private string _Name;
-		
-		private string _TraceabilityRequired;
-		
-		private string _EfficiencyRequired;
-		
-		private System.Nullable<int> _QualityControlId;
-		
-		private System.Nullable<double> _ExpectedWeight;
-		
-		private System.Data.Linq.Binary _haccp;
-		
-		private EntitySet<RecipeIngredient> _RecipeIngredients;
-		
-		private EntitySet<RecipeStep> _RecipeSteps;
-		
-		private EntitySet<ProductEntry> _ProductEntries;
-		
-		private EntityRef<QualityControl> _QualityControl;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRecipeIdChanging(int value);
-    partial void OnRecipeIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnTraceabilityRequiredChanging(string value);
-    partial void OnTraceabilityRequiredChanged();
-    partial void OnEfficiencyRequiredChanging(string value);
-    partial void OnEfficiencyRequiredChanged();
-    partial void OnQualityControlIdChanging(System.Nullable<int> value);
-    partial void OnQualityControlIdChanged();
-    partial void OnExpectedWeightChanging(System.Nullable<double> value);
-    partial void OnExpectedWeightChanged();
-    partial void OnhaccpChanging(System.Data.Linq.Binary value);
-    partial void OnhaccpChanged();
-    #endregion
-		
-		public Recipe()
-		{
-			this._RecipeIngredients = new EntitySet<RecipeIngredient>(new Action<RecipeIngredient>(this.attach_RecipeIngredients), new Action<RecipeIngredient>(this.detach_RecipeIngredients));
-			this._RecipeSteps = new EntitySet<RecipeStep>(new Action<RecipeStep>(this.attach_RecipeSteps), new Action<RecipeStep>(this.detach_RecipeSteps));
-			this._ProductEntries = new EntitySet<ProductEntry>(new Action<ProductEntry>(this.attach_ProductEntries), new Action<ProductEntry>(this.detach_ProductEntries));
-			this._QualityControl = default(EntityRef<QualityControl>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecipeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int RecipeId
-		{
-			get
-			{
-				return this._RecipeId;
-			}
-			set
-			{
-				if ((this._RecipeId != value))
-				{
-					this.OnRecipeIdChanging(value);
-					this.SendPropertyChanging();
-					this._RecipeId = value;
-					this.SendPropertyChanged("RecipeId");
-					this.OnRecipeIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TraceabilityRequired", DbType="VarChar(1)")]
-		public string TraceabilityRequired
-		{
-			get
-			{
-				return this._TraceabilityRequired;
-			}
-			set
-			{
-				if ((this._TraceabilityRequired != value))
-				{
-					this.OnTraceabilityRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._TraceabilityRequired = value;
-					this.SendPropertyChanged("TraceabilityRequired");
-					this.OnTraceabilityRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EfficiencyRequired", DbType="VarChar(1)")]
-		public string EfficiencyRequired
-		{
-			get
-			{
-				return this._EfficiencyRequired;
-			}
-			set
-			{
-				if ((this._EfficiencyRequired != value))
-				{
-					this.OnEfficiencyRequiredChanging(value);
-					this.SendPropertyChanging();
-					this._EfficiencyRequired = value;
-					this.SendPropertyChanged("EfficiencyRequired");
-					this.OnEfficiencyRequiredChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QualityControlId", DbType="Int")]
-		public System.Nullable<int> QualityControlId
-		{
-			get
-			{
-				return this._QualityControlId;
-			}
-			set
-			{
-				if ((this._QualityControlId != value))
-				{
-					if (this._QualityControl.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnQualityControlIdChanging(value);
-					this.SendPropertyChanging();
-					this._QualityControlId = value;
-					this.SendPropertyChanged("QualityControlId");
-					this.OnQualityControlIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpectedWeight", DbType="Float")]
-		public System.Nullable<double> ExpectedWeight
-		{
-			get
-			{
-				return this._ExpectedWeight;
-			}
-			set
-			{
-				if ((this._ExpectedWeight != value))
-				{
-					this.OnExpectedWeightChanging(value);
-					this.SendPropertyChanging();
-					this._ExpectedWeight = value;
-					this.SendPropertyChanged("ExpectedWeight");
-					this.OnExpectedWeightChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_haccp", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary haccp
-		{
-			get
-			{
-				return this._haccp;
-			}
-			set
-			{
-				if ((this._haccp != value))
-				{
-					this.OnhaccpChanging(value);
-					this.SendPropertyChanging();
-					this._haccp = value;
-					this.SendPropertyChanged("haccp");
-					this.OnhaccpChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Recipe_RecipeIngredient", Storage="_RecipeIngredients", ThisKey="RecipeId", OtherKey="RecipeId")]
-		public EntitySet<RecipeIngredient> RecipeIngredients
-		{
-			get
-			{
-				return this._RecipeIngredients;
-			}
-			set
-			{
-				this._RecipeIngredients.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Recipe_RecipeStep", Storage="_RecipeSteps", ThisKey="RecipeId", OtherKey="RecipeId")]
-		public EntitySet<RecipeStep> RecipeSteps
-		{
-			get
-			{
-				return this._RecipeSteps;
-			}
-			set
-			{
-				this._RecipeSteps.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Recipe_ProductEntry", Storage="_ProductEntries", ThisKey="RecipeId", OtherKey="RecipeEntryId")]
-		public EntitySet<ProductEntry> ProductEntries
-		{
-			get
-			{
-				return this._ProductEntries;
-			}
-			set
-			{
-				this._ProductEntries.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QualityControl_Recipe", Storage="_QualityControl", ThisKey="QualityControlId", OtherKey="QualityControlId", IsForeignKey=true)]
-		public QualityControl QualityControl
-		{
-			get
-			{
-				return this._QualityControl.Entity;
-			}
-			set
-			{
-				QualityControl previousValue = this._QualityControl.Entity;
-				if (((previousValue != value) 
-							|| (this._QualityControl.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._QualityControl.Entity = null;
-						previousValue.Recipes.Remove(this);
-					}
-					this._QualityControl.Entity = value;
-					if ((value != null))
-					{
-						value.Recipes.Add(this);
-						this._QualityControlId = value.QualityControlId;
-					}
-					else
-					{
-						this._QualityControlId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("QualityControl");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_RecipeIngredients(RecipeIngredient entity)
-		{
-			this.SendPropertyChanging();
-			entity.Recipe = this;
-		}
-		
-		private void detach_RecipeIngredients(RecipeIngredient entity)
-		{
-			this.SendPropertyChanging();
-			entity.Recipe = null;
-		}
-		
-		private void attach_RecipeSteps(RecipeStep entity)
-		{
-			this.SendPropertyChanging();
-			entity.Recipe = this;
-		}
-		
-		private void detach_RecipeSteps(RecipeStep entity)
-		{
-			this.SendPropertyChanging();
-			entity.Recipe = null;
-		}
-		
-		private void attach_ProductEntries(ProductEntry entity)
-		{
-			this.SendPropertyChanging();
-			entity.Recipe = this;
-		}
-		
-		private void detach_ProductEntries(ProductEntry entity)
-		{
-			this.SendPropertyChanging();
-			entity.Recipe = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.InvoiceRow")]
-	public partial class InvoiceRow : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _InvoiceRowId;
-		
-		private string _Product;
-		
-		private double _Quantity;
-		
-		private decimal _RatePer;
-		
-		private string _CreditAccount;
-		
-		private System.Nullable<int> _InvoiceId;
-		
-		private string _CodeDate;
-		
-		private EntityRef<Invoice> _Invoice;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnInvoiceRowIdChanging(int value);
-    partial void OnInvoiceRowIdChanged();
-    partial void OnProductChanging(string value);
-    partial void OnProductChanged();
-    partial void OnQuantityChanging(double value);
-    partial void OnQuantityChanged();
-    partial void OnRatePerChanging(decimal value);
-    partial void OnRatePerChanged();
-    partial void OnCreditAccountChanging(string value);
-    partial void OnCreditAccountChanged();
-    partial void OnInvoiceIdChanging(System.Nullable<int> value);
-    partial void OnInvoiceIdChanged();
-    partial void OnCodeDateChanging(string value);
-    partial void OnCodeDateChanged();
-    #endregion
-		
-		public InvoiceRow()
-		{
-			this._Invoice = default(EntityRef<Invoice>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceRowId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int InvoiceRowId
-		{
-			get
-			{
-				return this._InvoiceRowId;
-			}
-			set
-			{
-				if ((this._InvoiceRowId != value))
-				{
-					this.OnInvoiceRowIdChanging(value);
-					this.SendPropertyChanging();
-					this._InvoiceRowId = value;
-					this.SendPropertyChanged("InvoiceRowId");
-					this.OnInvoiceRowIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Product
-		{
-			get
-			{
-				return this._Product;
-			}
-			set
-			{
-				if ((this._Product != value))
-				{
-					this.OnProductChanging(value);
-					this.SendPropertyChanging();
-					this._Product = value;
-					this.SendPropertyChanged("Product");
-					this.OnProductChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Float NOT NULL")]
-		public double Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RatePer", DbType="Decimal(18,0) NOT NULL")]
-		public decimal RatePer
-		{
-			get
-			{
-				return this._RatePer;
-			}
-			set
-			{
-				if ((this._RatePer != value))
-				{
-					this.OnRatePerChanging(value);
-					this.SendPropertyChanging();
-					this._RatePer = value;
-					this.SendPropertyChanged("RatePer");
-					this.OnRatePerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreditAccount", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string CreditAccount
-		{
-			get
-			{
-				return this._CreditAccount;
-			}
-			set
-			{
-				if ((this._CreditAccount != value))
-				{
-					this.OnCreditAccountChanging(value);
-					this.SendPropertyChanging();
-					this._CreditAccount = value;
-					this.SendPropertyChanged("CreditAccount");
-					this.OnCreditAccountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceId", DbType="Int")]
-		public System.Nullable<int> InvoiceId
-		{
-			get
-			{
-				return this._InvoiceId;
-			}
-			set
-			{
-				if ((this._InvoiceId != value))
-				{
-					if (this._Invoice.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnInvoiceIdChanging(value);
-					this.SendPropertyChanging();
-					this._InvoiceId = value;
-					this.SendPropertyChanged("InvoiceId");
-					this.OnInvoiceIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeDate", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string CodeDate
-		{
-			get
-			{
-				return this._CodeDate;
-			}
-			set
-			{
-				if ((this._CodeDate != value))
-				{
-					this.OnCodeDateChanging(value);
-					this.SendPropertyChanging();
-					this._CodeDate = value;
-					this.SendPropertyChanged("CodeDate");
-					this.OnCodeDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Invoice_InvoiceRow", Storage="_Invoice", ThisKey="InvoiceId", OtherKey="InvoiceId", IsForeignKey=true)]
-		public Invoice Invoice
-		{
-			get
-			{
-				return this._Invoice.Entity;
-			}
-			set
-			{
-				Invoice previousValue = this._Invoice.Entity;
-				if (((previousValue != value) 
-							|| (this._Invoice.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Invoice.Entity = null;
-						previousValue.InvoiceRows.Remove(this);
-					}
-					this._Invoice.Entity = value;
-					if ((value != null))
-					{
-						value.InvoiceRows.Add(this);
-						this._InvoiceId = value.InvoiceId;
-					}
-					else
-					{
-						this._InvoiceId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Invoice");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Invoice")]
-	public partial class Invoice : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _InvoiceId;
-		
-		private System.Nullable<System.DateTime> _Date;
-		
-		private string _InvoiceNumber;
-		
-		private System.Nullable<int> _CustomerId;
-		
-		private System.Nullable<decimal> _Total;
-		
-		private string _Status;
-		
-		private EntitySet<InvoiceRow> _InvoiceRows;
-		
-		private EntityRef<Customer> _Customer;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnInvoiceIdChanging(int value);
-    partial void OnInvoiceIdChanged();
-    partial void OnDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateChanged();
-    partial void OnInvoiceNumberChanging(string value);
-    partial void OnInvoiceNumberChanged();
-    partial void OnCustomerIdChanging(System.Nullable<int> value);
-    partial void OnCustomerIdChanged();
-    partial void OnTotalChanging(System.Nullable<decimal> value);
-    partial void OnTotalChanged();
-    partial void OnStatusChanging(string value);
-    partial void OnStatusChanged();
-    #endregion
-		
-		public Invoice()
-		{
-			this._InvoiceRows = new EntitySet<InvoiceRow>(new Action<InvoiceRow>(this.attach_InvoiceRows), new Action<InvoiceRow>(this.detach_InvoiceRows));
-			this._Customer = default(EntityRef<Customer>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int InvoiceId
-		{
-			get
-			{
-				return this._InvoiceId;
-			}
-			set
-			{
-				if ((this._InvoiceId != value))
-				{
-					this.OnInvoiceIdChanging(value);
-					this.SendPropertyChanging();
-					this._InvoiceId = value;
-					this.SendPropertyChanged("InvoiceId");
-					this.OnInvoiceIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNumber", DbType="NVarChar(MAX)")]
-		public string InvoiceNumber
-		{
-			get
-			{
-				return this._InvoiceNumber;
-			}
-			set
-			{
-				if ((this._InvoiceNumber != value))
-				{
-					this.OnInvoiceNumberChanging(value);
-					this.SendPropertyChanging();
-					this._InvoiceNumber = value;
-					this.SendPropertyChanged("InvoiceNumber");
-					this.OnInvoiceNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", DbType="Int")]
-		public System.Nullable<int> CustomerId
-		{
-			get
-			{
-				return this._CustomerId;
-			}
-			set
-			{
-				if ((this._CustomerId != value))
-				{
-					if (this._Customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCustomerIdChanging(value);
-					this.SendPropertyChanging();
-					this._CustomerId = value;
-					this.SendPropertyChanged("CustomerId");
-					this.OnCustomerIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Money")]
-		public System.Nullable<decimal> Total
-		{
-			get
-			{
-				return this._Total;
-			}
-			set
-			{
-				if ((this._Total != value))
-				{
-					this.OnTotalChanging(value);
-					this.SendPropertyChanging();
-					this._Total = value;
-					this.SendPropertyChanged("Total");
-					this.OnTotalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(MAX)")]
-		public string Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Invoice_InvoiceRow", Storage="_InvoiceRows", ThisKey="InvoiceId", OtherKey="InvoiceId")]
-		public EntitySet<InvoiceRow> InvoiceRows
-		{
-			get
-			{
-				return this._InvoiceRows;
-			}
-			set
-			{
-				this._InvoiceRows.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Invoice", Storage="_Customer", ThisKey="CustomerId", OtherKey="CustomerId", IsForeignKey=true)]
-		public Customer Customer
-		{
-			get
-			{
-				return this._Customer.Entity;
-			}
-			set
-			{
-				Customer previousValue = this._Customer.Entity;
-				if (((previousValue != value) 
-							|| (this._Customer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Customer.Entity = null;
-						previousValue.Invoices.Remove(this);
-					}
-					this._Customer.Entity = value;
-					if ((value != null))
-					{
-						value.Invoices.Add(this);
-						this._CustomerId = value.CustomerId;
-					}
-					else
-					{
-						this._CustomerId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Customer");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_InvoiceRows(InvoiceRow entity)
-		{
-			this.SendPropertyChanging();
-			entity.Invoice = this;
-		}
-		
-		private void detach_InvoiceRows(InvoiceRow entity)
-		{
-			this.SendPropertyChanging();
-			entity.Invoice = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer")]
-	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _CustomerId;
-		
-		private string _Name;
-		
-		private string _AccountNumber;
-		
-		private string _Address;
-		
-		private string _City;
-		
-		private string _State;
-		
-		private string _ZipCode;
-		
-		private string _PhoneNumber;
-		
-		private string _Type;
-		
-		private string _Enabled;
-		
-		private EntitySet<Invoice> _Invoices;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCustomerIdChanging(int value);
-    partial void OnCustomerIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnAccountNumberChanging(string value);
-    partial void OnAccountNumberChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnCityChanging(string value);
-    partial void OnCityChanged();
-    partial void OnStateChanging(string value);
-    partial void OnStateChanged();
-    partial void OnZipCodeChanging(string value);
-    partial void OnZipCodeChanged();
-    partial void OnPhoneNumberChanging(string value);
-    partial void OnPhoneNumberChanged();
-    partial void OnTypeChanging(string value);
-    partial void OnTypeChanged();
-    partial void OnEnabledChanging(string value);
-    partial void OnEnabledChanged();
-    #endregion
-		
-		public Customer()
-		{
-			this._Invoices = new EntitySet<Invoice>(new Action<Invoice>(this.attach_Invoices), new Action<Invoice>(this.detach_Invoices));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int CustomerId
-		{
-			get
-			{
-				return this._CustomerId;
-			}
-			set
-			{
-				if ((this._CustomerId != value))
-				{
-					this.OnCustomerIdChanging(value);
-					this.SendPropertyChanging();
-					this._CustomerId = value;
-					this.SendPropertyChanged("CustomerId");
-					this.OnCustomerIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(MAX)")]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountNumber", DbType="VarChar(MAX)")]
-		public string AccountNumber
-		{
-			get
-			{
-				return this._AccountNumber;
-			}
-			set
-			{
-				if ((this._AccountNumber != value))
-				{
-					this.OnAccountNumberChanging(value);
-					this.SendPropertyChanging();
-					this._AccountNumber = value;
-					this.SendPropertyChanged("AccountNumber");
-					this.OnAccountNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(MAX)")]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="VarChar(MAX)")]
-		public string City
-		{
-			get
-			{
-				return this._City;
-			}
-			set
-			{
-				if ((this._City != value))
-				{
-					this.OnCityChanging(value);
-					this.SendPropertyChanging();
-					this._City = value;
-					this.SendPropertyChanged("City");
-					this.OnCityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_State", DbType="VarChar(MAX)")]
-		public string State
-		{
-			get
-			{
-				return this._State;
-			}
-			set
-			{
-				if ((this._State != value))
-				{
-					this.OnStateChanging(value);
-					this.SendPropertyChanging();
-					this._State = value;
-					this.SendPropertyChanged("State");
-					this.OnStateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ZipCode", DbType="VarChar(MAX)")]
-		public string ZipCode
-		{
-			get
-			{
-				return this._ZipCode;
-			}
-			set
-			{
-				if ((this._ZipCode != value))
-				{
-					this.OnZipCodeChanging(value);
-					this.SendPropertyChanging();
-					this._ZipCode = value;
-					this.SendPropertyChanged("ZipCode");
-					this.OnZipCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(MAX)")]
-		public string PhoneNumber
-		{
-			get
-			{
-				return this._PhoneNumber;
-			}
-			set
-			{
-				if ((this._PhoneNumber != value))
-				{
-					this.OnPhoneNumberChanging(value);
-					this.SendPropertyChanging();
-					this._PhoneNumber = value;
-					this.SendPropertyChanged("PhoneNumber");
-					this.OnPhoneNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(MAX)")]
-		public string Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this.OnTypeChanging(value);
-					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enabled", DbType="VarChar(1)")]
-		public string Enabled
-		{
-			get
-			{
-				return this._Enabled;
-			}
-			set
-			{
-				if ((this._Enabled != value))
-				{
-					this.OnEnabledChanging(value);
-					this.SendPropertyChanging();
-					this._Enabled = value;
-					this.SendPropertyChanged("Enabled");
-					this.OnEnabledChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Invoice", Storage="_Invoices", ThisKey="CustomerId", OtherKey="CustomerId")]
-		public EntitySet<Invoice> Invoices
-		{
-			get
-			{
-				return this._Invoices;
-			}
-			set
-			{
-				this._Invoices.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Invoices(Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = this;
-		}
-		
-		private void detach_Invoices(Invoice entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductEntry")]
-	public partial class ProductEntry : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ProductEntryId;
-		
-		private System.Nullable<int> _RecipeEntryId;
-		
-		private string _CodeDate;
-		
-		private System.Nullable<System.DateTime> _Date;
-		
-		private System.Nullable<int> _AmountPackaged;
-		
-		private System.Nullable<int> _AmountProduced;
-		
-		private string _Downtime;
-		
-		private string _ProductionNotes;
-		
-		private string _StudentManager;
-		
-		private string _PlantManager;
-		
-		private string _QualityPerformer;
-		
-		private System.Nullable<int> _QualityControlId;
-		
-		private string _Complete;
-		
-		private System.Data.Linq.Binary _haacp;
-		
-		private EntitySet<Traceability> _Traceabilities;
-		
-		private EntitySet<ChocolateControl> _ChocolateControls;
-		
-		private EntitySet<ChocolateQuality> _ChocolateQualities;
-		
-		private EntitySet<Efficiency> _Efficiencies;
-		
-		private EntitySet<ProductQualityEntryQual> _ProductQualityEntryQuals;
-		
-		private EntitySet<ProductQualityEntryQuant> _ProductQualityEntryQuants;
-		
-		private EntityRef<QualityControl> _QualityControl;
-		
-		private EntityRef<Recipe> _Recipe;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnProductEntryIdChanging(int value);
-    partial void OnProductEntryIdChanged();
-    partial void OnRecipeEntryIdChanging(System.Nullable<int> value);
-    partial void OnRecipeEntryIdChanged();
-    partial void OnCodeDateChanging(string value);
-    partial void OnCodeDateChanged();
-    partial void OnDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateChanged();
-    partial void OnAmountPackagedChanging(System.Nullable<int> value);
-    partial void OnAmountPackagedChanged();
-    partial void OnAmountProducedChanging(System.Nullable<int> value);
-    partial void OnAmountProducedChanged();
-    partial void OnDowntimeChanging(string value);
-    partial void OnDowntimeChanged();
-    partial void OnProductionNotesChanging(string value);
-    partial void OnProductionNotesChanged();
-    partial void OnStudentManagerChanging(string value);
-    partial void OnStudentManagerChanged();
-    partial void OnPlantManagerChanging(string value);
-    partial void OnPlantManagerChanged();
-    partial void OnQualityPerformerChanging(string value);
-    partial void OnQualityPerformerChanged();
-    partial void OnQualityControlIdChanging(System.Nullable<int> value);
-    partial void OnQualityControlIdChanged();
-    partial void OnCompleteChanging(string value);
-    partial void OnCompleteChanged();
-    partial void OnhaacpChanging(System.Data.Linq.Binary value);
-    partial void OnhaacpChanged();
-    #endregion
-		
-		public ProductEntry()
-		{
-			this._Traceabilities = new EntitySet<Traceability>(new Action<Traceability>(this.attach_Traceabilities), new Action<Traceability>(this.detach_Traceabilities));
-			this._ChocolateControls = new EntitySet<ChocolateControl>(new Action<ChocolateControl>(this.attach_ChocolateControls), new Action<ChocolateControl>(this.detach_ChocolateControls));
-			this._ChocolateQualities = new EntitySet<ChocolateQuality>(new Action<ChocolateQuality>(this.attach_ChocolateQualities), new Action<ChocolateQuality>(this.detach_ChocolateQualities));
-			this._Efficiencies = new EntitySet<Efficiency>(new Action<Efficiency>(this.attach_Efficiencies), new Action<Efficiency>(this.detach_Efficiencies));
-			this._ProductQualityEntryQuals = new EntitySet<ProductQualityEntryQual>(new Action<ProductQualityEntryQual>(this.attach_ProductQualityEntryQuals), new Action<ProductQualityEntryQual>(this.detach_ProductQualityEntryQuals));
-			this._ProductQualityEntryQuants = new EntitySet<ProductQualityEntryQuant>(new Action<ProductQualityEntryQuant>(this.attach_ProductQualityEntryQuants), new Action<ProductQualityEntryQuant>(this.detach_ProductQualityEntryQuants));
-			this._QualityControl = default(EntityRef<QualityControl>);
-			this._Recipe = default(EntityRef<Recipe>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductEntryId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ProductEntryId
-		{
-			get
-			{
-				return this._ProductEntryId;
-			}
-			set
-			{
-				if ((this._ProductEntryId != value))
-				{
-					this.OnProductEntryIdChanging(value);
-					this.SendPropertyChanging();
-					this._ProductEntryId = value;
-					this.SendPropertyChanged("ProductEntryId");
-					this.OnProductEntryIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecipeEntryId", DbType="Int")]
-		public System.Nullable<int> RecipeEntryId
-		{
-			get
-			{
-				return this._RecipeEntryId;
-			}
-			set
-			{
-				if ((this._RecipeEntryId != value))
-				{
-					if (this._Recipe.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnRecipeEntryIdChanging(value);
-					this.SendPropertyChanging();
-					this._RecipeEntryId = value;
-					this.SendPropertyChanged("RecipeEntryId");
-					this.OnRecipeEntryIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeDate", DbType="VarChar(50)")]
-		public string CodeDate
-		{
-			get
-			{
-				return this._CodeDate;
-			}
-			set
-			{
-				if ((this._CodeDate != value))
-				{
-					this.OnCodeDateChanging(value);
-					this.SendPropertyChanging();
-					this._CodeDate = value;
-					this.SendPropertyChanged("CodeDate");
-					this.OnCodeDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountPackaged", DbType="Int")]
-		public System.Nullable<int> AmountPackaged
-		{
-			get
-			{
-				return this._AmountPackaged;
-			}
-			set
-			{
-				if ((this._AmountPackaged != value))
-				{
-					this.OnAmountPackagedChanging(value);
-					this.SendPropertyChanging();
-					this._AmountPackaged = value;
-					this.SendPropertyChanged("AmountPackaged");
-					this.OnAmountPackagedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountProduced", DbType="Int")]
-		public System.Nullable<int> AmountProduced
-		{
-			get
-			{
-				return this._AmountProduced;
-			}
-			set
-			{
-				if ((this._AmountProduced != value))
-				{
-					this.OnAmountProducedChanging(value);
-					this.SendPropertyChanging();
-					this._AmountProduced = value;
-					this.SendPropertyChanged("AmountProduced");
-					this.OnAmountProducedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Downtime", DbType="VarChar(50)")]
-		public string Downtime
-		{
-			get
-			{
-				return this._Downtime;
-			}
-			set
-			{
-				if ((this._Downtime != value))
-				{
-					this.OnDowntimeChanging(value);
-					this.SendPropertyChanging();
-					this._Downtime = value;
-					this.SendPropertyChanged("Downtime");
-					this.OnDowntimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductionNotes", DbType="VarChar(MAX)")]
-		public string ProductionNotes
-		{
-			get
-			{
-				return this._ProductionNotes;
-			}
-			set
-			{
-				if ((this._ProductionNotes != value))
-				{
-					this.OnProductionNotesChanging(value);
-					this.SendPropertyChanging();
-					this._ProductionNotes = value;
-					this.SendPropertyChanged("ProductionNotes");
-					this.OnProductionNotesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentManager", DbType="VarChar(50)")]
-		public string StudentManager
-		{
-			get
-			{
-				return this._StudentManager;
-			}
-			set
-			{
-				if ((this._StudentManager != value))
-				{
-					this.OnStudentManagerChanging(value);
-					this.SendPropertyChanging();
-					this._StudentManager = value;
-					this.SendPropertyChanged("StudentManager");
-					this.OnStudentManagerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlantManager", DbType="VarChar(50)")]
-		public string PlantManager
-		{
-			get
-			{
-				return this._PlantManager;
-			}
-			set
-			{
-				if ((this._PlantManager != value))
-				{
-					this.OnPlantManagerChanging(value);
-					this.SendPropertyChanging();
-					this._PlantManager = value;
-					this.SendPropertyChanged("PlantManager");
-					this.OnPlantManagerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QualityPerformer", DbType="VarChar(50)")]
-		public string QualityPerformer
-		{
-			get
-			{
-				return this._QualityPerformer;
-			}
-			set
-			{
-				if ((this._QualityPerformer != value))
-				{
-					this.OnQualityPerformerChanging(value);
-					this.SendPropertyChanging();
-					this._QualityPerformer = value;
-					this.SendPropertyChanged("QualityPerformer");
-					this.OnQualityPerformerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QualityControlId", DbType="Int")]
-		public System.Nullable<int> QualityControlId
-		{
-			get
-			{
-				return this._QualityControlId;
-			}
-			set
-			{
-				if ((this._QualityControlId != value))
-				{
-					if (this._QualityControl.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnQualityControlIdChanging(value);
-					this.SendPropertyChanging();
-					this._QualityControlId = value;
-					this.SendPropertyChanged("QualityControlId");
-					this.OnQualityControlIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Complete", DbType="VarChar(1)")]
-		public string Complete
-		{
-			get
-			{
-				return this._Complete;
-			}
-			set
-			{
-				if ((this._Complete != value))
-				{
-					this.OnCompleteChanging(value);
-					this.SendPropertyChanging();
-					this._Complete = value;
-					this.SendPropertyChanged("Complete");
-					this.OnCompleteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_haacp", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary haacp
-		{
-			get
-			{
-				return this._haacp;
-			}
-			set
-			{
-				if ((this._haacp != value))
-				{
-					this.OnhaacpChanging(value);
-					this.SendPropertyChanging();
-					this._haacp = value;
-					this.SendPropertyChanged("haacp");
-					this.OnhaacpChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_Traceability", Storage="_Traceabilities", ThisKey="ProductEntryId", OtherKey="ProductEntryId")]
-		public EntitySet<Traceability> Traceabilities
-		{
-			get
-			{
-				return this._Traceabilities;
-			}
-			set
-			{
-				this._Traceabilities.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ChocolateControl", Storage="_ChocolateControls", ThisKey="ProductEntryId", OtherKey="ProductEntryId")]
-		public EntitySet<ChocolateControl> ChocolateControls
-		{
-			get
-			{
-				return this._ChocolateControls;
-			}
-			set
-			{
-				this._ChocolateControls.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ChocolateQuality", Storage="_ChocolateQualities", ThisKey="ProductEntryId", OtherKey="ProductEntryId")]
-		public EntitySet<ChocolateQuality> ChocolateQualities
-		{
-			get
-			{
-				return this._ChocolateQualities;
-			}
-			set
-			{
-				this._ChocolateQualities.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_Efficiency", Storage="_Efficiencies", ThisKey="ProductEntryId", OtherKey="ProductEntryId")]
-		public EntitySet<Efficiency> Efficiencies
-		{
-			get
-			{
-				return this._Efficiencies;
-			}
-			set
-			{
-				this._Efficiencies.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ProductQualityEntryQual", Storage="_ProductQualityEntryQuals", ThisKey="ProductEntryId", OtherKey="ProductEntryId")]
-		public EntitySet<ProductQualityEntryQual> ProductQualityEntryQuals
-		{
-			get
-			{
-				return this._ProductQualityEntryQuals;
-			}
-			set
-			{
-				this._ProductQualityEntryQuals.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProductEntry_ProductQualityEntryQuant", Storage="_ProductQualityEntryQuants", ThisKey="ProductEntryId", OtherKey="ProductEntryId")]
-		public EntitySet<ProductQualityEntryQuant> ProductQualityEntryQuants
-		{
-			get
-			{
-				return this._ProductQualityEntryQuants;
-			}
-			set
-			{
-				this._ProductQualityEntryQuants.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="QualityControl_ProductEntry", Storage="_QualityControl", ThisKey="QualityControlId", OtherKey="QualityControlId", IsForeignKey=true)]
-		public QualityControl QualityControl
-		{
-			get
-			{
-				return this._QualityControl.Entity;
-			}
-			set
-			{
-				QualityControl previousValue = this._QualityControl.Entity;
-				if (((previousValue != value) 
-							|| (this._QualityControl.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._QualityControl.Entity = null;
-						previousValue.ProductEntries.Remove(this);
-					}
-					this._QualityControl.Entity = value;
-					if ((value != null))
-					{
-						value.ProductEntries.Add(this);
-						this._QualityControlId = value.QualityControlId;
-					}
-					else
-					{
-						this._QualityControlId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("QualityControl");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Recipe_ProductEntry", Storage="_Recipe", ThisKey="RecipeEntryId", OtherKey="RecipeId", IsForeignKey=true)]
-		public Recipe Recipe
-		{
-			get
-			{
-				return this._Recipe.Entity;
-			}
-			set
-			{
-				Recipe previousValue = this._Recipe.Entity;
-				if (((previousValue != value) 
-							|| (this._Recipe.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Recipe.Entity = null;
-						previousValue.ProductEntries.Remove(this);
-					}
-					this._Recipe.Entity = value;
-					if ((value != null))
-					{
-						value.ProductEntries.Add(this);
-						this._RecipeEntryId = value.RecipeId;
-					}
-					else
-					{
-						this._RecipeEntryId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Recipe");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Traceabilities(Traceability entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = this;
-		}
-		
-		private void detach_Traceabilities(Traceability entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = null;
-		}
-		
-		private void attach_ChocolateControls(ChocolateControl entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = this;
-		}
-		
-		private void detach_ChocolateControls(ChocolateControl entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = null;
-		}
-		
-		private void attach_ChocolateQualities(ChocolateQuality entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = this;
-		}
-		
-		private void detach_ChocolateQualities(ChocolateQuality entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = null;
-		}
-		
-		private void attach_Efficiencies(Efficiency entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = this;
-		}
-		
-		private void detach_Efficiencies(Efficiency entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = null;
-		}
-		
-		private void attach_ProductQualityEntryQuals(ProductQualityEntryQual entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = this;
-		}
-		
-		private void detach_ProductQualityEntryQuals(ProductQualityEntryQual entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = null;
-		}
-		
-		private void attach_ProductQualityEntryQuants(ProductQualityEntryQuant entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = this;
-		}
-		
-		private void detach_ProductQualityEntryQuants(ProductQualityEntryQuant entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProductEntry = null;
 		}
 	}
 }
